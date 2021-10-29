@@ -1,7 +1,7 @@
 {
     "short_name": "newWebsite",
     "name": "newWebsite-test-pwa",
-    "start_url": "/",
+    "start_url": "/newWebsite",
     "icons": [
       {
         "src": "logo_512.png",
