@@ -4,7 +4,7 @@
     "start_url": "https://federicolonghin.github.io/newWebsite/",
     "icons": [
       {
-        "src": "../src/img/pencil_512.png",
+        "src": "/img/pencil_512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
