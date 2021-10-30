@@ -1,15 +1,15 @@
 {
-    "short_name": "newWebsite",
-    "name": "PWA per CoseVarie",
-    "start_url": "https://federicolonghin.github.io/newWebsite/",
+    "short_name": "svelte-pwa",
+    "name": "svelte-test-pwa",
+    "start_url": "/newWebsite",
     "icons": [
       {
-        "src": "/img/pencil_512.png",
+        "src": "favicon.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
-    "background_color": "#ffffff",
+    "background_color": "#3367D6",
     "display": "standalone",
     "scope": "/",
     "theme_color": "#3367D6",
@@ -19,15 +19,15 @@
         "short_name": "Today",
         "description": "View weather information for today",
         "url": "/today?source=pwa",
-        "icons": [{ "src": "/img/pencil_512.png", "sizes": "512x512" }]
+        "icons": [{ "src": "favicon.png", "sizes": "512x512" }]
       },
       {
-        "name": "CoseVarie belle e divertenti",
-        "short_name": "CoseVarie",
-        "description": "Cosevarie belle e divertenti",
+        "name": "How's weather tomorrow?",
+        "short_name": "Tomorrow",
+        "description": "View weather information for tomorrow",
         "url": "/tomorrow?source=pwa",
-        "icons": [{ "src": "/img/pencil_512.png", "sizes": "512x512" }]
+        "icons": [{ "src": "favicon.png", "sizes": "512x512" }]
       }
     ],
-    "description": "Cosevarie belle e divertenti"
+    "description": "Lofi to lofi beats, while using the scratchpad to list down tasks and thoughts"
 }
