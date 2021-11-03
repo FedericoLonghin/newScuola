@@ -19,26 +19,13 @@
 </svelte:head>
 
 <div class="content">
-	<h1>About this app</h1>
+	<h1>Benvenuto</h1>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
+		questo dovrebbe essere un sitino bellino... chissà se funziona... bah
 	</p>
 
-	<!-- TODO lose the @next! -->
-	<pre>npm init svelte@next</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/todos">TODOs</a> page illustrates SvelteKit's data loading and form handling. Try using
-		it with JavaScript disabled!
-	</p>
+	<p>Teoricamente qua dovrei fare una bella sezione per la scuola... chissà se funzionerà realmente</p>
 </div>
 
 <style>
