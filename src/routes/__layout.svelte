@@ -18,7 +18,6 @@
 </svelte:head>
 
 <Header />
-<IndicePath showIndicePath={0}/>
 <main>
 	<slot />
 </main>
