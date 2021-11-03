@@ -2860,9 +2860,9 @@ function init(settings) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-f246505b.js",
+      file: "/./_app/start-ae4ae7d9.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-f246505b.js", "/./_app/chunks/vendor-b38b17f6.js"]
+      js: ["/./_app/start-ae4ae7d9.js", "/./_app/chunks/vendor-b38b17f6.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2927,7 +2927,7 @@ var module_lookup = {
     return scuola;
   })
 };
-var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-b5632cde.js", "css": ["/./_app/assets/pages/__layout.svelte-584201ce.css"], "js": ["/./_app/pages/__layout.svelte-b5632cde.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-1f4fb626.js", "css": [], "js": ["/./_app/error.svelte-1f4fb626.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-d8b26d4f.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/index.svelte-d8b26d4f.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-f889195a.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/scuola.svelte-f889195a.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}};
+var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-b5006852.js", "css": ["/./_app/assets/pages/__layout.svelte-bd6aabf2.css"], "js": ["/./_app/pages/__layout.svelte-b5006852.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-1f4fb626.js", "css": [], "js": ["/./_app/error.svelte-1f4fb626.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-d8b26d4f.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/index.svelte-d8b26d4f.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-f889195a.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/scuola.svelte-f889195a.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -3000,8 +3000,8 @@ var ReloadPrompt = create_ssr_component(($$result, $$props, $$bindings, slots) =
 		<button class="${"svelte-1sc0yvd"}">Close </button></div>` : ``}`;
 });
 var css$2 = {
-  code: "main.svelte-1izrdc8{flex:1;display:flex;flex-direction:column;padding:1rem;width:100%;max-width:1024px;margin:0 auto;box-sizing:border-box}footer.svelte-1izrdc8{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px}@media(min-width: 480px){footer.svelte-1izrdc8{padding:40px 0}}",
-  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<script lang=\\"ts\\">import Header from '$lib/Header/index.svelte';\\nimport ReloadPrompt from '$lib/ReloadPrompt/index.svelte';\\nimport '../app.css';\\n</script>\\n\\n<svelte:head>\\n\\t<link rel=\\"manifest\\" href=\\"/manifest.webmanifest\\" />\\n\\n\\t<meta name=\\"description\\" content=\\"questo \xE8 il nuovo sitoTest di Federico Longhin\\" />\\n\\t<meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\" />\\n\\t<!-- <link rel=\\"icon\\" href=\\"/favicon.svg\\" type=\\"image/svg+xml\\"> -->\\n\\t<link rel=\\"apple-touch-icon\\" href=\\"/pencil-512x512.png\\" />\\n\\t<!-- <link rel=\\"mask-icon\\" href=\\"/safari-pinned-tab.svg\\" color=\\"#00aba9\\"> -->\\n\\t<meta name=\\"msapplication-TileColor\\" content=\\"#00aba9\\" />\\n\\t<meta name=\\"theme-color\\" content=\\"#ffffff\\" />\\n</svelte:head>\\n\\n<Header />\\n\\n<main>\\n\\t<slot />\\n</main>\\n\\n<footer>\\n\\t<p>Federico Longhin - 2021</p>\\n</footer>\\n\\n<ReloadPrompt />\\n\\n<style>\\n\\tmain {\\n\\t\\tflex: 1;\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tpadding: 1rem;\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: 1024px;\\n\\t\\tmargin: 0 auto;\\n\\t\\tbox-sizing: border-box;\\n\\t}\\n\\n\\tfooter {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 40px;\\n\\t}\\n\\n\\tfooter a {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\n\\t@media (min-width: 480px) {\\n\\t\\tfooter {\\n\\t\\t\\tpadding: 40px 0;\\n\\t\\t}\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA8BC,IAAI,eAAC,CAAC,AACL,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,UAAU,CAAE,UAAU,AACvB,CAAC,AAED,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,AACd,CAAC,AAMD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CAAC,CAAC,AAChB,CAAC,AACF,CAAC"}`
+  code: "main.svelte-1enxj1f{flex:1;display:flex;flex-direction:column;padding:1rem;width:100%;max-width:1024px;margin:0 auto;box-sizing:border-box}footer.svelte-1enxj1f{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;opacity:0.5}@media(min-width: 480px){footer.svelte-1enxj1f{padding:40px 0}}",
+  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<script lang=\\"ts\\">import Header from '$lib/Header/index.svelte';\\nimport ReloadPrompt from '$lib/ReloadPrompt/index.svelte';\\nimport '../app.css';\\n</script>\\n\\n<svelte:head>\\n\\t<link rel=\\"manifest\\" href=\\"/manifest.webmanifest\\" />\\n\\n\\t<meta name=\\"description\\" content=\\"questo \xE8 il nuovo sitoTest di Federico Longhin\\" />\\n\\t<meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\" />\\n\\t<!-- <link rel=\\"icon\\" href=\\"/favicon.svg\\" type=\\"image/svg+xml\\"> -->\\n\\t<link rel=\\"apple-touch-icon\\" href=\\"/pencil-512x512.png\\" />\\n\\t<!-- <link rel=\\"mask-icon\\" href=\\"/safari-pinned-tab.svg\\" color=\\"#00aba9\\"> -->\\n\\t<meta name=\\"msapplication-TileColor\\" content=\\"#00aba9\\" />\\n\\t<meta name=\\"theme-color\\" content=\\"#ffffff\\" />\\n</svelte:head>\\n\\n<Header />\\n\\n<main>\\n\\t<slot />\\n</main>\\n\\n<footer>\\n\\t<p>Federico Longhin - 2021</p>\\n</footer>\\n\\n<ReloadPrompt />\\n\\n<style>\\n\\tmain {\\n\\t\\tflex: 1;\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tpadding: 1rem;\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: 1024px;\\n\\t\\tmargin: 0 auto;\\n\\t\\tbox-sizing: border-box;\\n\\t}\\n\\n\\tfooter {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 40px;\\n\\t\\topacity: 0.5;\\n\\t}\\n\\n\\tfooter a {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\n\\t@media (min-width: 480px) {\\n\\t\\tfooter {\\n\\t\\t\\tpadding: 40px 0;\\n\\t\\t}\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA8BC,IAAI,eAAC,CAAC,AACL,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,UAAU,CAAE,UAAU,AACvB,CAAC,AAED,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,OAAO,CAAE,GAAG,AACb,CAAC,AAMD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CAAC,CAAC,AAChB,CAAC,AACF,CAAC"}`
 };
 var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$2);
@@ -3009,9 +3009,9 @@ var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 ${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
 
-<main class="${"svelte-1izrdc8"}">${slots.default ? slots.default({}) : ``}</main>
+<main class="${"svelte-1enxj1f"}">${slots.default ? slots.default({}) : ``}</main>
 
-<footer class="${"svelte-1izrdc8"}"><p>Federico Longhin - 2021</p></footer>
+<footer class="${"svelte-1enxj1f"}"><p>Federico Longhin - 2021</p></footer>
 
 ${validate_component(ReloadPrompt, "ReloadPrompt").$$render($$result, {}, {}, {})}`;
 });

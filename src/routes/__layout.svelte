@@ -46,6 +46,7 @@
 		justify-content: center;
 		align-items: center;
 		padding: 40px;
+		opacity: 0.5;
 	}
 
 	footer a {
