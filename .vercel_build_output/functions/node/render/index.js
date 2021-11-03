@@ -245,7 +245,7 @@ var require_workbox_window_prod_umd = __commonJS({
           }), e3.sn = t2, e3.nn = r2, navigator.serviceWorker.addEventListener("message", e3.gn), e3;
         }
         i2 = n2, (e2 = f2).prototype = Object.create(i2.prototype), e2.prototype.constructor = e2, e2.__proto__ = i2;
-        var h2, l, d2, m = f2.prototype;
+        var h2, l, d, m = f2.prototype;
         return m.register = function(n3) {
           var t2 = (n3 === void 0 ? {} : n3).immediate, r2 = t2 !== void 0 && t2;
           try {
@@ -320,7 +320,7 @@ var require_workbox_window_prod_umd = __commonJS({
           return this.en.promise;
         }}, {key: "controlling", get: function() {
           return this.on.promise;
-        }}]) && r(h2.prototype, l), d2 && r(h2, d2), f2;
+        }}]) && r(h2.prototype, l), d && r(h2, d), f2;
       }(function() {
         function n2() {
           this.Pn = new Map();
@@ -1846,8 +1846,8 @@ function normalize(loaded) {
   }
   return loaded;
 }
-function resolve(base2, path) {
-  const baseparts = path[0] === "/" ? [] : base2.slice(1).split("/");
+function resolve(base, path) {
+  const baseparts = path[0] === "/" ? [] : base.slice(1).split("/");
   const pathparts = path[0] === "/" ? path.slice(1).split("/") : path.split("/");
   baseparts.pop();
   for (let i = 0; i < pathparts.length; i += 1) {
@@ -1920,7 +1920,7 @@ async function load_node({
           const resolved = resolve(request.path, path);
           const filename = resolved.slice(1);
           const filename_html = `${filename}/index.html`;
-          const asset = options2.manifest.assets.find((d2) => d2.file === filename || d2.file === filename_html);
+          const asset = options2.manifest.assets.find((d) => d.file === filename || d.file === filename_html);
           if (asset) {
             if (options2.read) {
               response = new Response(options2.read(asset.file), {
@@ -2572,9 +2572,6 @@ function run_all(fns) {
 function is_function(thing) {
   return typeof thing === "function";
 }
-function safe_not_equal2(a, b) {
-  return a != a ? b == b : a !== b || (a && typeof a === "object" || typeof a === "function");
-}
 function is_empty(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -2585,33 +2582,7 @@ function subscribe(store, ...callbacks) {
   const unsub = store.subscribe(...callbacks);
   return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
 }
-var is_client = typeof window !== "undefined";
-var now = is_client ? () => window.performance.now() : () => Date.now();
-var raf = is_client ? (cb) => requestAnimationFrame(cb) : noop2;
 var tasks = new Set();
-function run_tasks(now2) {
-  tasks.forEach((task) => {
-    if (!task.c(now2)) {
-      tasks.delete(task);
-      task.f();
-    }
-  });
-  if (tasks.size !== 0)
-    raf(run_tasks);
-}
-function loop(callback) {
-  let task;
-  if (tasks.size === 0)
-    raf(run_tasks);
-  return {
-    promise: new Promise((fulfill) => {
-      tasks.add(task = {c: callback, f: fulfill});
-    }),
-    abort() {
-      tasks.delete(task);
-    }
-  };
-}
 var active_docs = new Set();
 var current_component;
 function set_current_component(component) {
@@ -2673,13 +2644,6 @@ var escaped2 = {
 };
 function escape2(html) {
   return String(html).replace(/["'&<>]/g, (match) => escaped2[match]);
-}
-function each(items, fn) {
-  let str = "";
-  for (let i = 0; i < items.length; i += 1) {
-    str += fn(items[i], i);
-  }
-  return str;
 }
 var missing_component = {
   $$render: () => ""
@@ -2818,156 +2782,7 @@ function v4() {
 
 // .svelte-kit/output/server/app.js
 var import_workbox_window = __toModule(require_workbox_window_prod_umd());
-
-// node_modules/svelte/store/index.mjs
-var subscriber_queue2 = [];
-function writable2(value, start = noop2) {
-  let stop;
-  const subscribers = [];
-  function set(new_value) {
-    if (safe_not_equal2(value, new_value)) {
-      value = new_value;
-      if (stop) {
-        const run_queue = !subscriber_queue2.length;
-        for (let i = 0; i < subscribers.length; i += 1) {
-          const s2 = subscribers[i];
-          s2[1]();
-          subscriber_queue2.push(s2, value);
-        }
-        if (run_queue) {
-          for (let i = 0; i < subscriber_queue2.length; i += 2) {
-            subscriber_queue2[i][0](subscriber_queue2[i + 1]);
-          }
-          subscriber_queue2.length = 0;
-        }
-      }
-    }
-  }
-  function update(fn) {
-    set(fn(value));
-  }
-  function subscribe2(run2, invalidate = noop2) {
-    const subscriber = [run2, invalidate];
-    subscribers.push(subscriber);
-    if (subscribers.length === 1) {
-      stop = start(set) || noop2;
-    }
-    run2(value);
-    return () => {
-      const index2 = subscribers.indexOf(subscriber);
-      if (index2 !== -1) {
-        subscribers.splice(index2, 1);
-      }
-      if (subscribers.length === 0) {
-        stop();
-        stop = null;
-      }
-    };
-  }
-  return {set, update, subscribe: subscribe2};
-}
-
-// node_modules/svelte/motion/index.mjs
-function is_date(obj) {
-  return Object.prototype.toString.call(obj) === "[object Date]";
-}
-function tick_spring(ctx, last_value, current_value, target_value) {
-  if (typeof current_value === "number" || is_date(current_value)) {
-    const delta = target_value - current_value;
-    const velocity = (current_value - last_value) / (ctx.dt || 1 / 60);
-    const spring2 = ctx.opts.stiffness * delta;
-    const damper = ctx.opts.damping * velocity;
-    const acceleration = (spring2 - damper) * ctx.inv_mass;
-    const d2 = (velocity + acceleration) * ctx.dt;
-    if (Math.abs(d2) < ctx.opts.precision && Math.abs(delta) < ctx.opts.precision) {
-      return target_value;
-    } else {
-      ctx.settled = false;
-      return is_date(current_value) ? new Date(current_value.getTime() + d2) : current_value + d2;
-    }
-  } else if (Array.isArray(current_value)) {
-    return current_value.map((_2, i) => tick_spring(ctx, last_value[i], current_value[i], target_value[i]));
-  } else if (typeof current_value === "object") {
-    const next_value = {};
-    for (const k in current_value) {
-      next_value[k] = tick_spring(ctx, last_value[k], current_value[k], target_value[k]);
-    }
-    return next_value;
-  } else {
-    throw new Error(`Cannot spring ${typeof current_value} values`);
-  }
-}
-function spring(value, opts = {}) {
-  const store = writable2(value);
-  const {stiffness = 0.15, damping = 0.8, precision = 0.01} = opts;
-  let last_time;
-  let task;
-  let current_token;
-  let last_value = value;
-  let target_value = value;
-  let inv_mass = 1;
-  let inv_mass_recovery_rate = 0;
-  let cancel_task = false;
-  function set(new_value, opts2 = {}) {
-    target_value = new_value;
-    const token = current_token = {};
-    if (value == null || opts2.hard || spring2.stiffness >= 1 && spring2.damping >= 1) {
-      cancel_task = true;
-      last_time = now();
-      last_value = new_value;
-      store.set(value = target_value);
-      return Promise.resolve();
-    } else if (opts2.soft) {
-      const rate = opts2.soft === true ? 0.5 : +opts2.soft;
-      inv_mass_recovery_rate = 1 / (rate * 60);
-      inv_mass = 0;
-    }
-    if (!task) {
-      last_time = now();
-      cancel_task = false;
-      task = loop((now2) => {
-        if (cancel_task) {
-          cancel_task = false;
-          task = null;
-          return false;
-        }
-        inv_mass = Math.min(inv_mass + inv_mass_recovery_rate, 1);
-        const ctx = {
-          inv_mass,
-          opts: spring2,
-          settled: true,
-          dt: (now2 - last_time) * 60 / 1e3
-        };
-        const next_value = tick_spring(ctx, last_value, value, target_value);
-        last_time = now2;
-        last_value = value;
-        store.set(value = next_value);
-        if (ctx.settled) {
-          task = null;
-        }
-        return !ctx.settled;
-      });
-    }
-    return new Promise((fulfil) => {
-      task.promise.then(() => {
-        if (token === current_token)
-          fulfil();
-      });
-    });
-  }
-  const spring2 = {
-    set,
-    update: (fn, opts2) => set(fn(target_value, value), opts2),
-    subscribe: store.subscribe,
-    stiffness,
-    damping,
-    precision
-  };
-  return spring2;
-}
-
-// .svelte-kit/output/server/app.js
-var css$7 = {
+var css$5 = {
   code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
   map: `{"version":3,"file":"root.svelte","sources":["root.svelte"],"sourcesContent":["<!-- This file is generated by @sveltejs/kit \u2014 do not edit it! -->\\n<script>\\n\\timport { setContext, afterUpdate, onMount } from 'svelte';\\n\\n\\t// stores\\n\\texport let stores;\\n\\texport let page;\\n\\n\\texport let components;\\n\\texport let props_0 = null;\\n\\texport let props_1 = null;\\n\\texport let props_2 = null;\\n\\n\\tsetContext('__svelte__', stores);\\n\\n\\t$: stores.page.set(page);\\n\\tafterUpdate(stores.page.notify);\\n\\n\\tlet mounted = false;\\n\\tlet navigated = false;\\n\\tlet title = null;\\n\\n\\tonMount(() => {\\n\\t\\tconst unsubscribe = stores.page.subscribe(() => {\\n\\t\\t\\tif (mounted) {\\n\\t\\t\\t\\tnavigated = true;\\n\\t\\t\\t\\ttitle = document.title || 'untitled page';\\n\\t\\t\\t}\\n\\t\\t});\\n\\n\\t\\tmounted = true;\\n\\t\\treturn unsubscribe;\\n\\t});\\n</script>\\n\\n<svelte:component this={components[0]} {...(props_0 || {})}>\\n\\t{#if components[1]}\\n\\t\\t<svelte:component this={components[1]} {...(props_1 || {})}>\\n\\t\\t\\t{#if components[2]}\\n\\t\\t\\t\\t<svelte:component this={components[2]} {...(props_2 || {})}/>\\n\\t\\t\\t{/if}\\n\\t\\t</svelte:component>\\n\\t{/if}\\n</svelte:component>\\n\\n{#if mounted}\\n\\t<div id=\\"svelte-announcer\\" aria-live=\\"assertive\\" aria-atomic=\\"true\\">\\n\\t\\t{#if navigated}\\n\\t\\t\\t{title}\\n\\t\\t{/if}\\n\\t</div>\\n{/if}\\n\\n<style>\\n\\t#svelte-announcer {\\n\\t\\tposition: absolute;\\n\\t\\tleft: 0;\\n\\t\\ttop: 0;\\n\\t\\tclip: rect(0 0 0 0);\\n\\t\\tclip-path: inset(50%);\\n\\t\\toverflow: hidden;\\n\\t\\twhite-space: nowrap;\\n\\t\\twidth: 1px;\\n\\t\\theight: 1px;\\n\\t}\\n</style>"],"names":[],"mappings":"AAsDC,iBAAiB,eAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,CAAC,CACP,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CACnB,SAAS,CAAE,MAAM,GAAG,CAAC,CACrB,QAAQ,CAAE,MAAM,CAChB,WAAW,CAAE,MAAM,CACnB,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC"}`
 };
@@ -3005,7 +2820,7 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.props_1(props_1);
   if ($$props.props_2 === void 0 && $$bindings.props_2 && props_2 !== void 0)
     $$bindings.props_2(props_2);
-  $$result.css.add(css$7);
+  $$result.css.add(css$5);
   {
     stores.page.set(page2);
   }
@@ -3050,9 +2865,9 @@ function init(settings) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-7c5e6b23.js",
+      file: "/./_app/start-5351727c.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-7c5e6b23.js", "/./_app/chunks/vendor-863681f0.js"]
+      js: ["/./_app/start-5351727c.js", "/./_app/chunks/vendor-b38b17f6.js"]
     },
     fetched: void 0,
     floc: false,
@@ -3077,10 +2892,9 @@ function init(settings) {
     trailing_slash: "never"
   };
 }
-var d = decodeURIComponent;
 var empty = () => ({});
 var manifest = {
-  assets: [{"file": "apple-icon-180.png", "size": 5234, "type": "image/png"}, {"file": "apple-splash-1125-2436.jpg", "size": 48897, "type": "image/jpeg"}, {"file": "apple-splash-1136-640.jpg", "size": 17398, "type": "image/jpeg"}, {"file": "apple-splash-1170-2532.jpg", "size": 51811, "type": "image/jpeg"}, {"file": "apple-splash-1242-2208.jpg", "size": 52599, "type": "image/jpeg"}, {"file": "apple-splash-1242-2688.jpg", "size": 56170, "type": "image/jpeg"}, {"file": "apple-splash-1284-2778.jpg", "size": 58403, "type": "image/jpeg"}, {"file": "apple-splash-1334-750.jpg", "size": 21159, "type": "image/jpeg"}, {"file": "apple-splash-1536-2048.jpg", "size": 63142, "type": "image/jpeg"}, {"file": "apple-splash-1620-2160.jpg", "size": 67883, "type": "image/jpeg"}, {"file": "apple-splash-1668-2224.jpg", "size": 70051, "type": "image/jpeg"}, {"file": "apple-splash-1668-2388.jpg", "size": 72176, "type": "image/jpeg"}, {"file": "apple-splash-1792-828.jpg", "size": 23547, "type": "image/jpeg"}, {"file": "apple-splash-2048-1536.jpg", "size": 52834, "type": "image/jpeg"}, {"file": "apple-splash-2048-2732.jpg", "size": 92017, "type": "image/jpeg"}, {"file": "apple-splash-2160-1620.jpg", "size": 56842, "type": "image/jpeg"}, {"file": "apple-splash-2208-1242.jpg", "size": 40976, "type": "image/jpeg"}, {"file": "apple-splash-2224-1668.jpg", "size": 59104, "type": "image/jpeg"}, {"file": "apple-splash-2388-1668.jpg", "size": 59760, "type": "image/jpeg"}, {"file": "apple-splash-2436-1125.jpg", "size": 35559, "type": "image/jpeg"}, {"file": "apple-splash-2532-1170.jpg", "size": 38062, "type": "image/jpeg"}, {"file": "apple-splash-2688-1242.jpg", "size": 41567, "type": "image/jpeg"}, {"file": "apple-splash-2732-2048.jpg", "size": 78153, "type": "image/jpeg"}, {"file": "apple-splash-2778-1284.jpg", "size": 43582, "type": "image/jpeg"}, {"file": "apple-splash-640-1136.jpg", "size": 23426, "type": "image/jpeg"}, {"file": "apple-splash-750-1334.jpg", "size": 28014, "type": "image/jpeg"}, {"file": "apple-splash-828-1792.jpg", "size": 33344, "type": "image/jpeg"}, {"file": "favicon.png", "size": 3624, "type": "image/png"}, {"file": "manifest.webmanifest", "size": 333, "type": "application/manifest+json"}, {"file": "pwa-192x192.png", "size": 5537, "type": "image/png"}, {"file": "pwa-512x512.png", "size": 18707, "type": "image/png"}, {"file": "robots.txt", "size": 67, "type": "text/plain"}, {"file": "svelte-welcome.png", "size": 360807, "type": "image/png"}, {"file": "svelte-welcome.webp", "size": 115470, "type": "image/webp"}],
+  assets: [{"file": "favicon.png", "size": 3624, "type": "image/png"}, {"file": "manifest.webmanifest", "size": 333, "type": "application/manifest+json"}, {"file": "pencil-512x512.png", "size": 3624, "type": "image/png"}, {"file": "robots.txt", "size": 67, "type": "text/plain"}, {"file": "svelte-welcome.png", "size": 360807, "type": "image/png"}, {"file": "svelte-welcome.webp", "size": 115470, "type": "image/webp"}],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
@@ -3093,33 +2907,10 @@ var manifest = {
     },
     {
       type: "page",
-      pattern: /^\/about\/?$/,
+      pattern: /^\/scuola\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/about.svelte"],
+      a: ["src/routes/__layout.svelte", "src/routes/scuola.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
-    },
-    {
-      type: "endpoint",
-      pattern: /^\/todos\.json$/,
-      params: empty,
-      load: () => Promise.resolve().then(function() {
-        return index_json;
-      })
-    },
-    {
-      type: "page",
-      pattern: /^\/todos\/?$/,
-      params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/todos/index.svelte"],
-      b: [".svelte-kit/build/components/error.svelte"]
-    },
-    {
-      type: "endpoint",
-      pattern: /^\/todos\/([^/]+?)\.json$/,
-      params: (m) => ({uid: d(m[1])}),
-      load: () => Promise.resolve().then(function() {
-        return _uid__json;
-      })
     }
   ]
 };
@@ -3135,16 +2926,13 @@ var module_lookup = {
     return error2;
   }),
   "src/routes/index.svelte": () => Promise.resolve().then(function() {
-    return index$1;
-  }),
-  "src/routes/about.svelte": () => Promise.resolve().then(function() {
-    return about;
-  }),
-  "src/routes/todos/index.svelte": () => Promise.resolve().then(function() {
     return index;
+  }),
+  "src/routes/scuola.svelte": () => Promise.resolve().then(function() {
+    return scuola;
   })
 };
-var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-c6709233.js", "css": ["/./_app/assets/pages/__layout.svelte-c33d314d.css"], "js": ["/./_app/pages/__layout.svelte-c6709233.js", "/./_app/chunks/vendor-863681f0.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-3ae72231.js", "css": [], "js": ["/./_app/error.svelte-3ae72231.js", "/./_app/chunks/vendor-863681f0.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-9a3bfcc3.js", "css": ["/./_app/assets/pages/index.svelte-eeebb565.css"], "js": ["/./_app/pages/index.svelte-9a3bfcc3.js", "/./_app/chunks/vendor-863681f0.js"], "styles": null}, "src/routes/about.svelte": {"entry": "/./_app/pages/about.svelte-699f8d5f.js", "css": ["/./_app/assets/pages/about.svelte-4db5be0d.css"], "js": ["/./_app/pages/about.svelte-699f8d5f.js", "/./_app/chunks/vendor-863681f0.js"], "styles": null}, "src/routes/todos/index.svelte": {"entry": "/./_app/pages/todos/index.svelte-f3dacc5b.js", "css": ["/./_app/assets/pages/todos/index.svelte-ef0435f2.css"], "js": ["/./_app/pages/todos/index.svelte-f3dacc5b.js", "/./_app/chunks/vendor-863681f0.js"], "styles": null}};
+var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-6105658c.js", "css": ["/./_app/assets/pages/__layout.svelte-c33d314d.css"], "js": ["/./_app/pages/__layout.svelte-6105658c.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-1f4fb626.js", "css": [], "js": ["/./_app/error.svelte-1f4fb626.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-fec6fa57.js", "css": ["/./_app/assets/pages/index.svelte-80243294.css"], "js": ["/./_app/pages/index.svelte-fec6fa57.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-f889195a.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/scuola.svelte-f889195a.js", "/./_app/chunks/vendor-b38b17f6.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -3158,65 +2946,6 @@ function render(request, {
   const host = request.headers["host"];
   return respond({...request, host}, options, {prerender: prerender2});
 }
-var base = "https://api.svelte.dev";
-async function api(request, resource, data) {
-  if (!request.locals.userid) {
-    return {status: 401};
-  }
-  const res = await fetch(`${base}/${resource}`, {
-    method: request.method,
-    headers: {
-      "content-type": "application/json"
-    },
-    body: data && JSON.stringify(data)
-  });
-  if (res.ok && request.method !== "GET" && request.headers.accept !== "application/json") {
-    return {
-      status: 303,
-      headers: {
-        location: "/todos"
-      }
-    };
-  }
-  return {
-    status: res.status,
-    body: await res.json()
-  };
-}
-var get = async (request) => {
-  const response = await api(request, `todos/${request.locals.userid}`);
-  if (response.status === 404) {
-    return {body: []};
-  }
-  return response;
-};
-var post = async (request) => {
-  const response = await api(request, `todos/${request.locals.userid}`, {
-    text: request.body.get("text")
-  });
-  return response;
-};
-var index_json = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  get,
-  post
-});
-var patch = async (request) => {
-  return api(request, `todos/${request.locals.userid}/${request.params.uid}`, {
-    text: request.body.get("text"),
-    done: request.body.has("done") ? !!request.body.get("done") : void 0
-  });
-};
-var del = async (request) => {
-  return api(request, `todos/${request.locals.userid}/${request.params.uid}`);
-};
-var _uid__json = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  patch,
-  del
-});
 var getStores = () => {
   const stores = getContext("__svelte__");
   return {
@@ -3242,20 +2971,20 @@ var page = {
   }
 };
 var logo = "/_app/assets/GitHub-Mark-120px-plus.78981108.png";
-var css$6 = {
+var css$4 = {
   code: "header.svelte-1twf6mk.svelte-1twf6mk{display:flex;justify-content:space-between}.corner.svelte-1twf6mk.svelte-1twf6mk{width:3em;height:3em}.corner.svelte-1twf6mk a.svelte-1twf6mk{display:flex;align-items:center;justify-content:center;width:100%;height:100%}.corner.svelte-1twf6mk img.svelte-1twf6mk{width:2em;height:2em;object-fit:contain}nav.svelte-1twf6mk.svelte-1twf6mk{display:flex;justify-content:center;--background:rgba(255, 255, 255, 0.7)}svg.svelte-1twf6mk.svelte-1twf6mk{width:2em;height:3em;display:block}path.svelte-1twf6mk.svelte-1twf6mk{fill:var(--background)}ul.svelte-1twf6mk.svelte-1twf6mk{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--background);background-size:contain}li.svelte-1twf6mk.svelte-1twf6mk{position:relative;height:100%}li.active.svelte-1twf6mk.svelte-1twf6mk::before{--size:6px;content:'';width:0;height:0;position:absolute;top:0;left:calc(50% - var(--size));border:var(--size) solid transparent;border-top:var(--size) solid var(--accent-color)}nav.svelte-1twf6mk a.svelte-1twf6mk{display:flex;height:100%;align-items:center;padding:0 1em;color:var(--heading-color);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:10%;text-decoration:none;transition:color 0.2s linear}a.svelte-1twf6mk.svelte-1twf6mk:hover{color:var(--accent-color)}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\nimport logo from './GitHub-Mark-120px-plus.png';\\n</script>\\n\\n<header>\\n\\t<div class=\\"corner\\">\\n\\t\\t<a href=\\"https://github.com/FedericoLonghin/newWebsite\\">\\n\\t\\t\\t<img src={logo} alt=\\"Repo on GitHub\\" />\\n\\t\\t</a>\\n\\t</div>\\n\\n\\t<nav>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t\\t<ul>\\n\\t\\t\\t<li class:active={$page.path === '/'}><a sveltekit:prefetch href=\\"/\\">Home</a></li>\\n\\t\\t\\t<li class:active={$page.path === '/about'}><a sveltekit:prefetch href=\\"/about\\">Scuola</a></li>\\n\\t\\t</ul>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t</nav>\\n\\n\\t<div class=\\"corner\\">\\n\\t\\t<!-- TODO put something else here? github link? -->\\n\\t</div>\\n</header>\\n\\n<style>\\n\\theader {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\n\\t.corner {\\n\\t\\twidth: 3em;\\n\\t\\theight: 3em;\\n\\t}\\n\\n\\t.corner a {\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: center;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\t.corner img {\\n\\t\\twidth: 2em;\\n\\t\\theight: 2em;\\n\\t\\tobject-fit: contain;\\n\\t}\\n\\n\\tnav {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\t--background: rgba(255, 255, 255, 0.7);\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 2em;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: block;\\n\\t}\\n\\n\\tpath {\\n\\t\\tfill: var(--background);\\n\\t}\\n\\n\\tul {\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tlist-style: none;\\n\\t\\tbackground: var(--background);\\n\\t\\tbackground-size: contain;\\n\\t}\\n\\n\\tli {\\n\\t\\tposition: relative;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\tli.active::before {\\n\\t\\t--size: 6px;\\n\\t\\tcontent: '';\\n\\t\\twidth: 0;\\n\\t\\theight: 0;\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: calc(50% - var(--size));\\n\\t\\tborder: var(--size) solid transparent;\\n\\t\\tborder-top: var(--size) solid var(--accent-color);\\n\\t}\\n\\n\\tnav a {\\n\\t\\tdisplay: flex;\\n\\t\\theight: 100%;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 0 1em;\\n\\t\\tcolor: var(--heading-color);\\n\\t\\tfont-weight: 700;\\n\\t\\tfont-size: 0.8rem;\\n\\t\\ttext-transform: uppercase;\\n\\t\\tletter-spacing: 10%;\\n\\t\\ttext-decoration: none;\\n\\t\\ttransition: color 0.2s linear;\\n\\t}\\n\\n\\ta:hover {\\n\\t\\tcolor: var(--accent-color);\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA8BC,MAAM,8BAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AAED,OAAO,8BAAC,CAAC,AACR,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC,AAED,sBAAO,CAAC,CAAC,eAAC,CAAC,AACV,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CACvB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AAED,sBAAO,CAAC,GAAG,eAAC,CAAC,AACZ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,UAAU,CAAE,OAAO,AACpB,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,YAAY,CAAE,wBAAwB,AACvC,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,KAAK,AACf,CAAC,AAED,IAAI,8BAAC,CAAC,AACL,IAAI,CAAE,IAAI,YAAY,CAAC,AACxB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,IAAI,YAAY,CAAC,CAC7B,eAAe,CAAE,OAAO,AACzB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,AACb,CAAC,AAED,EAAE,qCAAO,QAAQ,AAAC,CAAC,AAClB,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,GAAG,CAAC,CAAC,CAAC,IAAI,MAAM,CAAC,CAAC,CAC7B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,WAAW,CACrC,UAAU,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,IAAI,cAAc,CAAC,AAClD,CAAC,AAED,kBAAG,CAAC,CAAC,eAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,CAAC,CAAC,GAAG,CACd,KAAK,CAAE,IAAI,eAAe,CAAC,CAC3B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,KAAK,CAAC,IAAI,CAAC,MAAM,AAC9B,CAAC,AAED,+BAAC,MAAM,AAAC,CAAC,AACR,KAAK,CAAE,IAAI,cAAc,CAAC,AAC3B,CAAC"}`
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\nimport logo from './GitHub-Mark-120px-plus.png';\\n</script>\\n\\n<header>\\n\\t<div class=\\"corner\\">\\n\\t\\t<a href=\\"https://github.com/FedericoLonghin/newWebsite\\">\\n\\t\\t\\t<img src={logo} alt=\\"Repo on GitHub\\" />\\n\\t\\t</a>\\n\\t</div>\\n\\n\\t<nav>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t\\t<ul>\\n\\t\\t\\t<li class:active={$page.path === '/'}><a sveltekit:prefetch href=\\"/\\">Home</a></li>\\n\\t\\t\\t<li class:active={$page.path === '/scuola'}><a sveltekit:prefetch href=\\"/scuola\\">Scuola</a></li>\\n\\t\\t</ul>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t</nav>\\n\\n\\t<div class=\\"corner\\">\\n\\t\\t<!-- TODO put something else here? github link? -->\\n\\t</div>\\n</header>\\n\\n<style>\\n\\theader {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\n\\t.corner {\\n\\t\\twidth: 3em;\\n\\t\\theight: 3em;\\n\\t}\\n\\n\\t.corner a {\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: center;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\t.corner img {\\n\\t\\twidth: 2em;\\n\\t\\theight: 2em;\\n\\t\\tobject-fit: contain;\\n\\t}\\n\\n\\tnav {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\t--background: rgba(255, 255, 255, 0.7);\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 2em;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: block;\\n\\t}\\n\\n\\tpath {\\n\\t\\tfill: var(--background);\\n\\t}\\n\\n\\tul {\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tlist-style: none;\\n\\t\\tbackground: var(--background);\\n\\t\\tbackground-size: contain;\\n\\t}\\n\\n\\tli {\\n\\t\\tposition: relative;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\tli.active::before {\\n\\t\\t--size: 6px;\\n\\t\\tcontent: '';\\n\\t\\twidth: 0;\\n\\t\\theight: 0;\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: calc(50% - var(--size));\\n\\t\\tborder: var(--size) solid transparent;\\n\\t\\tborder-top: var(--size) solid var(--accent-color);\\n\\t}\\n\\n\\tnav a {\\n\\t\\tdisplay: flex;\\n\\t\\theight: 100%;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 0 1em;\\n\\t\\tcolor: var(--heading-color);\\n\\t\\tfont-weight: 700;\\n\\t\\tfont-size: 0.8rem;\\n\\t\\ttext-transform: uppercase;\\n\\t\\tletter-spacing: 10%;\\n\\t\\ttext-decoration: none;\\n\\t\\ttransition: color 0.2s linear;\\n\\t}\\n\\n\\ta:hover {\\n\\t\\tcolor: var(--accent-color);\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA8BC,MAAM,8BAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AAED,OAAO,8BAAC,CAAC,AACR,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC,AAED,sBAAO,CAAC,CAAC,eAAC,CAAC,AACV,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CACvB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC,AAED,sBAAO,CAAC,GAAG,eAAC,CAAC,AACZ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,UAAU,CAAE,OAAO,AACpB,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,YAAY,CAAE,wBAAwB,AACvC,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,KAAK,AACf,CAAC,AAED,IAAI,8BAAC,CAAC,AACL,IAAI,CAAE,IAAI,YAAY,CAAC,AACxB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,IAAI,YAAY,CAAC,CAC7B,eAAe,CAAE,OAAO,AACzB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,AACb,CAAC,AAED,EAAE,qCAAO,QAAQ,AAAC,CAAC,AAClB,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,GAAG,CAAC,CAAC,CAAC,IAAI,MAAM,CAAC,CAAC,CAC7B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,WAAW,CACrC,UAAU,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,IAAI,cAAc,CAAC,AAClD,CAAC,AAED,kBAAG,CAAC,CAAC,eAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,CAAC,CAAC,GAAG,CACd,KAAK,CAAE,IAAI,eAAe,CAAC,CAC3B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,KAAK,CAAC,IAAI,CAAC,MAAM,AAC9B,CAAC,AAED,+BAAC,MAAM,AAAC,CAAC,AACR,KAAK,CAAE,IAAI,cAAc,CAAC,AAC3B,CAAC"}`
 };
 var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;
   $$unsubscribe_page = subscribe(page, (value) => $page = value);
-  $$result.css.add(css$6);
+  $$result.css.add(css$4);
   $$unsubscribe_page();
   return `<header class="${"svelte-1twf6mk"}"><div class="${"corner svelte-1twf6mk"}"><a href="${"https://github.com/FedericoLonghin/newWebsite"}" class="${"svelte-1twf6mk"}"><img${add_attribute("src", logo, 0)} alt="${"Repo on GitHub"}" class="${"svelte-1twf6mk"}"></a></div>
 
 	<nav class="${"svelte-1twf6mk"}"><svg viewBox="${"0 0 2 3"}" aria-hidden="${"true"}" class="${"svelte-1twf6mk"}"><path d="${"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z"}" class="${"svelte-1twf6mk"}"></path></svg>
 		<ul class="${"svelte-1twf6mk"}"><li class="${["svelte-1twf6mk", $page.path === "/" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/"}" class="${"svelte-1twf6mk"}">Home</a></li>
-			<li class="${["svelte-1twf6mk", $page.path === "/about" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/about"}" class="${"svelte-1twf6mk"}">Scuola</a></li></ul>
+			<li class="${["svelte-1twf6mk", $page.path === "/scuola" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/scuola"}" class="${"svelte-1twf6mk"}">Scuola</a></li></ul>
 		<svg viewBox="${"0 0 2 3"}" aria-hidden="${"true"}" class="${"svelte-1twf6mk"}"><path d="${"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z"}" class="${"svelte-1twf6mk"}"></path></svg></nav>
 
 	<div class="${"corner svelte-1twf6mk"}"></div>
@@ -3263,14 +2992,14 @@ var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 });
 var browser = false;
 var dev = false;
-var css$5 = {
+var css$3 = {
   code: ".pwa-toast.svelte-1q69697.svelte-1q69697{position:fixed;right:0;bottom:0;margin:16px;padding:12px;border:1px solid #8885;border-radius:4px;z-index:1;text-align:left;background-color:aqua;box-shadow:3px 4px 5px 0px #8885}.pwa-toast.svelte-1q69697 .message.svelte-1q69697{margin-bottom:8px}.pwa-toast.svelte-1q69697 button.svelte-1q69697{border:1px solid #8885;outline:none;margin-right:5px;border-radius:2px;padding:3px 10px}",
   map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { dev, browser } from '$app/env';\\nimport { Workbox, messageSW } from 'workbox-window';\\nlet wb;\\nlet registration;\\nlet offlineReady = false;\\nlet needRefresh = false;\\nfunction showSkipWaitingPrompt(event) {\\n    // \\\\\`event.wasWaitingBeforeRegister\\\\\` will be false if this is\\n    // the first time the updated service worker is waiting.\\n    // When \\\\\`event.wasWaitingBeforeRegister\\\\\` is true, a previously\\n    // updated service worker is still waiting.\\n    // You may want to customize the UI prompt accordingly.\\n    // Assumes your app has some sort of prompt UI element\\n    // that a user can either accept or reject.\\n    needRefresh = true;\\n}\\nfunction updateServiceWorker() {\\n    // Assuming the user accepted the update, set up a listener\\n    // that will reload the page as soon as the previously waiting\\n    // service worker has taken control.\\n    if (wb) {\\n        wb.addEventListener('controlling', (event) => {\\n            if (event.isUpdate)\\n                window.location.reload();\\n        });\\n    }\\n    if (registration && registration.waiting) {\\n        // Send a message to the waiting service worker,\\n        // instructing it to activate.\\n        // Note: for this to work, you have to add a message\\n        // listener in your service worker. See below.\\n        messageSW(registration.waiting, { type: 'SKIP_WAITING' }).then(() => {\\n            // console.log(\\"NOTIFIED SKIP_WAITING\\");\\n        }).catch(e => {\\n            console.error(\\"NOTIFIED SKIP_WAITING WITH ERROR\\", e);\\n        });\\n    }\\n}\\nfunction close() {\\n    offlineReady = false;\\n    needRefresh = false;\\n}\\nif (!dev && browser) {\\n    if ('serviceWorker' in navigator) {\\n        wb = new Workbox('/service-worker.js', { scope: '/' });\\n        wb.addEventListener('activated', (event) => {\\n            // this will only controls the offline request.\\n            // event.isUpdate will be true if another version of the service\\n            // worker was controlling the page when this version was registered.\\n            if (!event.isUpdate) {\\n                offlineReady = true;\\n            }\\n        });\\n        // Add an event listener to detect when the registered\\n        // service worker has installed but is waiting to activate.\\n        wb.addEventListener('waiting', showSkipWaitingPrompt);\\n        // eslint-disable-next-line\\n        // @ts-ignore\\n        wb.addEventListener('externalwaiting', showSkipWaitingPrompt);\\n        // register the service worker\\n        wb.register({ immediate: true }).then(r => registration = r).catch(e => {\\n            console.error(\\"cannot register service worker\\", e);\\n        });\\n    }\\n    else {\\n        console.warn('Service workers are not supported.');\\n    }\\n}\\n$: toast = offlineReady || needRefresh;\\n</script>\\n\\n{#if toast}\\n  <div\\n      class=\\"pwa-toast\\"\\n      role=\\"alert\\"\\n  >\\n    <div class=\\"message\\">\\n      {#if offlineReady}\\n      <span>\\n        App ready to work offline\\n      </span>\\n      {:else}\\n      <span>\\n        New content available, click on reload button to update.\\n      </span>\\n      {/if}\\n    </div>\\n    {#if needRefresh}\\n    <button on:click={updateServiceWorker}>\\n      Reload\\n    </button>\\n    {/if}\\n    <button on:click={close}>\\n      Close\\n    </button>\\n  </div>\\n{/if}\\n\\n<style>\\n    .pwa-toast {\\n        position: fixed;\\n        right: 0;\\n        bottom: 0;\\n        margin: 16px;\\n        padding: 12px;\\n        border: 1px solid #8885;\\n        border-radius: 4px;\\n        z-index: 1;\\n        text-align: left;\\n        background-color: aqua;\\n        box-shadow: 3px 4px 5px 0px #8885;\\n    }\\n    .pwa-toast .message {\\n        margin-bottom: 8px;\\n    }\\n    .pwa-toast button {\\n        border: 1px solid #8885;\\n        outline: none;\\n        margin-right: 5px;\\n        border-radius: 2px;\\n        padding: 3px 10px;\\n    }\\n</style>\\n"],"names":[],"mappings":"AAmGI,UAAU,8BAAC,CAAC,AACR,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,IAAI,CACZ,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CACvB,aAAa,CAAE,GAAG,CAClB,OAAO,CAAE,CAAC,CACV,UAAU,CAAE,IAAI,CAChB,gBAAgB,CAAE,IAAI,CACtB,UAAU,CAAE,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,KAAK,AACrC,CAAC,AACD,yBAAU,CAAC,QAAQ,eAAC,CAAC,AACjB,aAAa,CAAE,GAAG,AACtB,CAAC,AACD,yBAAU,CAAC,MAAM,eAAC,CAAC,AACf,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CACvB,OAAO,CAAE,IAAI,CACb,YAAY,CAAE,GAAG,CACjB,aAAa,CAAE,GAAG,CAClB,OAAO,CAAE,GAAG,CAAC,IAAI,AACrB,CAAC"}`
 };
 var ReloadPrompt = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let toast;
   let needRefresh = false;
-  $$result.css.add(css$5);
+  $$result.css.add(css$3);
   toast = needRefresh;
   return `${toast ? `<div class="${"pwa-toast svelte-1q69697"}" role="${"alert"}"><div class="${"message svelte-1q69697"}">${`<span>New content available, click on reload button to update.
       </span>`}</div>
@@ -3278,13 +3007,13 @@ var ReloadPrompt = create_ssr_component(($$result, $$props, $$bindings, slots) =
     <button class="${"svelte-1q69697"}">Close
     </button></div>` : ``}`;
 });
-var css$4 = {
+var css$2 = {
   code: "main.svelte-1izrdc8{flex:1;display:flex;flex-direction:column;padding:1rem;width:100%;max-width:1024px;margin:0 auto;box-sizing:border-box}footer.svelte-1izrdc8{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px}@media(min-width: 480px){footer.svelte-1izrdc8{padding:40px 0}}",
-  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<script lang=\\"ts\\">import Header from '$lib/Header/index.svelte';\\nimport ReloadPrompt from '$lib/ReloadPrompt/index.svelte';\\nimport '../app.css';\\n</script>\\n\\n<svelte:head>\\n\\t<link rel=\\"manifest\\" href=\\"/manifest.webmanifest\\" />\\n\\t<link rel=\\"apple-touch-icon\\" href=\\"/apple-icon-180.png\\" />\\n\\n\\t<meta\\n\\t\\tname=\\"description\\"\\n\\t\\tcontent=\\"questo \xE8 il nuovo sitoTest di federico Longhin\\"\\n\\t/>\\n\\t<meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\" />\\n\\t<!-- <link rel=\\"icon\\" href=\\"/favicon.svg\\" type=\\"image/svg+xml\\"> -->\\n\\t<link rel=\\"apple-touch-icon\\" href=\\"/pwa-192x192.png\\" />\\n\\t<!-- <link rel=\\"mask-icon\\" href=\\"/safari-pinned-tab.svg\\" color=\\"#00aba9\\"> -->\\n\\t<meta name=\\"msapplication-TileColor\\" content=\\"#00aba9\\" />\\n\\t<meta name=\\"theme-color\\" content=\\"#ffffff\\" />\\n</svelte:head>\\n\\n<Header />\\n\\n<main>\\n\\t<slot />\\n</main>\\n\\n<footer>\\n\\t<p>Federico Longhin - 2021</p>\\n</footer>\\n\\n<ReloadPrompt />\\n\\n<style>\\n\\tmain {\\n\\t\\tflex: 1;\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tpadding: 1rem;\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: 1024px;\\n\\t\\tmargin: 0 auto;\\n\\t\\tbox-sizing: border-box;\\n\\t}\\n\\n\\tfooter {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 40px;\\n\\t}\\n\\n\\tfooter a {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\n\\t@media (min-width: 480px) {\\n\\t\\tfooter {\\n\\t\\t\\tpadding: 40px 0;\\n\\t\\t}\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAkCC,IAAI,eAAC,CAAC,AACL,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,UAAU,CAAE,UAAU,AACvB,CAAC,AAED,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,AACd,CAAC,AAMD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CAAC,CAAC,AAChB,CAAC,AACF,CAAC"}`
+  map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<script lang=\\"ts\\">import Header from '$lib/Header/index.svelte';\\nimport ReloadPrompt from '$lib/ReloadPrompt/index.svelte';\\nimport '../app.css';\\n</script>\\n\\n<svelte:head>\\n\\t<link rel=\\"manifest\\" href=\\"/manifest.webmanifest\\" />\\n\\n\\t<meta\\n\\t\\tname=\\"description\\"\\n\\t\\tcontent=\\"questo \xE8 il nuovo sitoTest di Federico Longhin\\"\\n\\t/>\\n\\t<meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\" />\\n\\t<!-- <link rel=\\"icon\\" href=\\"/favicon.svg\\" type=\\"image/svg+xml\\"> -->\\n\\t<link rel=\\"apple-touch-icon\\" href=\\"/pencil-512x512.png\\" />\\n\\t<!-- <link rel=\\"mask-icon\\" href=\\"/safari-pinned-tab.svg\\" color=\\"#00aba9\\"> -->\\n\\t<meta name=\\"msapplication-TileColor\\" content=\\"#00aba9\\" />\\n\\t<meta name=\\"theme-color\\" content=\\"#ffffff\\" />\\n</svelte:head>\\n\\n<Header />\\n\\n<main>\\n\\t<slot />\\n</main>\\n\\n<footer>\\n\\t<p>Federico Longhin - 2021</p>\\n</footer>\\n\\n<ReloadPrompt />\\n\\n<style>\\n\\tmain {\\n\\t\\tflex: 1;\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tpadding: 1rem;\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: 1024px;\\n\\t\\tmargin: 0 auto;\\n\\t\\tbox-sizing: border-box;\\n\\t}\\n\\n\\tfooter {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 40px;\\n\\t}\\n\\n\\tfooter a {\\n\\t\\tfont-weight: bold;\\n\\t}\\n\\n\\t@media (min-width: 480px) {\\n\\t\\tfooter {\\n\\t\\t\\tpadding: 40px 0;\\n\\t\\t}\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAiCC,IAAI,eAAC,CAAC,AACL,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,UAAU,CAAE,UAAU,AACvB,CAAC,AAED,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,AACd,CAAC,AAMD,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CAAC,CAAC,AAChB,CAAC,AACF,CAAC"}`
 };
 var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$4);
-  return `${$$result.head += `<link rel="${"manifest"}" href="${"/manifest.webmanifest"}" data-svelte="svelte-smnt54"><link rel="${"apple-touch-icon"}" href="${"/apple-icon-180.png"}" data-svelte="svelte-smnt54"><meta name="${"description"}" content="${"questo \xE8 il nuovo sitoTest di federico Longhin"}" data-svelte="svelte-smnt54"><meta name="${"apple-mobile-web-app-capable"}" content="${"yes"}" data-svelte="svelte-smnt54"><link rel="${"apple-touch-icon"}" href="${"/pwa-192x192.png"}" data-svelte="svelte-smnt54"><meta name="${"msapplication-TileColor"}" content="${"#00aba9"}" data-svelte="svelte-smnt54"><meta name="${"theme-color"}" content="${"#ffffff"}" data-svelte="svelte-smnt54">`, ""}
+  $$result.css.add(css$2);
+  return `${$$result.head += `<link rel="${"manifest"}" href="${"/manifest.webmanifest"}" data-svelte="svelte-1fbpyfb"><meta name="${"description"}" content="${"questo \xE8 il nuovo sitoTest di Federico Longhin"}" data-svelte="svelte-1fbpyfb"><meta name="${"apple-mobile-web-app-capable"}" content="${"yes"}" data-svelte="svelte-1fbpyfb"><link rel="${"apple-touch-icon"}" href="${"/pencil-512x512.png"}" data-svelte="svelte-1fbpyfb"><meta name="${"msapplication-TileColor"}" content="${"#00aba9"}" data-svelte="svelte-1fbpyfb"><meta name="${"theme-color"}" content="${"#ffffff"}" data-svelte="svelte-1fbpyfb">`, ""}
 
 ${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
 
@@ -3299,10 +3028,10 @@ var __layout = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": _layout
 });
-function load$1({error: error22, status}) {
+function load({error: error22, status}) {
   return {props: {error: error22, status}};
 }
-var Error$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+var Error2 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let {status} = $$props;
   let {error: error22} = $$props;
   if ($$props.status === void 0 && $$bindings.status && status !== void 0)
@@ -3319,43 +3048,16 @@ ${error22.stack ? `<pre>${escape2(error22.stack)}</pre>` : ``}`;
 var error2 = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": Error$1,
-  load: load$1
+  "default": Error2,
+  load
 });
-var css$3 = {
-  code: ".counter.svelte-ltn89m.svelte-ltn89m{display:flex;border-top:1px solid rgba(0, 0, 0, 0.1);border-bottom:1px solid rgba(0, 0, 0, 0.1);margin:1rem 0}.counter.svelte-ltn89m button.svelte-ltn89m{width:2em;padding:0;display:flex;align-items:center;justify-content:center;border:0;background-color:transparent;color:var(--text-color);font-size:2rem}.counter.svelte-ltn89m button.svelte-ltn89m:hover{background-color:var(--secondary-color)}svg.svelte-ltn89m.svelte-ltn89m{width:25%;height:25%}path.svelte-ltn89m.svelte-ltn89m{vector-effect:non-scaling-stroke;stroke-width:2px;stroke:var(--text-color)}.counter-viewport.svelte-ltn89m.svelte-ltn89m{width:8em;height:4em;overflow:hidden;text-align:center;position:relative}.counter-viewport.svelte-ltn89m strong.svelte-ltn89m{position:absolute;display:block;width:100%;height:100%;font-weight:400;color:var(--accent-color);font-size:4rem;display:flex;align-items:center;justify-content:center}.counter-digits.svelte-ltn89m.svelte-ltn89m{position:absolute;width:100%;height:100%}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { spring } from 'svelte/motion';\\nlet count = 0;\\nconst displayed_count = spring();\\n$: displayed_count.set(count);\\n$: offset = modulo($displayed_count, 1);\\nfunction modulo(n, m) {\\n    // handle negative numbers\\n    return ((n % m) + m) % m;\\n}\\n</script>\\n\\n<div class=\\"counter\\">\\n\\t<button on:click={() => (count -= 1)} aria-label=\\"Decrease the counter by one\\">\\n\\t\\t<svg aria-hidden=\\"true\\" viewBox=\\"0 0 1 1\\">\\n\\t\\t\\t<path d=\\"M0,0.5 L1,0.5\\" />\\n\\t\\t</svg>\\n\\t</button>\\n\\n\\t<div class=\\"counter-viewport\\">\\n\\t\\t<div class=\\"counter-digits\\" style=\\"transform: translate(0, {100 * offset}%)\\">\\n\\t\\t\\t<strong style=\\"top: -100%\\" aria-hidden=\\"true\\">{Math.floor($displayed_count + 1)}</strong>\\n\\t\\t\\t<strong>{Math.floor($displayed_count)}</strong>\\n\\t\\t</div>\\n\\t</div>\\n\\n\\t<button on:click={() => (count += 1)} aria-label=\\"Increase the counter by one\\">\\n\\t\\t<svg aria-hidden=\\"true\\" viewBox=\\"0 0 1 1\\">\\n\\t\\t\\t<path d=\\"M0,0.5 L1,0.5 M0.5,0 L0.5,1\\" />\\n\\t\\t</svg>\\n\\t</button>\\n</div>\\n\\n<style>\\n\\t.counter {\\n\\t\\tdisplay: flex;\\n\\t\\tborder-top: 1px solid rgba(0, 0, 0, 0.1);\\n\\t\\tborder-bottom: 1px solid rgba(0, 0, 0, 0.1);\\n\\t\\tmargin: 1rem 0;\\n\\t}\\n\\n\\t.counter button {\\n\\t\\twidth: 2em;\\n\\t\\tpadding: 0;\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: center;\\n\\t\\tborder: 0;\\n\\t\\tbackground-color: transparent;\\n\\t\\tcolor: var(--text-color);\\n\\t\\tfont-size: 2rem;\\n\\t}\\n\\n\\t.counter button:hover {\\n\\t\\tbackground-color: var(--secondary-color);\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 25%;\\n\\t\\theight: 25%;\\n\\t}\\n\\n\\tpath {\\n\\t\\tvector-effect: non-scaling-stroke;\\n\\t\\tstroke-width: 2px;\\n\\t\\tstroke: var(--text-color);\\n\\t}\\n\\n\\t.counter-viewport {\\n\\t\\twidth: 8em;\\n\\t\\theight: 4em;\\n\\t\\toverflow: hidden;\\n\\t\\ttext-align: center;\\n\\t\\tposition: relative;\\n\\t}\\n\\n\\t.counter-viewport strong {\\n\\t\\tposition: absolute;\\n\\t\\tdisplay: block;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t\\tfont-weight: 400;\\n\\t\\tcolor: var(--accent-color);\\n\\t\\tfont-size: 4rem;\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: center;\\n\\t}\\n\\n\\t.counter-digits {\\n\\t\\tposition: absolute;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAiCC,QAAQ,4BAAC,CAAC,AACT,OAAO,CAAE,IAAI,CACb,UAAU,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACxC,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,MAAM,CAAE,IAAI,CAAC,CAAC,AACf,CAAC,AAED,sBAAQ,CAAC,MAAM,cAAC,CAAC,AAChB,KAAK,CAAE,GAAG,CACV,OAAO,CAAE,CAAC,CACV,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,CACvB,MAAM,CAAE,CAAC,CACT,gBAAgB,CAAE,WAAW,CAC7B,KAAK,CAAE,IAAI,YAAY,CAAC,CACxB,SAAS,CAAE,IAAI,AAChB,CAAC,AAED,sBAAQ,CAAC,oBAAM,MAAM,AAAC,CAAC,AACtB,gBAAgB,CAAE,IAAI,iBAAiB,CAAC,AACzC,CAAC,AAED,GAAG,4BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC,AAED,IAAI,4BAAC,CAAC,AACL,aAAa,CAAE,kBAAkB,CACjC,YAAY,CAAE,GAAG,CACjB,MAAM,CAAE,IAAI,YAAY,CAAC,AAC1B,CAAC,AAED,iBAAiB,4BAAC,CAAC,AAClB,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,QAAQ,CAAE,MAAM,CAChB,UAAU,CAAE,MAAM,CAClB,QAAQ,CAAE,QAAQ,AACnB,CAAC,AAED,+BAAiB,CAAC,MAAM,cAAC,CAAC,AACzB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,GAAG,CAChB,KAAK,CAAE,IAAI,cAAc,CAAC,CAC1B,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,MAAM,AACxB,CAAC,AAED,eAAe,4BAAC,CAAC,AAChB,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,AACb,CAAC"}`
-};
-function modulo(n, m) {
-  return (n % m + m) % m;
-}
-create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let offset;
-  let $displayed_count, $$unsubscribe_displayed_count;
-  let count = 0;
-  const displayed_count = spring();
-  $$unsubscribe_displayed_count = subscribe(displayed_count, (value) => $displayed_count = value);
-  $$result.css.add(css$3);
-  {
-    displayed_count.set(count);
-  }
-  offset = modulo($displayed_count, 1);
-  $$unsubscribe_displayed_count();
-  return `<div class="${"counter svelte-ltn89m"}"><button aria-label="${"Decrease the counter by one"}" class="${"svelte-ltn89m"}"><svg aria-hidden="${"true"}" viewBox="${"0 0 1 1"}" class="${"svelte-ltn89m"}"><path d="${"M0,0.5 L1,0.5"}" class="${"svelte-ltn89m"}"></path></svg></button>
-
-	<div class="${"counter-viewport svelte-ltn89m"}"><div class="${"counter-digits svelte-ltn89m"}" style="${"transform: translate(0, " + escape2(100 * offset) + "%)"}"><strong style="${"top: -100%"}" aria-hidden="${"true"}" class="${"svelte-ltn89m"}">${escape2(Math.floor($displayed_count + 1))}</strong>
-			<strong class="${"svelte-ltn89m"}">${escape2(Math.floor($displayed_count))}</strong></div></div>
-
-	<button aria-label="${"Increase the counter by one"}" class="${"svelte-ltn89m"}"><svg aria-hidden="${"true"}" viewBox="${"0 0 1 1"}" class="${"svelte-ltn89m"}"><path d="${"M0,0.5 L1,0.5 M0.5,0 L0.5,1"}" class="${"svelte-ltn89m"}"></path></svg></button>
-</div>`;
-});
-var css$2 = {
+var css$1 = {
   code: "section.svelte-mjk9ig{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}h1.svelte-mjk9ig{width:100%}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<script lang=\\"ts\\">import Counter from '$lib/Counter/index.svelte';\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>\\n\\t\\tBenvenuto nel nuovino sitino\\n\\t</h1>\\n\\n<h2>Chiss\xE0 se funziona... bah</h2>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n\\n\\t.welcome {\\n\\t\\tposition: relative;\\n\\t\\twidth: 100%;\\n\\t\\theight: 0;\\n\\t\\tpadding: 0 0 calc(100% * 495 / 2048) 0;\\n\\t}\\n\\n\\t.welcome img {\\n\\t\\tposition: absolute;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t\\ttop: 0;\\n\\t\\tdisplay: block;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAmBC,OAAO,cAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}`
+  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>\\n\\t\\tBenvenuto nel nuovino sitino\\n\\t</h1>\\n\\n<h2>Chiss\xE0 se funziona... bah</h2>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n\\n\\t.welcome {\\n\\t\\tposition: relative;\\n\\t\\twidth: 100%;\\n\\t\\theight: 0;\\n\\t\\tpadding: 0 0 calc(100% * 495 / 2048) 0;\\n\\t}\\n\\n\\t.welcome img {\\n\\t\\tposition: absolute;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t\\ttop: 0;\\n\\t\\tdisplay: block;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAkBC,OAAO,cAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,EAAE,cAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
 };
 var prerender$1 = true;
 var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$2);
+  $$result.css.add(css$1);
   return `${$$result.head += `${$$result.title = `<title>Home</title>`, ""}`, ""}
 
 <section class="${"svelte-mjk9ig"}"><h1 class="${"svelte-mjk9ig"}">Benvenuto nel nuovino sitino
@@ -3364,22 +3066,22 @@ var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 <h2>Chiss\xE0 se funziona... bah</h2>
 </section>`;
 });
-var index$1 = /* @__PURE__ */ Object.freeze({
+var index = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
   "default": Routes,
   prerender: prerender$1
 });
-var css$1 = {
+var css = {
   code: ".content.svelte-cf77e8{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}",
-  map: `{"version":3,"file":"about.svelte","sources":["about.svelte"],"sourcesContent":["<script context=\\"module\\">\\n\\timport { browser, dev } from '$app/env';\\n\\n\\t// we don't need any JS on this page, though we'll load\\n\\t// it in dev so that we get hot module replacement...\\n\\texport const hydrate = dev;\\n\\n\\t// ...but if the client-side router is already loaded\\n\\t// (i.e. we came here from elsewhere in the app), use it\\n\\texport const router = browser;\\n\\n\\t// since there's no dynamic data here, we can prerender\\n\\t// it so that it gets served as a static asset in prod\\n\\texport const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>About</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto</h1>\\n\\n\\t<p>\\n\\t\\tquesto dovrebbe essere un sitino bellino... chiss\xE0 se funziona... bah\\n\\t</p>\\n\\n\\t<p>Teoricamente qua dovrei fare una bella sezione per la scuola... chiss\xE0 se funzioner\xE0 realmente</p>\\n</div>\\n\\n<style>\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA+BC,QAAQ,cAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC"}`
+  map: `{"version":3,"file":"scuola.svelte","sources":["scuola.svelte"],"sourcesContent":["<script context=\\"module\\">\\n\\timport { browser, dev } from '$app/env';\\n\\n\\t// we don't need any JS on this page, though we'll load\\n\\t// it in dev so that we get hot module replacement...\\n\\texport const hydrate = dev;\\n\\n\\t// ...but if the client-side router is already loaded\\n\\t// (i.e. we came here from elsewhere in the app), use it\\n\\texport const router = browser;\\n\\n\\t// since there's no dynamic data here, we can prerender\\n\\t// it so that it gets served as a static asset in prod\\n\\texport const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Scuola</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto</h1>\\n\\n\\t<p>\\n\\t\\tquesto dovrebbe essere un sitino bellino... chiss\xE0 se funziona... bah\\n\\t</p>\\n\\n\\t<p>Teoricamente qua dovrei fare una bella sezione per la scuola... chiss\xE0 se funzioner\xE0 realmente</p>\\n</div>\\n\\n<style>\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA+BC,QAAQ,cAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC"}`
 };
 var hydrate = dev;
 var router = browser;
 var prerender = true;
-var About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  $$result.css.add(css$1);
-  return `${$$result.head += `${$$result.title = `<title>About</title>`, ""}`, ""}
+var Scuola = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  $$result.css.add(css);
+  return `${$$result.head += `${$$result.title = `<title>Scuola</title>`, ""}`, ""}
 
 <div class="${"content svelte-cf77e8"}"><h1>Benvenuto</h1>
 
@@ -3389,107 +3091,13 @@ var About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<p>Teoricamente qua dovrei fare una bella sezione per la scuola... chiss\xE0 se funzioner\xE0 realmente</p>
 </div>`;
 });
-var about = /* @__PURE__ */ Object.freeze({
+var scuola = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": About,
+  "default": Scuola,
   hydrate,
   router,
   prerender
-});
-var css = {
-  code: `.todos.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto;line-height:1}.new.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{margin:0 0 0.5rem 0}input.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{border:1px solid transparent}input.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd:focus-visible{box-shadow:inset 1px 1px 6px rgba(0, 0, 0, 0.1);border:1px solid #ff3e00 !important;outline:none}.new.svelte-dmxqmd input.svelte-dmxqmd.svelte-dmxqmd{font-size:28px;width:100%;padding:0.5em 1em 0.3em 1em;box-sizing:border-box;background:rgba(255, 255, 255, 0.05);border-radius:8px;text-align:center}.todo.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{display:grid;grid-template-columns:2rem 1fr 2rem;grid-gap:0.5rem;align-items:center;margin:0 0 0.5rem 0;padding:0.5rem;background-color:white;border-radius:8px;filter:drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));transform:translate(-1px, -1px);transition:filter 0.2s, transform 0.2s}.done.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{transform:none;opacity:0.4;filter:drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.1))}form.text.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{position:relative;display:flex;align-items:center;flex:1}.todo.svelte-dmxqmd input.svelte-dmxqmd.svelte-dmxqmd{flex:1;padding:0.5em 2em 0.5em 0.8em;border-radius:3px}.todo.svelte-dmxqmd button.svelte-dmxqmd.svelte-dmxqmd{width:2em;height:2em;border:none;background-color:transparent;background-position:50% 50%;background-repeat:no-repeat}button.toggle.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{border:1px solid rgba(0, 0, 0, 0.2);border-radius:50%;box-sizing:border-box;background-size:1em auto}.done.svelte-dmxqmd .toggle.svelte-dmxqmd.svelte-dmxqmd{background-image:url("data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 1.5L7.4375 14.5L1.5 8.5909' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}.delete.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{background-image:url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 5V22H19.5V5H4.5Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M10 10V16.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 10V16.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 5H22' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 5L9.6445 2H14.3885L16 5H8Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E%0A");opacity:0.2}.delete.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd:hover,.delete.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd:focus{transition:opacity 0.2s;opacity:1}.save.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd{position:absolute;right:0;opacity:0;background-image:url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 2H3.5C2.67158 2 2 2.67157 2 3.5V20.5C2 21.3284 2.67158 22 3.5 22H20.5C21.3284 22 22 21.3284 22 20.5V3.5C22 2.67157 21.3284 2 20.5 2Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M17 2V11H7.5V2H17Z' fill='white' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M13.5 5.5V7.5' stroke='%23676778' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5.99844 2H18.4992' stroke='%23676778' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A")}.todo.svelte-dmxqmd input.svelte-dmxqmd:focus+.save.svelte-dmxqmd,.save.svelte-dmxqmd.svelte-dmxqmd.svelte-dmxqmd:focus{transition:opacity 0.2s;opacity:1}`,
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\\n    return new (P || (P = Promise))(function (resolve, reject) {\\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\\n        function rejected(value) { try { step(generator[\\"throw\\"](value)); } catch (e) { reject(e); } }\\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\\n    });\\n};\\nimport { enhance } from '$lib/form';\\n;\\n// see https://kit.svelte.dev/docs#loading\\nexport const load = ({ fetch }) => __awaiter(void 0, void 0, void 0, function* () {\\n    const res = yield fetch('/todos.json');\\n    if (res.ok) {\\n        const todos = yield res.json();\\n        return {\\n            props: { todos }\\n        };\\n    }\\n    const { message } = yield res.json();\\n    return {\\n        error: new Error(message)\\n    };\\n});\\n</script>\\n\\n<script lang=\\"ts\\">var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {\\n    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }\\n    return new (P || (P = Promise))(function (resolve, reject) {\\n        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }\\n        function rejected(value) { try { step(generator[\\"throw\\"](value)); } catch (e) { reject(e); } }\\n        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }\\n        step((generator = generator.apply(thisArg, _arguments || [])).next());\\n    });\\n};\\nimport { scale } from 'svelte/transition';\\nimport { flip } from 'svelte/animate';\\nexport let todos;\\nfunction patch(res) {\\n    return __awaiter(this, void 0, void 0, function* () {\\n        const todo = yield res.json();\\n        todos = todos.map((t) => {\\n            if (t.uid === todo.uid)\\n                return todo;\\n            return t;\\n        });\\n    });\\n}\\n</script>\\n\\n<svelte:head>\\n\\t<title>Todos</title>\\n</svelte:head>\\n\\n<div class=\\"todos\\">\\n\\t<h1>Todos</h1>\\n\\n\\t<form\\n\\t\\tclass=\\"new\\"\\n\\t\\taction=\\"/todos.json\\"\\n\\t\\tmethod=\\"post\\"\\n\\t\\tuse:enhance={{\\n\\t\\t\\tresult: async (res, form) => {\\n\\t\\t\\t\\tconst created = await res.json();\\n\\t\\t\\t\\ttodos = [...todos, created];\\n\\n\\t\\t\\t\\tform.reset();\\n\\t\\t\\t}\\n\\t\\t}}\\n\\t>\\n\\t\\t<input name=\\"text\\" aria-label=\\"Add todo\\" placeholder=\\"+ tap to add a todo\\" />\\n\\t</form>\\n\\n\\t{#each todos as todo (todo.uid)}\\n\\t\\t<div\\n\\t\\t\\tclass=\\"todo\\"\\n\\t\\t\\tclass:done={todo.done}\\n\\t\\t\\ttransition:scale|local={{ start: 0.7 }}\\n\\t\\t\\tanimate:flip={{ duration: 200 }}\\n\\t\\t>\\n\\t\\t\\t<form\\n\\t\\t\\t\\taction=\\"/todos/{todo.uid}.json?_method=patch\\"\\n\\t\\t\\t\\tmethod=\\"post\\"\\n\\t\\t\\t\\tuse:enhance={{\\n\\t\\t\\t\\t\\tpending: (data) => {\\n\\t\\t\\t\\t\\t\\ttodo.done = !!data.get('done');\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\tresult: patch\\n\\t\\t\\t\\t}}\\n\\t\\t\\t>\\n\\t\\t\\t\\t<input type=\\"hidden\\" name=\\"done\\" value={todo.done ? '' : 'true'} />\\n\\t\\t\\t\\t<button class=\\"toggle\\" aria-label=\\"Mark todo as {todo.done ? 'not done' : 'done'}\\" />\\n\\t\\t\\t</form>\\n\\n\\t\\t\\t<form\\n\\t\\t\\t\\tclass=\\"text\\"\\n\\t\\t\\t\\taction=\\"/todos/{todo.uid}.json?_method=patch\\"\\n\\t\\t\\t\\tmethod=\\"post\\"\\n\\t\\t\\t\\tuse:enhance={{\\n\\t\\t\\t\\t\\tresult: patch\\n\\t\\t\\t\\t}}\\n\\t\\t\\t>\\n\\t\\t\\t\\t<input aria-label=\\"Edit todo\\" type=\\"text\\" name=\\"text\\" value={todo.text} />\\n\\t\\t\\t\\t<button class=\\"save\\" aria-label=\\"Save todo\\" />\\n\\t\\t\\t</form>\\n\\n\\t\\t\\t<form\\n\\t\\t\\t\\taction=\\"/todos/{todo.uid}.json?_method=delete\\"\\n\\t\\t\\t\\tmethod=\\"post\\"\\n\\t\\t\\t\\tuse:enhance={{\\n\\t\\t\\t\\t\\tresult: () => {\\n\\t\\t\\t\\t\\t\\ttodos = todos.filter((t) => t.uid !== todo.uid);\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t}}\\n\\t\\t\\t>\\n\\t\\t\\t\\t<button class=\\"delete\\" aria-label=\\"Delete todo\\" />\\n\\t\\t\\t</form>\\n\\t\\t</div>\\n\\t{/each}\\n</div>\\n\\n<style>\\n\\t.todos {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t\\tline-height: 1;\\n\\t}\\n\\n\\t.new {\\n\\t\\tmargin: 0 0 0.5rem 0;\\n\\t}\\n\\n\\tinput {\\n\\t\\tborder: 1px solid transparent;\\n\\t}\\n\\n\\tinput:focus-visible {\\n\\t\\tbox-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.1);\\n\\t\\tborder: 1px solid #ff3e00 !important;\\n\\t\\toutline: none;\\n\\t}\\n\\n\\t.new input {\\n\\t\\tfont-size: 28px;\\n\\t\\twidth: 100%;\\n\\t\\tpadding: 0.5em 1em 0.3em 1em;\\n\\t\\tbox-sizing: border-box;\\n\\t\\tbackground: rgba(255, 255, 255, 0.05);\\n\\t\\tborder-radius: 8px;\\n\\t\\ttext-align: center;\\n\\t}\\n\\n\\t.todo {\\n\\t\\tdisplay: grid;\\n\\t\\tgrid-template-columns: 2rem 1fr 2rem;\\n\\t\\tgrid-gap: 0.5rem;\\n\\t\\talign-items: center;\\n\\t\\tmargin: 0 0 0.5rem 0;\\n\\t\\tpadding: 0.5rem;\\n\\t\\tbackground-color: white;\\n\\t\\tborder-radius: 8px;\\n\\t\\tfilter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.1));\\n\\t\\ttransform: translate(-1px, -1px);\\n\\t\\ttransition: filter 0.2s, transform 0.2s;\\n\\t}\\n\\n\\t.done {\\n\\t\\ttransform: none;\\n\\t\\topacity: 0.4;\\n\\t\\tfilter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.1));\\n\\t}\\n\\n\\tform.text {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\t.todo input {\\n\\t\\tflex: 1;\\n\\t\\tpadding: 0.5em 2em 0.5em 0.8em;\\n\\t\\tborder-radius: 3px;\\n\\t}\\n\\n\\t.todo button {\\n\\t\\twidth: 2em;\\n\\t\\theight: 2em;\\n\\t\\tborder: none;\\n\\t\\tbackground-color: transparent;\\n\\t\\tbackground-position: 50% 50%;\\n\\t\\tbackground-repeat: no-repeat;\\n\\t}\\n\\n\\tbutton.toggle {\\n\\t\\tborder: 1px solid rgba(0, 0, 0, 0.2);\\n\\t\\tborder-radius: 50%;\\n\\t\\tbox-sizing: border-box;\\n\\t\\tbackground-size: 1em auto;\\n\\t}\\n\\n\\t.done .toggle {\\n\\t\\tbackground-image: url(\\"data:image/svg+xml,%3Csvg width='22' height='16' viewBox='0 0 22 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 1.5L7.4375 14.5L1.5 8.5909' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E\\");\\n\\t}\\n\\n\\t.delete {\\n\\t\\tbackground-image: url(\\"data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 5V22H19.5V5H4.5Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M10 10V16.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M14 10V16.5' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M2 5H22' stroke='%23676778' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 5L9.6445 2H14.3885L16 5H8Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3C/svg%3E%0A\\");\\n\\t\\topacity: 0.2;\\n\\t}\\n\\n\\t.delete:hover,\\n\\t.delete:focus {\\n\\t\\ttransition: opacity 0.2s;\\n\\t\\topacity: 1;\\n\\t}\\n\\n\\t.save {\\n\\t\\tposition: absolute;\\n\\t\\tright: 0;\\n\\t\\topacity: 0;\\n\\t\\tbackground-image: url(\\"data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.5 2H3.5C2.67158 2 2 2.67157 2 3.5V20.5C2 21.3284 2.67158 22 3.5 22H20.5C21.3284 22 22 21.3284 22 20.5V3.5C22 2.67157 21.3284 2 20.5 2Z' fill='%23676778' stroke='%23676778' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M17 2V11H7.5V2H17Z' fill='white' stroke='white' stroke-width='1.5' stroke-linejoin='round'/%3E%3Cpath d='M13.5 5.5V7.5' stroke='%23676778' stroke-width='1.5' stroke-linecap='round'/%3E%3Cpath d='M5.99844 2H18.4992' stroke='%23676778' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E%0A\\");\\n\\t}\\n\\n\\t.todo input:focus + .save,\\n\\t.save:focus {\\n\\t\\ttransition: opacity 0.2s;\\n\\t\\topacity: 1;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA2HC,MAAM,0CAAC,CAAC,AACP,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,CAC5C,WAAW,CAAE,CAAC,AACf,CAAC,AAED,IAAI,0CAAC,CAAC,AACL,MAAM,CAAE,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,AACrB,CAAC,AAED,KAAK,0CAAC,CAAC,AACN,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,WAAW,AAC9B,CAAC,AAED,+CAAK,cAAc,AAAC,CAAC,AACpB,UAAU,CAAE,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAChD,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAAC,UAAU,CACpC,OAAO,CAAE,IAAI,AACd,CAAC,AAED,kBAAI,CAAC,KAAK,4BAAC,CAAC,AACX,SAAS,CAAE,IAAI,CACf,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CAAC,GAAG,CAAC,KAAK,CAAC,GAAG,CAC5B,UAAU,CAAE,UAAU,CACtB,UAAU,CAAE,KAAK,GAAG,CAAC,CAAC,GAAG,CAAC,CAAC,GAAG,CAAC,CAAC,IAAI,CAAC,CACrC,aAAa,CAAE,GAAG,CAClB,UAAU,CAAE,MAAM,AACnB,CAAC,AAED,KAAK,0CAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,qBAAqB,CAAE,IAAI,CAAC,GAAG,CAAC,IAAI,CACpC,QAAQ,CAAE,MAAM,CAChB,WAAW,CAAE,MAAM,CACnB,MAAM,CAAE,CAAC,CAAC,CAAC,CAAC,MAAM,CAAC,CAAC,CACpB,OAAO,CAAE,MAAM,CACf,gBAAgB,CAAE,KAAK,CACvB,aAAa,CAAE,GAAG,CAClB,MAAM,CAAE,YAAY,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CACnD,SAAS,CAAE,UAAU,IAAI,CAAC,CAAC,IAAI,CAAC,CAChC,UAAU,CAAE,MAAM,CAAC,IAAI,CAAC,CAAC,SAAS,CAAC,IAAI,AACxC,CAAC,AAED,KAAK,0CAAC,CAAC,AACN,SAAS,CAAE,IAAI,CACf,OAAO,CAAE,GAAG,CACZ,MAAM,CAAE,YAAY,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,AACpD,CAAC,AAED,IAAI,KAAK,0CAAC,CAAC,AACV,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,IAAI,CACb,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,mBAAK,CAAC,KAAK,4BAAC,CAAC,AACZ,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,KAAK,CAAC,GAAG,CAAC,KAAK,CAAC,KAAK,CAC9B,aAAa,CAAE,GAAG,AACnB,CAAC,AAED,mBAAK,CAAC,MAAM,4BAAC,CAAC,AACb,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,MAAM,CAAE,IAAI,CACZ,gBAAgB,CAAE,WAAW,CAC7B,mBAAmB,CAAE,GAAG,CAAC,GAAG,CAC5B,iBAAiB,CAAE,SAAS,AAC7B,CAAC,AAED,MAAM,OAAO,0CAAC,CAAC,AACd,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,aAAa,CAAE,GAAG,CAClB,UAAU,CAAE,UAAU,CACtB,eAAe,CAAE,GAAG,CAAC,IAAI,AAC1B,CAAC,AAED,mBAAK,CAAC,OAAO,4BAAC,CAAC,AACd,gBAAgB,CAAE,IAAI,uQAAuQ,CAAC,AAC/R,CAAC,AAED,OAAO,0CAAC,CAAC,AACR,gBAAgB,CAAE,IAAI,yrBAAyrB,CAAC,CAChtB,OAAO,CAAE,GAAG,AACb,CAAC,AAED,iDAAO,MAAM,CACb,iDAAO,MAAM,AAAC,CAAC,AACd,UAAU,CAAE,OAAO,CAAC,IAAI,CACxB,OAAO,CAAE,CAAC,AACX,CAAC,AAED,KAAK,0CAAC,CAAC,AACN,QAAQ,CAAE,QAAQ,CAClB,KAAK,CAAE,CAAC,CACR,OAAO,CAAE,CAAC,CACV,gBAAgB,CAAE,IAAI,gpBAAgpB,CAAC,AACxqB,CAAC,AAED,mBAAK,CAAC,mBAAK,MAAM,CAAG,mBAAK,CACzB,+CAAK,MAAM,AAAC,CAAC,AACZ,UAAU,CAAE,OAAO,CAAC,IAAI,CACxB,OAAO,CAAE,CAAC,AACX,CAAC"}`
-};
-var __awaiter = function(thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function(resolve2) {
-      resolve2(value);
-    });
-  }
-  return new (P || (P = Promise))(function(resolve2, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function step(result) {
-      result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-};
-var load = ({fetch: fetch22}) => __awaiter(void 0, void 0, void 0, function* () {
-  const res = yield fetch22("/todos.json");
-  if (res.ok) {
-    const todos = yield res.json();
-    return {props: {todos}};
-  }
-  const {message} = yield res.json();
-  return {error: new Error(message)};
-});
-var Todos = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  (function(thisArg, _arguments, P, generator) {
-    function adopt(value) {
-      return value instanceof P ? value : new P(function(resolve2) {
-        resolve2(value);
-      });
-    }
-    return new (P || (P = Promise))(function(resolve2, reject) {
-      function fulfilled(value) {
-        try {
-          step(generator.next(value));
-        } catch (e) {
-          reject(e);
-        }
-      }
-      function rejected(value) {
-        try {
-          step(generator["throw"](value));
-        } catch (e) {
-          reject(e);
-        }
-      }
-      function step(result) {
-        result.done ? resolve2(result.value) : adopt(result.value).then(fulfilled, rejected);
-      }
-      step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-  });
-  let {todos} = $$props;
-  if ($$props.todos === void 0 && $$bindings.todos && todos !== void 0)
-    $$bindings.todos(todos);
-  $$result.css.add(css);
-  return `${$$result.head += `${$$result.title = `<title>Todos</title>`, ""}`, ""}
-
-<div class="${"todos svelte-dmxqmd"}"><h1>Todos</h1>
-
-	<form class="${"new svelte-dmxqmd"}" action="${"/todos.json"}" method="${"post"}"><input name="${"text"}" aria-label="${"Add todo"}" placeholder="${"+ tap to add a todo"}" class="${"svelte-dmxqmd"}"></form>
-
-	${each(todos, (todo) => `<div class="${["todo svelte-dmxqmd", todo.done ? "done" : ""].join(" ").trim()}"><form action="${"/todos/" + escape2(todo.uid) + ".json?_method=patch"}" method="${"post"}"><input type="${"hidden"}" name="${"done"}"${add_attribute("value", todo.done ? "" : "true", 0)} class="${"svelte-dmxqmd"}">
-				<button class="${"toggle svelte-dmxqmd"}" aria-label="${"Mark todo as " + escape2(todo.done ? "not done" : "done")}"></button></form>
-
-			<form class="${"text svelte-dmxqmd"}" action="${"/todos/" + escape2(todo.uid) + ".json?_method=patch"}" method="${"post"}"><input aria-label="${"Edit todo"}" type="${"text"}" name="${"text"}"${add_attribute("value", todo.text, 0)} class="${"svelte-dmxqmd"}">
-				<button class="${"save svelte-dmxqmd"}" aria-label="${"Save todo"}"></button></form>
-
-			<form action="${"/todos/" + escape2(todo.uid) + ".json?_method=delete"}" method="${"post"}"><button class="${"delete svelte-dmxqmd"}" aria-label="${"Delete todo"}"></button></form>
-		</div>`)}
-</div>`;
-});
-var index = /* @__PURE__ */ Object.freeze({
-  __proto__: null,
-  [Symbol.toStringTag]: "Module",
-  "default": Todos,
-  load
 });
 
 // .svelte-kit/vercel/entry.js
@@ -3516,17 +3124,3 @@ var entry_default = async (req, res) => {
  * Copyright(c) 2015 Douglas Christopher Wilson
  * MIT Licensed
  */
-/*! *****************************************************************************
-Copyright (c) Microsoft Corporation.
-
-Permission to use, copy, modify, and/or distribute this software for any
-purpose with or without fee is hereby granted.
-
-THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
-REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
-AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
-INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
-LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
-OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
-PERFORMANCE OF THIS SOFTWARE.
-***************************************************************************** */

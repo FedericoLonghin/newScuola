@@ -6,15 +6,14 @@
 
 <svelte:head>
 	<link rel="manifest" href="/manifest.webmanifest" />
-	<link rel="apple-touch-icon" href="/apple-icon-180.png" />
 
 	<meta
 		name="description"
-		content="questo è il nuovo sitoTest di federico Longhin"
+		content="questo è il nuovo sitoTest di Federico Longhin"
 	/>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
-	<link rel="apple-touch-icon" href="/pwa-192x192.png" />
+	<link rel="apple-touch-icon" href="/pencil-512x512.png" />
 	<!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aba9"> -->
 	<meta name="msapplication-TileColor" content="#00aba9" />
 	<meta name="theme-color" content="#ffffff" />
