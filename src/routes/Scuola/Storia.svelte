@@ -3,7 +3,7 @@
 
 	export const prerender = true;
 	var sectionName = 'Storia';
-	var pageName = 'Il Novecento';
+	var pageName = 'Maino';
 </script>
 
 <svelte:head>
@@ -12,10 +12,10 @@
 
 <div id="title-box" class="inline">
 	<div>
-		<a href="/Scuola/{sectionName}">{sectionName}/</a>
+		<a href="/Scuola/{sectionName}">{sectionName}</a>
 	</div>
-	<h2 class:hidden={pageName === 'Main'}>{pageName}</h2>
-	<div />
+		<div style="margin-left:10px"class:hidden={pageName === 'Main'}>/{pageName}</div>
+	
 </div>
 
 <section>
@@ -28,7 +28,212 @@
 	</div>
 	<div class="indice-elem inline">
 		<div>
-			<a href="/Scuola/Storia/Il-Novecento"> - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La prima guerra mondiale</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - La divina commedia di alessandro manzoni</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
+		</div>
+		<div style="width: auto;" />
+		<div class="indice-elem-data">03/11/2021</div>
+	</div>
+	<div class="indice-elem inline">
+		<div>
+			<a href="/Scuola/Storia/Il-Novecento">
+				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
+			</a>
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
@@ -70,7 +275,9 @@
 		margin-block-start: 0.83em;
 		margin-block-end: 0.83em;
 	}
-
+	#title-box {
+		font-size: 2rem !important;
+	}
 	.indice-elem {
 		width: 100%;
 		text-align: left;

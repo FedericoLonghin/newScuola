@@ -25,7 +25,7 @@
 	<p>
 		Questo sito è stato sviluppato tramite l'utilizzo di Sveltkit. È completamente Open Source,
 		tutti i sorgenti disponibili sulla <a href="https://github.com/FedericoLonghin/newWebsite"
-			>Repo GhitHub</a
+			>Repo GitHub</a
 		>
 	</p>
 </div>
