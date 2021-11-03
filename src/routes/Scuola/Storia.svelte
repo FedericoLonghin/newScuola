@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 
 	export const prerender = true;
+	var pageType='Indice'
 	var sectionName = 'Storia';
 	var pageName = 'Maino';
 </script>
@@ -10,13 +11,7 @@
 	<title>{pageName}</title>
 </svelte:head>
 
-<div id="title-box" class="inline">
-	<div>
-		<a href="/Scuola/{sectionName}">{sectionName}</a>
-	</div>
-		<div style="margin-left:10px"class:hidden={pageName === 'Main'}>/{pageName}</div>
-	
-</div>
+
 
 <section>
 	<div class="indice-elem inline">
@@ -263,9 +258,7 @@
 		flex: 1;
 	}
 
-	h1 {
-		width: 100%;
-	}
+
 
 	.inline {
 		text-align: left;
@@ -275,16 +268,12 @@
 		margin-block-start: 0.83em;
 		margin-block-end: 0.83em;
 	}
-	#title-box {
-		font-size: 2rem !important;
-	}
+	
 	.indice-elem {
 		width: 100%;
 		text-align: left;
 	}
-	.hidden {
-		visibility: hidden;
-	}
+
 	.indice-elem-data {
 		opacity: 0.6;
 		text-align: right;

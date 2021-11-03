@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/Header/index.svelte';
 	import ReloadPrompt from '$lib/ReloadPrompt/index.svelte';
+	import IndicePath from '$lib/IndicePath/index.svelte';
 	import '../app.css';
 </script>
 
@@ -12,12 +13,12 @@
 	<!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml"> -->
 	<link rel="apple-touch-icon" href="/pencil-512x512.png" />
 	<!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00aba9"> -->
-	<meta name="msapplication-TileColor" content="#00aba9" />
-	<meta name="theme-color" content="#ffffff" />
+	<meta name="msapplication-TileColor" content="#48e5c2" />
+	<meta name="theme-color" content="#333333" />
 </svelte:head>
 
 <Header />
-
+<IndicePath showIndicePath={0}/>
 <main>
 	<slot />
 </main>
@@ -47,10 +48,6 @@
 		align-items: center;
 		padding: 40px;
 		opacity: 0.5;
-	}
-
-	footer a {
-		font-weight: bold;
 	}
 
 	@media (min-width: 480px) {

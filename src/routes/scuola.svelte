@@ -1,6 +1,5 @@
 <script context="module">
 	import { browser, dev } from '$app/env';
-	import { page } from '$app/stores';
 
 	// we don't need any JS on this page, though we'll load
 	// it in dev so that we get hot module replacement...
@@ -13,6 +12,8 @@
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
+	export let showIndicePath=1;
+
 </script>
 
 <svelte:head>
@@ -32,34 +33,15 @@
 		<a sveltekit:prefetch href="/Scuola/Storia">- Storia</a>
 	</p>
 
-	<!--
-
-	<div>
-		<button class="Mat-btn">Italiano</button>
-		<button class="Mat-btn">Italiano</button>
-	</div>
--->
 </div>
 
 <style>
-	.link-holder {
-	}
+
 	.content {
 		width: 100%;
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
 	}
 
-	.Mat-btn {
-		border: 1px solid #8885;
-		outline: none;
-		margin-right: 5px;
-		border-radius: 2px;
-		padding: 3px 10px;
-		background-color: #b8b8b8;
-		color: #333333;
-	}
-	.Mat-btn:hover {
-		background-color: aqua;
-	}
+
 </style>
