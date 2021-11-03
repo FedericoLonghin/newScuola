@@ -2860,9 +2860,9 @@ function init(settings) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-14df0cdb.js",
+      file: "/./_app/start-a34e4df3.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-14df0cdb.js", "/./_app/chunks/vendor-db0bfca2.js"]
+      js: ["/./_app/start-a34e4df3.js", "/./_app/chunks/vendor-db0bfca2.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2889,7 +2889,7 @@ function init(settings) {
 }
 var empty = () => ({});
 var manifest = {
-  assets: [{"file": "favicon.png", "size": 3624, "type": "image/png"}, {"file": "manifest.webmanifest", "size": 601, "type": "application/manifest+json"}, {"file": "pencil-512x512.png", "size": 3624, "type": "image/png"}, {"file": "robots.txt", "size": 67, "type": "text/plain"}, {"file": "svelte-welcome.png", "size": 360807, "type": "image/png"}, {"file": "svelte-welcome.webp", "size": 115470, "type": "image/webp"}],
+  assets: [{"file": "favicon.png", "size": 3624, "type": "image/png"}, {"file": "manifest.webmanifest", "size": 601, "type": "application/manifest+json"}, {"file": "pencil-512x512.png", "size": 3624, "type": "image/png"}, {"file": "robots.txt", "size": 67, "type": "text/plain"}],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
@@ -2967,7 +2967,7 @@ var module_lookup = {
     return About$1;
   })
 };
-var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-5ca79141.js", "css": ["/./_app/assets/pages/__layout.svelte-859a6369.css"], "js": ["/./_app/pages/__layout.svelte-5ca79141.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-e326bc04.js", "css": [], "js": ["/./_app/error.svelte-e326bc04.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-45f6e7e4.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/index.svelte-45f6e7e4.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Italiano.svelte": {"entry": "/./_app/pages/Scuola/Italiano.svelte-db76be0f.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/Scuola/Italiano.svelte-db76be0f.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Storia/Il-Novecento.svelte": {"entry": "/./_app/pages/Scuola/Storia/Il-Novecento.svelte-38d8415d.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/Scuola/Storia/Il-Novecento.svelte-38d8415d.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Storia.svelte": {"entry": "/./_app/pages/Scuola/Storia.svelte-d2e36334.js", "css": ["/./_app/assets/pages/Scuola/Storia.svelte-c6228947.css"], "js": ["/./_app/pages/Scuola/Storia.svelte-d2e36334.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-933b6927.js", "css": ["/./_app/assets/pages/scuola.svelte-b0805508.css"], "js": ["/./_app/pages/scuola.svelte-933b6927.js", "/./_app/chunks/vendor-db0bfca2.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-be7fe9d9.js", "css": ["/./_app/assets/pages/About.svelte-9b1330ce.css"], "js": ["/./_app/pages/About.svelte-be7fe9d9.js", "/./_app/chunks/vendor-db0bfca2.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}};
+var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-5ca79141.js", "css": ["/./_app/assets/pages/__layout.svelte-859a6369.css"], "js": ["/./_app/pages/__layout.svelte-5ca79141.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-e326bc04.js", "css": [], "js": ["/./_app/error.svelte-e326bc04.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-45f6e7e4.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/index.svelte-45f6e7e4.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Italiano.svelte": {"entry": "/./_app/pages/Scuola/Italiano.svelte-db76be0f.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/Scuola/Italiano.svelte-db76be0f.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Storia/Il-Novecento.svelte": {"entry": "/./_app/pages/Scuola/Storia/Il-Novecento.svelte-38d8415d.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/Scuola/Storia/Il-Novecento.svelte-38d8415d.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Storia.svelte": {"entry": "/./_app/pages/Scuola/Storia.svelte-cc0f4dc0.js", "css": ["/./_app/assets/pages/Scuola/Storia.svelte-2068c681.css"], "js": ["/./_app/pages/Scuola/Storia.svelte-cc0f4dc0.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-933b6927.js", "css": ["/./_app/assets/pages/scuola.svelte-b0805508.css"], "js": ["/./_app/pages/scuola.svelte-933b6927.js", "/./_app/chunks/vendor-db0bfca2.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-be7fe9d9.js", "css": ["/./_app/assets/pages/About.svelte-9b1330ce.css"], "js": ["/./_app/pages/About.svelte-be7fe9d9.js", "/./_app/chunks/vendor-db0bfca2.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -3148,8 +3148,8 @@ var IlNovecento = /* @__PURE__ */ Object.freeze({
   prerender: prerender$3
 });
 var css$2 = {
-  code: "section.svelte-8gqo3n{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}.title-box.svelte-8gqo3n{text-align:left;white-space:nowrap}.hidden.svelte-8gqo3n{visibility:hidden}",
-  map: `{"version":3,"file":"Storia.svelte","sources":["Storia.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">import { page } from '$app/stores';\\nexport const prerender = true;\\nvar sectionName = 'Storia';\\nvar pageName = 'Il Novecento';\\n</script>\\n\\n<svelte:head>\\n\\t<title>{pageName}</title>\\n</svelte:head>\\n<div class=\\"title-box\\">\\n\\t<a href=\\"/Scuola/{sectionName}\\">{sectionName}:</a>\\n\\t<h2 class:hidden={pageName === 'Main'}>{pageName}</h2>\\n</div>\\n\\n\\n<section>\\n\\t<div class=\\"indice-elem\\"><a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento </a></div>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.indice-elem {\\n\\t}\\n\\t.title-box {\\n\\t\\ttext-align: left;\\n\\t\\twhite-space:nowrap; \\n\\n\\t}\\n\\t.hidden {\\n\\t\\tvisibility: hidden;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoBC,OAAO,cAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAOD,UAAU,cAAC,CAAC,AACX,UAAU,CAAE,IAAI,CAChB,YAAY,MAAM,AAEnB,CAAC,AACD,OAAO,cAAC,CAAC,AACR,UAAU,CAAE,MAAM,AACnB,CAAC"}`
+  code: "section.svelte-1eqz68c.svelte-1eqz68c{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}.inline.svelte-1eqz68c.svelte-1eqz68c{text-align:left;display:flex}.inline.svelte-1eqz68c>div.svelte-1eqz68c{margin-block-start:0.83em;margin-block-end:0.83em}.indice-elem.svelte-1eqz68c.svelte-1eqz68c{width:100%;text-align:left}.hidden.svelte-1eqz68c.svelte-1eqz68c{visibility:hidden}.indice-elem-data.svelte-1eqz68c.svelte-1eqz68c{opacity:0.6;text-align:right;margin-left:auto}",
+  map: `{"version":3,"file":"Storia.svelte","sources":["Storia.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">import { page } from '$app/stores';\\nexport const prerender = true;\\nvar sectionName = 'Storia';\\nvar pageName = 'Il Novecento';\\n</script>\\n\\n<svelte:head>\\n\\t<title>{pageName}</title>\\n</svelte:head>\\n\\n<div id=\\"title-box\\" class=\\"inline\\">\\n\\t<div>\\n\\t\\t<a href=\\"/Scuola/{sectionName}\\">{sectionName}/</a>\\n\\t</div>\\n\\t<h2 class:hidden={pageName === 'Main'}>{pageName}</h2>\\n\\t<div />\\n</div>\\n\\n<section>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n\\n\\t.inline {\\n\\t\\ttext-align: left;\\n\\t\\tdisplay: flex;\\n\\t}\\n\\t.inline > div {\\n\\t\\tmargin-block-start: 0.83em;\\n\\t\\tmargin-block-end: 0.83em;\\n\\t}\\n\\n\\t.indice-elem {\\n\\t\\twidth: 100%;\\n\\t\\ttext-align: left;\\n\\t}\\n\\t.hidden {\\n\\t\\tvisibility: hidden;\\n\\t}\\n\\t.indice-elem-data {\\n\\t\\topacity: 0.6;\\n\\t\\ttext-align: right;\\n\\t\\tmargin-left: auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAkDC,OAAO,8BAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAMD,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,sBAAO,CAAG,GAAG,eAAC,CAAC,AACd,kBAAkB,CAAE,MAAM,CAC1B,gBAAgB,CAAE,MAAM,AACzB,CAAC,AAED,YAAY,8BAAC,CAAC,AACb,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,IAAI,AACjB,CAAC,AACD,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,MAAM,AACnB,CAAC,AACD,iBAAiB,8BAAC,CAAC,AAClB,OAAO,CAAE,GAAG,CACZ,UAAU,CAAE,KAAK,CACjB,WAAW,CAAE,IAAI,AAClB,CAAC"}`
 };
 var prerender$2 = true;
 var sectionName = "Storia";
@@ -3157,11 +3157,24 @@ var pageName = "Il Novecento";
 var Storia = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$2);
   return `${$$result.head += `${$$result.title = `<title>${escape2(pageName)}</title>`, ""}`, ""}
-<div class="${"title-box svelte-8gqo3n"}"><a href="${"/Scuola/" + escape2(sectionName)}">${escape2(sectionName)}:</a>
-	<h2 class="${["svelte-8gqo3n", ""].join(" ").trim()}">${escape2(pageName)}</h2></div>
 
+<div id="${"title-box"}" class="${"inline svelte-1eqz68c"}"><div class="${"svelte-1eqz68c"}"><a href="${"/Scuola/" + escape2(sectionName)}">${escape2(sectionName)}/</a></div>
+	<h2 class="${["svelte-1eqz68c", ""].join(" ").trim()}">${escape2(pageName)}</h2>
+	<div class="${"svelte-1eqz68c"}"></div></div>
 
-<section class="${"svelte-8gqo3n"}"><div class="${"indice-elem svelte-8gqo3n"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento </a></div>
+<section class="${"svelte-1eqz68c"}"><div class="${"indice-elem inline svelte-1eqz68c"}"><div class="${"svelte-1eqz68c"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-1eqz68c"}"></div>
+		<div class="${"indice-elem-data svelte-1eqz68c"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-1eqz68c"}"><div class="${"svelte-1eqz68c"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-1eqz68c"}"></div>
+		<div class="${"indice-elem-data svelte-1eqz68c"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-1eqz68c"}"><div class="${"svelte-1eqz68c"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-1eqz68c"}"></div>
+		<div class="${"indice-elem-data svelte-1eqz68c"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-1eqz68c"}"><div class="${"svelte-1eqz68c"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-1eqz68c"}"></div>
+		<div class="${"indice-elem-data svelte-1eqz68c"}">03/11/2021</div></div>
 </section>`;
 });
 var Storia$1 = /* @__PURE__ */ Object.freeze({
