@@ -21,11 +21,11 @@
 <div class="content">
 	<h1>Benvenuto</h1>
 
-	<p>
-		questo dovrebbe essere un sitino bellino... chissà se funziona... bah
-	</p>
+	<p>questo dovrebbe essere un sitino bellino... chissà se funziona... bah</p>
 
-	<p>Teoricamente qua dovrei fare una bella sezione per la scuola... chissà se funzionerà realmente</p>
+	<p>
+		Teoricamente qua dovrei fare una bella sezione per la scuola... chissà se funzionerà realmente
+	</p>
 </div>
 
 <style>

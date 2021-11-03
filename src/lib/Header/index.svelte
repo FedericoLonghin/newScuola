@@ -5,9 +5,10 @@
 
 <header>
 	<div class="corner">
-		<a href="https://github.com/FedericoLonghin/newWebsite">
+		<!--<a href="https://github.com/FedericoLonghin/newWebsite">
 			<img src={logo} alt="Repo on GitHub" />
 		</a>
+		-->
 	</div>
 
 	<nav>
@@ -16,7 +17,9 @@
 		</svg>
 		<ul>
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/scuola'}><a sveltekit:prefetch href="/scuola">Scuola</a></li>
+			<li class:active={$page.path === '/scuola'}>
+				<a sveltekit:prefetch href="/scuola">Scuola</a>
+			</li>
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
@@ -56,7 +59,7 @@
 	nav {
 		display: flex;
 		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
+		--background: #5e5e5e;
 	}
 
 	svg {

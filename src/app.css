@@ -5,13 +5,14 @@
 		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	--font-mono: 'Fira Mono', monospace;
 	--pure-white: #ffffff;
-	--primary-color: #b9c6d2;
+	--primary-color: #f3d3bd;
 	--secondary-color: #d0dde9;
 	--tertiary-color: #edf0f8;
-	--accent-color: #ff3e00;
-	--heading-color: rgba(0, 0, 0, 0.7);
-	--text-color: #444444;
-	--background-without-opacity: rgba(255, 255, 255, 0.7);
+	--accent-color: #48e5c2;
+	--heading-color: #f3d3bd;
+	--text-color: #fcfaf9;
+	--backgroung-color: #333333;
+
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 }
@@ -20,13 +21,8 @@ body {
 	font-family: var(--font-mono);
 	min-height: 100vh;
 	margin: 0;
-	background-color: var(--primary-color);
-	background: linear-gradient(
-		180deg,
-		var(--primary-color) 0%,
-		var(--secondary-color) 10.45%,
-		var(--tertiary-color) 41.35%
-	);
+	background-color: var(--backgroung-color);
+	color: var(--pure-white);
 }
 
 body::before {
@@ -37,11 +33,7 @@ body::before {
 	top: 0;
 	left: 10vw;
 	z-index: -1;
-	background: radial-gradient(
-		50% 50% at 50% 50%,
-		var(--pure-white) 0%,
-		rgba(255, 255, 255, 0) 100%
-	);
+
 	opacity: 0.05;
 }
 
@@ -51,11 +43,14 @@ body::before {
 	flex-direction: column;
 }
 
-h1,
+h1 {
+	font-weight: 400;
+	color: var(--heading-color);
+}
 h2,
 p {
 	font-weight: 400;
-	color: var(--heading-color);
+	color: var(--text-color);
 }
 
 p {
@@ -79,17 +74,6 @@ h1 {
 
 h2 {
 	font-size: 1rem;
-}
-
-pre {
-	font-size: 16px;
-	font-family: var(--font-mono);
-	background-color: rgba(255, 255, 255, 0.45);
-	border-radius: 3px;
-	box-shadow: 2px 2px 6px rgb(255 255 255 / 25%);
-	padding: 0.5em;
-	overflow-x: auto;
-	color: var(--text-color);
 }
 
 input,

@@ -13,5 +13,13 @@
     "scope": "/",
     "display": "standalone",
     "theme_color": "#3050f0",
-    "background_color": "#ffffff"
+    "background_color": "#ffffff",
+    "shortcuts": 
+      {
+        "name": "pagina Scuola",
+        "short_name": "Scuola",
+        "description": "vai alla pagina dedicata alla scuola",
+        "url": "/scuola",
+        "icons": [{ "src": "/static/pencil-512x512.png", "sizes": "512x512" }]
+      }
   }
