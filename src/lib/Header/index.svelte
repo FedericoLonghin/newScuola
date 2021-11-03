@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './GitHub-Mark-120px-plus.png';
+	//import logo from './GitHub-Mark-120px-plus.png';
 </script>
 
 <header>

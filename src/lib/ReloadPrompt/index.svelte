@@ -86,15 +86,15 @@
 	<div class="pwa-toast" role="alert">
 		<div class="message">
 			{#if offlineReady}
-				<span> App ready to work offline </span>
+				<span> App pronta per lavorare offline </span>
 			{:else}
-				<span> New content available, click on reload button to update. </span>
+				<span> Ci sono nuovi contenuti disponibili! </span>
 			{/if}
 		</div>
 		{#if needRefresh}
-			<button on:click={updateServiceWorker}> Reload </button>
+			<button style="background-color: #48E5C2" on:click={updateServiceWorker}> Ricarica </button>
 		{/if}
-		<button on:click={close}> Close </button>
+		<button on:click={close}> Chiudi </button>
 	</div>
 {/if}
 
@@ -109,7 +109,7 @@
 		border-radius: 4px;
 		z-index: 1;
 		text-align: left;
-		background-color: aqua;
+		background-color: #333333;
 		box-shadow: 3px 4px 5px 0px #8885;
 	}
 	.pwa-toast .message {
@@ -121,5 +121,7 @@
 		margin-right: 5px;
 		border-radius: 2px;
 		padding: 3px 10px;
+		background-color: #b8b8b8;
+		color: #333333;
 	}
 </style>

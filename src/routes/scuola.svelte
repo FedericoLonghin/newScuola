@@ -1,5 +1,6 @@
 <script context="module">
 	import { browser, dev } from '$app/env';
+	import { page } from '$app/stores';
 
 	// we don't need any JS on this page, though we'll load
 	// it in dev so that we get hot module replacement...
@@ -19,19 +20,46 @@
 </svelte:head>
 
 <div class="content">
-	<h1>Benvenuto</h1>
+	<h1>Benvenuto nella sezione scuola</h1>
 
-	<p>questo dovrebbe essere un sitino bellino... chissà se funziona... bah</p>
+	<p>Qui troverai tutti gli appunti divisi per materie etc...</p>
 
-	<p>
-		Teoricamente qua dovrei fare una bella sezione per la scuola... chissà se funzionerà realmente
+	<p>Materie:</p>
+
+	<p class="link-holder">
+		<a sveltekit:prefetch href="/Scuola/Italiano">- Italiano</a>
+		<br />
+		<a sveltekit:prefetch href="/Scuola/Storia">- Storia</a>
 	</p>
+
+	<!--
+
+	<div>
+		<button class="Mat-btn">Italiano</button>
+		<button class="Mat-btn">Italiano</button>
+	</div>
+-->
 </div>
 
 <style>
+	.link-holder {
+	}
 	.content {
 		width: 100%;
 		max-width: var(--column-width);
 		margin: var(--column-margin-top) auto 0 auto;
+	}
+
+	.Mat-btn {
+		border: 1px solid #8885;
+		outline: none;
+		margin-right: 5px;
+		border-radius: 2px;
+		padding: 3px 10px;
+		background-color: #b8b8b8;
+		color: #333333;
+	}
+	.Mat-btn:hover {
+		background-color: aqua;
 	}
 </style>

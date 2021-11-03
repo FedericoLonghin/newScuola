@@ -12,18 +12,14 @@
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
-    "theme_color": "#48e5c2",
-    "background_color": "#333333",
-    "shortcuts": {
-      "name": "pagina Scuola",
-      "short_name": "Scuola",
-      "description": "vai alla pagina dedicata alla scuola",
-      "url": "/scuola",
-      "icons": [
-        {
-          "src": "pencil-512x512.png",
-          "sizes": "512x512"
-        }
-      ]
-    }
+    "theme_color": "#3050f0",
+    "background_color": "#ffffff",
+    "shortcuts": 
+      {
+        "name": "pagina Scuola",
+        "short_name": "Scuola",
+        "description": "vai alla pagina dedicata alla scuola",
+        "url": "/scuola",
+        "icons": [{ "src": "/static/pencil-512x512.png", "sizes": "512x512" }]
+      }
   }
