@@ -12,7 +12,6 @@
 	// since there's no dynamic data here, we can prerender
 	// it so that it gets served as a static asset in prod
 	export const prerender = true;
-	export let showIndicePath = 1;
 </script>
 
 <svelte:head>
@@ -27,9 +26,9 @@
 	<p>Materie:</p>
 
 	<p class="link-holder">
-		<a sveltekit:prefetch href="/Scuola/Italiano">- Italiano</a>
+		<a sveltekit:prefetch href="/scuola/Italiano">- Italiano</a>
 		<br />
-		<a sveltekit:prefetch href="/Scuola/Storia">- Storia</a>
+		<a sveltekit:prefetch href="/scuola/Storia">- Storia</a>
 	</p>
 </div>
 

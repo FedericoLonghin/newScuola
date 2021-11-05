@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	//import logo from './GitHub-Mark-120px-plus.png';
+	console.log($page.path.split('/')[1]);
 </script>
 
 <header>
@@ -17,7 +18,7 @@
 		</svg>
 		<ul>
 			<li class:active={$page.path === '/'}><a sveltekit:prefetch href="/">Home</a></li>
-			<li class:active={$page.path === '/scuola'}>
+			<li class:active={$page.path.split('/')[1] === 'scuola'}>
 				<a sveltekit:prefetch href="/scuola">Scuola</a>
 			</li>
 			<li class:active={$page.path === '/About'}><a sveltekit:prefetch href="/About">About</a></li>

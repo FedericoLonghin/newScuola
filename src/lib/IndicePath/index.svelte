@@ -6,13 +6,11 @@
 	var pageName = pathArray[3];
 	//var sectionName, pageName;
 
-	console.log(pageName);
-	if (typeof pageName !== 'undefined') console.log('und');
 </script>
 
 <div id="title-box" class="inline">
 	<div>
-		<a href="/Scuola/{sectionName}">{sectionName}</a>
+		<a href="/scuola/{sectionName}">{sectionName}</a>
 	</div>
 	<div style="margin-left:10px;     color: var(--heading-color);	" class:hidden={typeof pageName === 'undefined'}>/{pageName}</div>
 </div>
@@ -27,7 +25,7 @@
 		margin-block-end: 0.83em;
 	}
 	#title-box {
-		font-size: 2rem !important;
+		font-size: 1.6rem !important;
 	}
 
 	.hidden {
