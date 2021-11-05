@@ -2,16 +2,20 @@
 	import { page } from '$app/stores';
 
 	export const prerender = true;
-	var pageType='Indice'
-	var sectionName = 'Storia';
-	var pageName = 'Maino';
+	var pageType = 'Indice';
+	var sectionName;
+	var pageName;
 </script>
+
+<script>
+	import IndicePath from '$lib/IndicePath/index.svelte';
+</script>
+
+<IndicePath />
 
 <svelte:head>
 	<title>{pageName}</title>
 </svelte:head>
-
-
 
 <section>
 	<div class="indice-elem inline">
@@ -23,9 +27,7 @@
 	</div>
 	<div class="indice-elem inline">
 		<div>
-			<a href="/Scuola/Storia/Il-Novecento">
-				- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>
-			</a>
+			<a href="/Scuola/Storia/Prima-guerra-mondiale"> - Prima guerra mondiale </a>
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
@@ -43,7 +45,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -72,7 +75,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -101,7 +105,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -130,7 +135,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -159,7 +165,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -188,7 +195,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -217,7 +225,8 @@
 		</div>
 		<div style="width: auto;" />
 		<div class="indice-elem-data">03/11/2021</div>
-	</div>	<div class="indice-elem inline">
+	</div>
+	<div class="indice-elem inline">
 		<div>
 			<a href="/Scuola/Storia/Il-Novecento"> - Il novecento</a>
 		</div>
@@ -258,8 +267,6 @@
 		flex: 1;
 	}
 
-
-
 	.inline {
 		text-align: left;
 		display: flex;
@@ -268,7 +275,7 @@
 		margin-block-start: 0.83em;
 		margin-block-end: 0.83em;
 	}
-	
+
 	.indice-elem {
 		width: 100%;
 		text-align: left;

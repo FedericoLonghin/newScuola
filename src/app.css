@@ -35,6 +35,9 @@ body::before {
 
 	opacity: 0.05;
 }
+body::-webkit-scrollbar {
+	display: none;
+}
 
 #svelte {
 	min-height: 100vh;

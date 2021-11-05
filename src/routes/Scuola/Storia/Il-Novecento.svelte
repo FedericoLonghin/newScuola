@@ -2,9 +2,15 @@
 	export const prerender = true;
 </script>
 
-<svelte:head>
-	<title>Home</title>
-</svelte:head>
+<script>
+	import IndicePath from '$lib/IndicePath/index.svelte';
+
+	var sectionName = 'sectname';
+</script>
+
+<IndicePath />
+
+<svelte:head />
 
 <section>
 	<h1>Il Novecento</h1>

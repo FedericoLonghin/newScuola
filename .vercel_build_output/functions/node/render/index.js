@@ -344,6 +344,36 @@ var require_workbox_window_prod_umd = __commonJS({
   }
 });
 
+// node_modules/snarkdown/dist/snarkdown.js
+var require_snarkdown = __commonJS({
+  "node_modules/snarkdown/dist/snarkdown.js"(exports, module2) {
+    var e = {"": ["<em>", "</em>"], _: ["<strong>", "</strong>"], "*": ["<strong>", "</strong>"], "~": ["<s>", "</s>"], "\n": ["<br />"], " ": ["<br />"], "-": ["<hr />"]};
+    function n(e2) {
+      return e2.replace(RegExp("^" + (e2.match(/^(\t| )+/) || "")[0], "gm"), "");
+    }
+    function r(e2) {
+      return (e2 + "").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    module2.exports = function t(a, o) {
+      var c, l, s2, g, p, u = /((?:^|\n+)(?:\n---+|\* \*(?: \*)+)\n)|(?:^``` *(\w*)\n([\s\S]*?)\n```$)|((?:(?:^|\n+)(?:\t|  {2,}).+)+\n*)|((?:(?:^|\n)([>*+-]|\d+\.)\s+.*)+)|(?:!\[([^\]]*?)\]\(([^)]+?)\))|(\[)|(\](?:\(([^)]+?)\))?)|(?:(?:^|\n+)([^\s].*)\n(-{3,}|={3,})(?:\n+|$))|(?:(?:^|\n+)(#{1,6})\s*(.+)(?:\n+|$))|(?:`([^`].*?)`)|(  \n\n*|\n{2,}|__|\*\*|[_*]|~~)/gm, m = [], h = "", i = o || {}, d = 0;
+      function $(n2) {
+        var r2 = e[n2[1] || ""], t2 = m[m.length - 1] == n2;
+        return r2 ? r2[1] ? (t2 ? m.pop() : m.push(n2), r2[0 | t2]) : r2[0] : n2;
+      }
+      function f() {
+        for (var e2 = ""; m.length; )
+          e2 += $(m[m.length - 1]);
+        return e2;
+      }
+      for (a = a.replace(/^\[(.+?)\]:\s*(.+)$/gm, function(e2, n2, r2) {
+        return i[n2.toLowerCase()] = r2, "";
+      }).replace(/^\n+|\n+$/g, ""); s2 = u.exec(a); )
+        l = a.substring(d, s2.index), d = u.lastIndex, c = s2[0], l.match(/[^\\](\\\\)*\\$/) || ((p = s2[3] || s2[4]) ? c = '<pre class="code ' + (s2[4] ? "poetry" : s2[2].toLowerCase()) + '"><code' + (s2[2] ? ' class="language-' + s2[2].toLowerCase() + '"' : "") + ">" + n(r(p).replace(/^\n+|\n+$/g, "")) + "</code></pre>" : (p = s2[6]) ? (p.match(/\./) && (s2[5] = s2[5].replace(/^\d+/gm, "")), g = t(n(s2[5].replace(/^\s*[>*+.-]/gm, ""))), p == ">" ? p = "blockquote" : (p = p.match(/\./) ? "ol" : "ul", g = g.replace(/^(.*)(\n|$)/gm, "<li>$1</li>")), c = "<" + p + ">" + g + "</" + p + ">") : s2[8] ? c = '<img src="' + r(s2[8]) + '" alt="' + r(s2[7]) + '">' : s2[10] ? (h = h.replace("<a>", '<a href="' + r(s2[11] || i[l.toLowerCase()]) + '">'), c = f() + "</a>") : s2[9] ? c = "<a>" : s2[12] || s2[14] ? c = "<" + (p = "h" + (s2[14] ? s2[14].length : s2[13] > "=" ? 1 : 2)) + ">" + t(s2[12] || s2[15], i) + "</" + p + ">" : s2[16] ? c = "<code>" + r(s2[16]) + "</code>" : (s2[17] || s2[1]) && (c = $(s2[17] || "--"))), h += l, h += c;
+      return (h + a.substring(d) + f()).replace(/^\n+|\n+$/g, "");
+    };
+  }
+});
+
 // .svelte-kit/vercel/entry.js
 __markAsModule(exports);
 __export(exports, {
@@ -2593,12 +2623,6 @@ function get_current_component() {
     throw new Error("Function called outside component initialization");
   return current_component;
 }
-function onMount(fn) {
-  get_current_component().$$.on_mount.push(fn);
-}
-function afterUpdate(fn) {
-  get_current_component().$$.after_update.push(fn);
-}
 function setContext(key, context) {
   get_current_component().$$.context.set(key, context);
 }
@@ -2642,8 +2666,8 @@ var escaped2 = {
   "<": "&lt;",
   ">": "&gt;"
 };
-function escape2(html) {
-  return String(html).replace(/["'&<>]/g, (match) => escaped2[match]);
+function escape2(html2) {
+  return String(html2).replace(/["'&<>]/g, (match) => escaped2[match]);
 }
 var missing_component = {
   $$render: () => ""
@@ -2662,25 +2686,25 @@ function create_ssr_component(fn) {
     const parent_component = current_component;
     const $$ = {
       on_destroy,
-      context: new Map(parent_component ? parent_component.$$.context : context || []),
+      context: new Map(context || (parent_component ? parent_component.$$.context : [])),
       on_mount: [],
       before_update: [],
       after_update: [],
       callbacks: blank_object()
     };
     set_current_component({$$});
-    const html = fn(result, props, bindings, slots);
+    const html2 = fn(result, props, bindings, slots);
     set_current_component(parent_component);
-    return html;
+    return html2;
   }
   return {
     render: (props = {}, {$$slots = {}, context = new Map()} = {}) => {
       on_destroy = [];
       const result = {title: "", head: "", css: new Set()};
-      const html = $$render(result, props, {}, $$slots, context);
+      const html2 = $$render(result, props, {}, $$slots, context);
       run_all(on_destroy);
       return {
-        html,
+        html: html2,
         css: {
           code: Array.from(result.css).map((css2) => css2.code).join("\n"),
           map: null
@@ -2743,6 +2767,12 @@ if (typeof HTMLElement === "function") {
   };
 }
 
+// node_modules/svelte/ssr.mjs
+function onMount() {
+}
+function afterUpdate() {
+}
+
 // .svelte-kit/output/server/app.js
 var import_cookie = __toModule(require_cookie());
 
@@ -2777,9 +2807,10 @@ function v4() {
 
 // .svelte-kit/output/server/app.js
 var import_workbox_window = __toModule(require_workbox_window_prod_umd());
+var import_snarkdown = __toModule(require_snarkdown());
 var css$a = {
   code: "#svelte-announcer.svelte-1j55zn5{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}",
-  map: `{"version":3,"file":"root.svelte","sources":["root.svelte"],"sourcesContent":["<!-- This file is generated by @sveltejs/kit \u2014 do not edit it! -->\\n<script>\\n\\timport { setContext, afterUpdate, onMount } from 'svelte';\\n\\n\\t// stores\\n\\texport let stores;\\n\\texport let page;\\n\\n\\texport let components;\\n\\texport let props_0 = null;\\n\\texport let props_1 = null;\\n\\texport let props_2 = null;\\n\\texport let props_3 = null;\\n\\n\\tsetContext('__svelte__', stores);\\n\\n\\t$: stores.page.set(page);\\n\\tafterUpdate(stores.page.notify);\\n\\n\\tlet mounted = false;\\n\\tlet navigated = false;\\n\\tlet title = null;\\n\\n\\tonMount(() => {\\n\\t\\tconst unsubscribe = stores.page.subscribe(() => {\\n\\t\\t\\tif (mounted) {\\n\\t\\t\\t\\tnavigated = true;\\n\\t\\t\\t\\ttitle = document.title || 'untitled page';\\n\\t\\t\\t}\\n\\t\\t});\\n\\n\\t\\tmounted = true;\\n\\t\\treturn unsubscribe;\\n\\t});\\n</script>\\n\\n<svelte:component this={components[0]} {...(props_0 || {})}>\\n\\t{#if components[1]}\\n\\t\\t<svelte:component this={components[1]} {...(props_1 || {})}>\\n\\t\\t\\t{#if components[2]}\\n\\t\\t\\t\\t<svelte:component this={components[2]} {...(props_2 || {})}>\\n\\t\\t\\t\\t\\t{#if components[3]}\\n\\t\\t\\t\\t\\t\\t<svelte:component this={components[3]} {...(props_3 || {})}/>\\n\\t\\t\\t\\t\\t{/if}\\n\\t\\t\\t\\t</svelte:component>\\n\\t\\t\\t{/if}\\n\\t\\t</svelte:component>\\n\\t{/if}\\n</svelte:component>\\n\\n{#if mounted}\\n\\t<div id=\\"svelte-announcer\\" aria-live=\\"assertive\\" aria-atomic=\\"true\\">\\n\\t\\t{#if navigated}\\n\\t\\t\\t{title}\\n\\t\\t{/if}\\n\\t</div>\\n{/if}\\n\\n<style>\\n\\t#svelte-announcer {\\n\\t\\tposition: absolute;\\n\\t\\tleft: 0;\\n\\t\\ttop: 0;\\n\\t\\tclip: rect(0 0 0 0);\\n\\t\\tclip-path: inset(50%);\\n\\t\\toverflow: hidden;\\n\\t\\twhite-space: nowrap;\\n\\t\\twidth: 1px;\\n\\t\\theight: 1px;\\n\\t}\\n</style>"],"names":[],"mappings":"AA2DC,iBAAiB,eAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,CAAC,CACP,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CACnB,SAAS,CAAE,MAAM,GAAG,CAAC,CACrB,QAAQ,CAAE,MAAM,CAChB,WAAW,CAAE,MAAM,CACnB,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC"}`
+  map: `{"version":3,"file":"root.svelte","sources":["root.svelte"],"sourcesContent":["<!-- This file is generated by @sveltejs/kit \u2014 do not edit it! -->\\n<script>\\n\\timport { setContext, afterUpdate, onMount } from 'svelte';\\n\\n\\t// stores\\n\\texport let stores;\\n\\texport let page;\\n\\n\\texport let components;\\n\\texport let props_0 = null;\\n\\texport let props_1 = null;\\n\\texport let props_2 = null;\\n\\n\\tsetContext('__svelte__', stores);\\n\\n\\t$: stores.page.set(page);\\n\\tafterUpdate(stores.page.notify);\\n\\n\\tlet mounted = false;\\n\\tlet navigated = false;\\n\\tlet title = null;\\n\\n\\tonMount(() => {\\n\\t\\tconst unsubscribe = stores.page.subscribe(() => {\\n\\t\\t\\tif (mounted) {\\n\\t\\t\\t\\tnavigated = true;\\n\\t\\t\\t\\ttitle = document.title || 'untitled page';\\n\\t\\t\\t}\\n\\t\\t});\\n\\n\\t\\tmounted = true;\\n\\t\\treturn unsubscribe;\\n\\t});\\n</script>\\n\\n<svelte:component this={components[0]} {...(props_0 || {})}>\\n\\t{#if components[1]}\\n\\t\\t<svelte:component this={components[1]} {...(props_1 || {})}>\\n\\t\\t\\t{#if components[2]}\\n\\t\\t\\t\\t<svelte:component this={components[2]} {...(props_2 || {})}/>\\n\\t\\t\\t{/if}\\n\\t\\t</svelte:component>\\n\\t{/if}\\n</svelte:component>\\n\\n{#if mounted}\\n\\t<div id=\\"svelte-announcer\\" aria-live=\\"assertive\\" aria-atomic=\\"true\\">\\n\\t\\t{#if navigated}\\n\\t\\t\\t{title}\\n\\t\\t{/if}\\n\\t</div>\\n{/if}\\n\\n<style>\\n\\t#svelte-announcer {\\n\\t\\tposition: absolute;\\n\\t\\tleft: 0;\\n\\t\\ttop: 0;\\n\\t\\tclip: rect(0 0 0 0);\\n\\t\\tclip-path: inset(50%);\\n\\t\\toverflow: hidden;\\n\\t\\twhite-space: nowrap;\\n\\t\\twidth: 1px;\\n\\t\\theight: 1px;\\n\\t}\\n</style>"],"names":[],"mappings":"AAsDC,iBAAiB,eAAC,CAAC,AAClB,QAAQ,CAAE,QAAQ,CAClB,IAAI,CAAE,CAAC,CACP,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CACnB,SAAS,CAAE,MAAM,GAAG,CAAC,CACrB,QAAQ,CAAE,MAAM,CAChB,WAAW,CAAE,MAAM,CACnB,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC"}`
 };
 var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let {stores} = $$props;
@@ -2788,7 +2819,6 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let {props_0 = null} = $$props;
   let {props_1 = null} = $$props;
   let {props_2 = null} = $$props;
-  let {props_3 = null} = $$props;
   setContext("__svelte__", stores);
   afterUpdate(stores.page.notify);
   let mounted = false;
@@ -2816,8 +2846,6 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     $$bindings.props_1(props_1);
   if ($$props.props_2 === void 0 && $$bindings.props_2 && props_2 !== void 0)
     $$bindings.props_2(props_2);
-  if ($$props.props_3 === void 0 && $$bindings.props_3 && props_3 !== void 0)
-    $$bindings.props_3(props_3);
   $$result.css.add(css$a);
   {
     stores.page.set(page2);
@@ -2827,9 +2855,7 @@ var Root = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 ${validate_component(components[0] || missing_component, "svelte:component").$$render($$result, Object.assign(props_0 || {}), {}, {
     default: () => `${components[1] ? `${validate_component(components[1] || missing_component, "svelte:component").$$render($$result, Object.assign(props_1 || {}), {}, {
-      default: () => `${components[2] ? `${validate_component(components[2] || missing_component, "svelte:component").$$render($$result, Object.assign(props_2 || {}), {}, {
-        default: () => `${components[3] ? `${validate_component(components[3] || missing_component, "svelte:component").$$render($$result, Object.assign(props_3 || {}), {}, {})}` : ``}`
-      })}` : ``}`
+      default: () => `${components[2] ? `${validate_component(components[2] || missing_component, "svelte:component").$$render($$result, Object.assign(props_2 || {}), {}, {})}` : ``}`
     })}` : ``}`
   })}
 
@@ -2865,9 +2891,9 @@ function init(settings) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-d7cf01e6.js",
+      file: "/./_app/start-a671524d.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-d7cf01e6.js", "/./_app/chunks/vendor-db0bfca2.js"]
+      js: ["/./_app/start-a671524d.js", "/./_app/chunks/vendor-c12218c7.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2907,23 +2933,37 @@ var manifest = {
     },
     {
       type: "page",
+      pattern: /^\/Scuola\/a__layout\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/Scuola/a__layout.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
       pattern: /^\/Scuola\/Italiano\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/Scuola/__layout.svelte", "src/routes/Scuola/Italiano.svelte"],
+      a: ["src/routes/__layout.svelte", "src/routes/Scuola/Italiano.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/Scuola\/Storia\/Prima-guerra-mondiale\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/Scuola/Storia/Prima-guerra-mondiale.md"],
       b: [".svelte-kit/build/components/error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/Scuola\/Storia\/Il-Novecento\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/Scuola/__layout.svelte", "src/routes/Scuola/Storia/Il-Novecento.svelte"],
+      a: ["src/routes/__layout.svelte", "src/routes/Scuola/Storia/Il-Novecento.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
     },
     {
       type: "page",
       pattern: /^\/Scuola\/Storia\/?$/,
       params: empty,
-      a: ["src/routes/__layout.svelte", "src/routes/Scuola/__layout.svelte", "src/routes/Scuola/Storia.svelte"],
+      a: ["src/routes/__layout.svelte", "src/routes/Scuola/Storia.svelte"],
       b: [".svelte-kit/build/components/error.svelte"]
     },
     {
@@ -2948,7 +2988,7 @@ var get_hooks = (hooks) => ({
 });
 var module_lookup = {
   "src/routes/__layout.svelte": () => Promise.resolve().then(function() {
-    return __layout$1;
+    return __layout;
   }),
   ".svelte-kit/build/components/error.svelte": () => Promise.resolve().then(function() {
     return error2;
@@ -2956,11 +2996,14 @@ var module_lookup = {
   "src/routes/index.svelte": () => Promise.resolve().then(function() {
     return index;
   }),
-  "src/routes/Scuola/__layout.svelte": () => Promise.resolve().then(function() {
-    return __layout;
+  "src/routes/Scuola/a__layout.svelte": () => Promise.resolve().then(function() {
+    return a__layout;
   }),
   "src/routes/Scuola/Italiano.svelte": () => Promise.resolve().then(function() {
     return Italiano$1;
+  }),
+  "src/routes/Scuola/Storia/Prima-guerra-mondiale.md": () => Promise.resolve().then(function() {
+    return PrimaGuerraMondiale;
   }),
   "src/routes/Scuola/Storia/Il-Novecento.svelte": () => Promise.resolve().then(function() {
     return IlNovecento;
@@ -2975,7 +3018,7 @@ var module_lookup = {
     return About$1;
   })
 };
-var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-4b9356db.js", "css": ["/./_app/assets/pages/__layout.svelte-8782dbce.css", "/./_app/assets/index.svelte_svelte&type=style&lang-02d4a540.css"], "js": ["/./_app/pages/__layout.svelte-4b9356db.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-e326bc04.js", "css": [], "js": ["/./_app/error.svelte-e326bc04.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-45f6e7e4.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/index.svelte-45f6e7e4.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/__layout.svelte": {"entry": "/./_app/pages/Scuola/__layout.svelte-3801eac5.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-02d4a540.css"], "js": ["/./_app/pages/Scuola/__layout.svelte-3801eac5.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Italiano.svelte": {"entry": "/./_app/pages/Scuola/Italiano.svelte-db76be0f.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/Scuola/Italiano.svelte-db76be0f.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Storia/Il-Novecento.svelte": {"entry": "/./_app/pages/Scuola/Storia/Il-Novecento.svelte-38d8415d.js", "css": ["/./_app/assets/pages/index.svelte-bb0596c8.css"], "js": ["/./_app/pages/Scuola/Storia/Il-Novecento.svelte-38d8415d.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/Scuola/Storia.svelte": {"entry": "/./_app/pages/Scuola/Storia.svelte-87aac1fe.js", "css": ["/./_app/assets/pages/Scuola/Storia.svelte-68f5c08c.css"], "js": ["/./_app/pages/Scuola/Storia.svelte-87aac1fe.js", "/./_app/chunks/vendor-db0bfca2.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-2f069073.js", "css": ["/./_app/assets/pages/scuola.svelte-a5a1e23a.css"], "js": ["/./_app/pages/scuola.svelte-2f069073.js", "/./_app/chunks/vendor-db0bfca2.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-2b8f8ae0.js", "css": ["/./_app/assets/pages/About.svelte-9b1330ce.css"], "js": ["/./_app/pages/About.svelte-2b8f8ae0.js", "/./_app/chunks/vendor-db0bfca2.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}};
+var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-5e5418b7.js", "css": ["/./_app/assets/pages/__layout.svelte-37d526ef.css", "/./_app/assets/index.svelte_svelte&type=style&lang-468c76d3.css"], "js": ["/./_app/pages/__layout.svelte-5e5418b7.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-47e2ff6e.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-48509c4a.js", "css": [], "js": ["/./_app/error.svelte-48509c4a.js", "/./_app/chunks/vendor-c12218c7.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-88faaaab.js", "css": ["/./_app/assets/pages/index.svelte-8196204d.css"], "js": ["/./_app/pages/index.svelte-88faaaab.js", "/./_app/chunks/vendor-c12218c7.js"], "styles": null}, "src/routes/Scuola/a__layout.svelte": {"entry": "/./_app/pages/Scuola/a__layout.svelte-56b8b62e.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-468c76d3.css"], "js": ["/./_app/pages/Scuola/a__layout.svelte-56b8b62e.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-ce5e8758.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-47e2ff6e.js"], "styles": null}, "src/routes/Scuola/Italiano.svelte": {"entry": "/./_app/pages/Scuola/Italiano.svelte-6cdc8ba2.js", "css": ["/./_app/assets/pages/Scuola/Italiano.svelte-3c9047e4.css", "/./_app/assets/index.svelte_svelte&type=style&lang-468c76d3.css"], "js": ["/./_app/pages/Scuola/Italiano.svelte-6cdc8ba2.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-ce5e8758.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-47e2ff6e.js"], "styles": null}, "src/routes/Scuola/Storia/Prima-guerra-mondiale.md": {"entry": "/./_app/pages/Scuola/Storia/Prima-guerra-mondiale.md-40cac855.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-468c76d3.css"], "js": ["/./_app/pages/Scuola/Storia/Prima-guerra-mondiale.md-40cac855.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-ce5e8758.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-47e2ff6e.js"], "styles": null}, "src/routes/Scuola/Storia/Il-Novecento.svelte": {"entry": "/./_app/pages/Scuola/Storia/Il-Novecento.svelte-096a919c.js", "css": ["/./_app/assets/pages/Scuola/Storia/Il-Novecento.svelte-11939719.css", "/./_app/assets/index.svelte_svelte&type=style&lang-468c76d3.css"], "js": ["/./_app/pages/Scuola/Storia/Il-Novecento.svelte-096a919c.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-ce5e8758.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-47e2ff6e.js"], "styles": null}, "src/routes/Scuola/Storia.svelte": {"entry": "/./_app/pages/Scuola/Storia.svelte-d6cee031.js", "css": ["/./_app/assets/pages/Scuola/Storia.svelte-7edc4d61.css", "/./_app/assets/index.svelte_svelte&type=style&lang-468c76d3.css"], "js": ["/./_app/pages/Scuola/Storia.svelte-d6cee031.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-ce5e8758.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-47e2ff6e.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-f5b4008b.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/scuola.svelte-f5b4008b.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-84410af4.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/About.svelte-84410af4.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -3015,7 +3058,7 @@ var page = {
 };
 var css$9 = {
   code: "header.svelte-1vytpj.svelte-1vytpj{display:flex;justify-content:space-between}.corner.svelte-1vytpj.svelte-1vytpj{width:3em;height:3em}nav.svelte-1vytpj.svelte-1vytpj{display:flex;justify-content:center;--background:#5e5e5e}svg.svelte-1vytpj.svelte-1vytpj{width:2em;height:3em;display:block}path.svelte-1vytpj.svelte-1vytpj{fill:var(--background)}ul.svelte-1vytpj.svelte-1vytpj{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--background);background-size:contain}li.svelte-1vytpj.svelte-1vytpj{position:relative;height:100%}li.active.svelte-1vytpj.svelte-1vytpj::before{--size:6px;content:'';width:0;height:0;position:absolute;top:0;left:calc(50% - var(--size));border:var(--size) solid transparent;border-top:var(--size) solid var(--accent-color)}nav.svelte-1vytpj a.svelte-1vytpj{display:flex;height:100%;align-items:center;padding:0 1em;color:var(--heading-color);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:10%;text-decoration:none;transition:color 0.2s linear}a.svelte-1vytpj.svelte-1vytpj:hover{color:var(--accent-color)}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\n//import logo from './GitHub-Mark-120px-plus.png';\\n</script>\\n\\n<header>\\n\\t<div class=\\"corner\\">\\n\\t\\t<!--<a href=\\"https://github.com/FedericoLonghin/newWebsite\\">\\n\\t\\t\\t<img src={logo} alt=\\"Repo on GitHub\\" />\\n\\t\\t</a>\\n\\t\\t-->\\n\\t</div>\\n\\n\\t<nav>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t\\t<ul>\\n\\t\\t\\t<li class:active={$page.path === '/'}><a sveltekit:prefetch href=\\"/\\">Home</a></li>\\n\\t\\t\\t<li class:active={$page.path === '/scuola'}>\\n\\t\\t\\t\\t<a sveltekit:prefetch href=\\"/scuola\\">Scuola</a>\\n\\t\\t\\t</li>\\n\\t\\t\\t<li class:active={$page.path === '/About'}><a sveltekit:prefetch href=\\"/About\\">About</a></li>\\n\\t\\t</ul>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t</nav>\\n\\n\\t<div class=\\"corner\\">\\n\\t\\t<!-- TODO put something else here? github link? -->\\n\\t</div>\\n</header>\\n\\n\\n\\n<style>\\n\\theader {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\n\\t.corner {\\n\\t\\twidth: 3em;\\n\\t\\theight: 3em;\\n\\t}\\n\\n\\t.corner a {\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: center;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\t.corner img {\\n\\t\\twidth: 2em;\\n\\t\\theight: 2em;\\n\\t\\tobject-fit: contain;\\n\\t}\\n\\n\\tnav {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\t--background: #5e5e5e;\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 2em;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: block;\\n\\t}\\n\\n\\tpath {\\n\\t\\tfill: var(--background);\\n\\t}\\n\\n\\tul {\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tlist-style: none;\\n\\t\\tbackground: var(--background);\\n\\t\\tbackground-size: contain;\\n\\t}\\n\\n\\tli {\\n\\t\\tposition: relative;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\tli.active::before {\\n\\t\\t--size: 6px;\\n\\t\\tcontent: '';\\n\\t\\twidth: 0;\\n\\t\\theight: 0;\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: calc(50% - var(--size));\\n\\t\\tborder: var(--size) solid transparent;\\n\\t\\tborder-top: var(--size) solid var(--accent-color);\\n\\t}\\n\\n\\tnav a {\\n\\t\\tdisplay: flex;\\n\\t\\theight: 100%;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 0 1em;\\n\\t\\tcolor: var(--heading-color);\\n\\t\\tfont-weight: 700;\\n\\t\\tfont-size: 0.8rem;\\n\\t\\ttext-transform: uppercase;\\n\\t\\tletter-spacing: 10%;\\n\\t\\ttext-decoration: none;\\n\\t\\ttransition: color 0.2s linear;\\n\\t}\\n\\n\\ta:hover {\\n\\t\\tcolor: var(--accent-color);\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoCC,MAAM,4BAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AAED,OAAO,4BAAC,CAAC,AACR,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC,AAgBD,GAAG,4BAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,YAAY,CAAE,OAAO,AACtB,CAAC,AAED,GAAG,4BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,KAAK,AACf,CAAC,AAED,IAAI,4BAAC,CAAC,AACL,IAAI,CAAE,IAAI,YAAY,CAAC,AACxB,CAAC,AAED,EAAE,4BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,IAAI,YAAY,CAAC,CAC7B,eAAe,CAAE,OAAO,AACzB,CAAC,AAED,EAAE,4BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,AACb,CAAC,AAED,EAAE,mCAAO,QAAQ,AAAC,CAAC,AAClB,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,GAAG,CAAC,CAAC,CAAC,IAAI,MAAM,CAAC,CAAC,CAC7B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,WAAW,CACrC,UAAU,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,IAAI,cAAc,CAAC,AAClD,CAAC,AAED,iBAAG,CAAC,CAAC,cAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,CAAC,CAAC,GAAG,CACd,KAAK,CAAE,IAAI,eAAe,CAAC,CAC3B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,KAAK,CAAC,IAAI,CAAC,MAAM,AAC9B,CAAC,AAED,6BAAC,MAAM,AAAC,CAAC,AACR,KAAK,CAAE,IAAI,cAAc,CAAC,AAC3B,CAAC"}`
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\n//import logo from './GitHub-Mark-120px-plus.png';\\n</script>\\n\\n<header>\\n\\t<div class=\\"corner\\">\\n\\t\\t<!--<a href=\\"https://github.com/FedericoLonghin/newWebsite\\">\\n\\t\\t\\t<img src={logo} alt=\\"Repo on GitHub\\" />\\n\\t\\t</a>\\n\\t\\t-->\\n\\t</div>\\n\\n\\t<nav>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t\\t<ul>\\n\\t\\t\\t<li class:active={$page.path === '/'}><a sveltekit:prefetch href=\\"/\\">Home</a></li>\\n\\t\\t\\t<li class:active={$page.path === '/scuola'}>\\n\\t\\t\\t\\t<a sveltekit:prefetch href=\\"/scuola\\">Scuola</a>\\n\\t\\t\\t</li>\\n\\t\\t\\t<li class:active={$page.path === '/About'}><a sveltekit:prefetch href=\\"/About\\">About</a></li>\\n\\t\\t</ul>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t</nav>\\n\\n\\t<div class=\\"corner\\">\\n\\t\\t<!-- TODO put something else here? github link? -->\\n\\t</div>\\n</header>\\n\\n<style>\\n\\theader {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\n\\t.corner {\\n\\t\\twidth: 3em;\\n\\t\\theight: 3em;\\n\\t}\\n\\n\\t.corner a {\\n\\t\\tdisplay: flex;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: center;\\n\\t\\twidth: 100%;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\t.corner img {\\n\\t\\twidth: 2em;\\n\\t\\theight: 2em;\\n\\t\\tobject-fit: contain;\\n\\t}\\n\\n\\tnav {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\t--background: #5e5e5e;\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 2em;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: block;\\n\\t}\\n\\n\\tpath {\\n\\t\\tfill: var(--background);\\n\\t}\\n\\n\\tul {\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tlist-style: none;\\n\\t\\tbackground: var(--background);\\n\\t\\tbackground-size: contain;\\n\\t}\\n\\n\\tli {\\n\\t\\tposition: relative;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\tli.active::before {\\n\\t\\t--size: 6px;\\n\\t\\tcontent: '';\\n\\t\\twidth: 0;\\n\\t\\theight: 0;\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: calc(50% - var(--size));\\n\\t\\tborder: var(--size) solid transparent;\\n\\t\\tborder-top: var(--size) solid var(--accent-color);\\n\\t}\\n\\n\\tnav a {\\n\\t\\tdisplay: flex;\\n\\t\\theight: 100%;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 0 1em;\\n\\t\\tcolor: var(--heading-color);\\n\\t\\tfont-weight: 700;\\n\\t\\tfont-size: 0.8rem;\\n\\t\\ttext-transform: uppercase;\\n\\t\\tletter-spacing: 10%;\\n\\t\\ttext-decoration: none;\\n\\t\\ttransition: color 0.2s linear;\\n\\t}\\n\\n\\ta:hover {\\n\\t\\tcolor: var(--accent-color);\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAkCC,MAAM,4BAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,AAC/B,CAAC,AAED,OAAO,4BAAC,CAAC,AACR,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,AACZ,CAAC,AAgBD,GAAG,4BAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,YAAY,CAAE,OAAO,AACtB,CAAC,AAED,GAAG,4BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,KAAK,AACf,CAAC,AAED,IAAI,4BAAC,CAAC,AACL,IAAI,CAAE,IAAI,YAAY,CAAC,AACxB,CAAC,AAED,EAAE,4BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,IAAI,YAAY,CAAC,CAC7B,eAAe,CAAE,OAAO,AACzB,CAAC,AAED,EAAE,4BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,AACb,CAAC,AAED,EAAE,mCAAO,QAAQ,AAAC,CAAC,AAClB,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,GAAG,CAAC,CAAC,CAAC,IAAI,MAAM,CAAC,CAAC,CAC7B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,WAAW,CACrC,UAAU,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,IAAI,cAAc,CAAC,AAClD,CAAC,AAED,iBAAG,CAAC,CAAC,cAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,CAAC,CAAC,GAAG,CACd,KAAK,CAAE,IAAI,eAAe,CAAC,CAC3B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,KAAK,CAAC,IAAI,CAAC,MAAM,AAC9B,CAAC,AAED,6BAAC,MAAM,AAAC,CAAC,AACR,KAAK,CAAE,IAAI,cAAc,CAAC,AAC3B,CAAC"}`
 };
 var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;
@@ -3049,26 +3092,29 @@ var ReloadPrompt = create_ssr_component(($$result, $$props, $$bindings, slots) =
 		<button class="${"svelte-t803pv"}">Chiudi </button></div>` : ``}`;
 });
 var css$7 = {
-  code: ".inline.svelte-11c5nn4.svelte-11c5nn4{text-align:left;display:flex}.inline.svelte-11c5nn4>div.svelte-11c5nn4{margin-block-start:0.83em;margin-block-end:0.83em}#title-box.svelte-11c5nn4.svelte-11c5nn4{font-size:2rem !important}.hidden.svelte-11c5nn4.svelte-11c5nn4{visibility:hidden}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">export let showIndicePath;\\nvar sectionName = 'Storia';\\nvar pageName = 'aaaProva';\\n</script>\\n\\n<div id=\\"title-box\\" class=\\"inline\\"  class:hidden={!showIndicePath}>\\n\\t<div>\\n\\t\\t<a href=\\"/Scuola/{sectionName}\\">{sectionName}</a>\\n\\t</div>\\n\\t\\t<div style=\\"margin-left:10px\\"class:hidden={pageName === 'Main'}>/{pageName}</div>\\n\\t\\n</div>\\n\\n\\n\\n<style>\\n\\n\\t.inline {\\n\\t\\ttext-align: left;\\n\\t\\tdisplay: flex;\\n\\t}\\n\\t.inline > div {\\n\\t\\tmargin-block-start: 0.83em;\\n\\t\\tmargin-block-end: 0.83em;\\n\\t}\\n\\t#title-box {\\n\\t\\tfont-size: 2rem !important;\\n\\t}\\n\\t\\n\\t.hidden {\\n\\t\\tvisibility: hidden;\\n\\t}\\n</style>"],"names":[],"mappings":"AAiBC,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,sBAAO,CAAG,GAAG,eAAC,CAAC,AACd,kBAAkB,CAAE,MAAM,CAC1B,gBAAgB,CAAE,MAAM,AACzB,CAAC,AACD,UAAU,8BAAC,CAAC,AACX,SAAS,CAAE,IAAI,CAAC,UAAU,AAC3B,CAAC,AAED,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,MAAM,AACnB,CAAC"}`
+  code: ".inline.svelte-1hs7xfp.svelte-1hs7xfp{text-align:left;display:flex}.inline.svelte-1hs7xfp>div.svelte-1hs7xfp{margin-block-start:0.83em;margin-block-end:0.83em}#title-box.svelte-1hs7xfp.svelte-1hs7xfp{font-size:2rem !important}.hidden.svelte-1hs7xfp.svelte-1hs7xfp{visibility:hidden}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\nvar pathArray = $page.path.split('/');\\nvar sectionName = pathArray[2];\\nvar pageName = pathArray[3];\\n//var sectionName, pageName;\\nconsole.log(pageName);\\nif (typeof pageName !== 'undefined')\\n    console.log('und');\\n</script>\\n\\n<div id=\\"title-box\\" class=\\"inline\\">\\n\\t<div>\\n\\t\\t<a href=\\"/Scuola/{sectionName}\\">{sectionName}</a>\\n\\t</div>\\n\\t<div style=\\"margin-left:10px     color: var(--heading-color);\\t\\" class:hidden={typeof pageName === 'undefined'}>/{pageName}</div>\\n</div>\\n\\n<style>\\n\\t.inline {\\n\\t\\ttext-align: left;\\n\\t\\tdisplay: flex;\\n\\t}\\n\\t.inline > div {\\n\\t\\tmargin-block-start: 0.83em;\\n\\t\\tmargin-block-end: 0.83em;\\n\\t}\\n\\t#title-box {\\n\\t\\tfont-size: 2rem !important;\\n\\t}\\n\\n\\t.hidden {\\n\\t\\tvisibility: hidden;\\n\\t}\\n\\n</style>\\n"],"names":[],"mappings":"AAkBC,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,sBAAO,CAAG,GAAG,eAAC,CAAC,AACd,kBAAkB,CAAE,MAAM,CAC1B,gBAAgB,CAAE,MAAM,AACzB,CAAC,AACD,UAAU,8BAAC,CAAC,AACX,SAAS,CAAE,IAAI,CAAC,UAAU,AAC3B,CAAC,AAED,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,MAAM,AACnB,CAAC"}`
 };
-var sectionName = "Storia";
-var pageName$1 = "aaaProva";
 var IndicePath = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let {showIndicePath: showIndicePath2} = $$props;
-  if ($$props.showIndicePath === void 0 && $$bindings.showIndicePath && showIndicePath2 !== void 0)
-    $$bindings.showIndicePath(showIndicePath2);
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
+  var pathArray = $page.path.split("/");
+  var sectionName = pathArray[2];
+  var pageName2 = pathArray[3];
+  console.log(pageName2);
+  if (typeof pageName2 !== "undefined")
+    console.log("und");
   $$result.css.add(css$7);
-  return `<div id="${"title-box"}" class="${["inline svelte-11c5nn4", !showIndicePath2 ? "hidden" : ""].join(" ").trim()}"><div class="${"svelte-11c5nn4"}"><a href="${"/Scuola/" + escape2(sectionName)}">${escape2(sectionName)}</a></div>
-		<div style="${"margin-left:10px"}" class="${["svelte-11c5nn4", ""].join(" ").trim()}">/${escape2(pageName$1)}</div>
-	
+  $$unsubscribe_page();
+  return `<div id="${"title-box"}" class="${"inline svelte-1hs7xfp"}"><div class="${"svelte-1hs7xfp"}"><a href="${"/Scuola/" + escape2(sectionName)}">${escape2(sectionName)}</a></div>
+	<div style="${"margin-left:10px color: var(--heading-color); "}" class="${["svelte-1hs7xfp", typeof pageName2 === "undefined" ? "hidden" : ""].join(" ").trim()}">/${escape2(pageName2)}</div>
 </div>`;
 });
 var css$6 = {
   code: "main.svelte-193j25t{flex:1;display:flex;flex-direction:column;padding:1rem;width:100%;max-width:1024px;margin:0 auto;box-sizing:border-box}footer.svelte-193j25t{display:flex;flex-direction:column;justify-content:center;align-items:center;padding:40px;opacity:0.5}@media(min-width: 480px){footer.svelte-193j25t{padding:40px 0}}",
   map: `{"version":3,"file":"__layout.svelte","sources":["__layout.svelte"],"sourcesContent":["<script lang=\\"ts\\">import Header from '$lib/Header/index.svelte';\\nimport ReloadPrompt from '$lib/ReloadPrompt/index.svelte';\\nimport IndicePath from '$lib/IndicePath/index.svelte';\\nimport '../app.css';\\n</script>\\n\\n<svelte:head>\\n\\t<link rel=\\"manifest\\" href=\\"/manifest.webmanifest\\" />\\n\\n\\t<meta name=\\"description\\" content=\\"questo \xE8 il nuovo sitoTest di Federico Longhin\\" />\\n\\t<meta name=\\"apple-mobile-web-app-capable\\" content=\\"yes\\" />\\n\\t<!-- <link rel=\\"icon\\" href=\\"/favicon.svg\\" type=\\"image/svg+xml\\"> -->\\n\\t<link rel=\\"apple-touch-icon\\" href=\\"/pencil-512x512.png\\" />\\n\\t<!-- <link rel=\\"mask-icon\\" href=\\"/safari-pinned-tab.svg\\" color=\\"#00aba9\\"> -->\\n\\t<meta name=\\"msapplication-TileColor\\" content=\\"#48e5c2\\" />\\n\\t<meta name=\\"theme-color\\" content=\\"#333333\\" />\\n</svelte:head>\\n\\n<Header />\\n<main>\\n\\t<slot />\\n</main>\\n\\n<footer>\\n\\t<p>Federico Longhin - 2021</p>\\n</footer>\\n\\n<ReloadPrompt />\\n\\n<style>\\n\\tmain {\\n\\t\\tflex: 1;\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tpadding: 1rem;\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: 1024px;\\n\\t\\tmargin: 0 auto;\\n\\t\\tbox-sizing: border-box;\\n\\t}\\n\\n\\tfooter {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 40px;\\n\\t\\topacity: 0.5;\\n\\t}\\n\\n\\t@media (min-width: 480px) {\\n\\t\\tfooter {\\n\\t\\t\\tpadding: 40px 0;\\n\\t\\t}\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA8BC,IAAI,eAAC,CAAC,AACL,IAAI,CAAE,CAAC,CACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,OAAO,CAAE,IAAI,CACb,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,MAAM,CACjB,MAAM,CAAE,CAAC,CAAC,IAAI,CACd,UAAU,CAAE,UAAU,AACvB,CAAC,AAED,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,IAAI,CACb,OAAO,CAAE,GAAG,AACb,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAC1B,MAAM,eAAC,CAAC,AACP,OAAO,CAAE,IAAI,CAAC,CAAC,AAChB,CAAC,AACF,CAAC"}`
 };
-var _layout$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$6);
   return `${$$result.head += `<link rel="${"manifest"}" href="${"/manifest.webmanifest"}" data-svelte="svelte-1r84mds"><meta name="${"description"}" content="${"questo \xE8 il nuovo sitoTest di Federico Longhin"}" data-svelte="svelte-1r84mds"><meta name="${"apple-mobile-web-app-capable"}" content="${"yes"}" data-svelte="svelte-1r84mds"><link rel="${"apple-touch-icon"}" href="${"/pencil-512x512.png"}" data-svelte="svelte-1r84mds"><meta name="${"msapplication-TileColor"}" content="${"#48e5c2"}" data-svelte="svelte-1r84mds"><meta name="${"theme-color"}" content="${"#333333"}" data-svelte="svelte-1r84mds">`, ""}
 
@@ -3079,10 +3125,10 @@ ${validate_component(Header, "Header").$$render($$result, {}, {}, {})}
 
 ${validate_component(ReloadPrompt, "ReloadPrompt").$$render($$result, {}, {}, {})}`;
 });
-var __layout$1 = /* @__PURE__ */ Object.freeze({
+var __layout = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _layout$1
+  "default": _layout
 });
 function load({error: error22, status}) {
   return {props: {error: error22, status}};
@@ -3108,15 +3154,15 @@ var error2 = /* @__PURE__ */ Object.freeze({
   load
 });
 var css$5 = {
-  code: "section.svelte-1bgohwt{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}h1.svelte-1bgohwt{width:100%}",
-  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>Benvenuto nel nuovino sitino</h1>\\n\\n\\t<h2>Chiss\xE0 se funziona... bah</h2>\\n\\t<h2>\\n\\t\\tAh, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\\n\\t\\t(in realt\xE0 \xE8 solo una scusa per giudicare le monnezze che non ho voglia di sistemare(in\\n\\t\\trealt\xE0(si, di nuovo) dico che non \xE8 che non ho voglia di farlo, ma non me ne accorgo/non so\\n\\t\\tfarlo... umilt\xE0 ragazzi... sempre))\\n\\t</h2>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoBC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
+  code: ".content.svelte-13qm1wo{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}h1.svelte-13qm1wo{width:100%}",
+  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto nel nuovino sitino</h1>\\n\\n\\t<h2>Chiss\xE0 se funziona... bah</h2>\\n\\t<h2>\\n\\t\\tAh, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\\n\\t\\t(in realt\xE0 \xE8 solo una scusa per giudicare le monnezze che non ho voglia di sistemare(in\\n\\t\\trealt\xE0(si, di nuovo) dico che non \xE8 che non ho voglia di farlo, ma non me ne accorgo/non so\\n\\t\\tfarlo... umilt\xE0 ragazzi... sempre))\\n\\t</h2>\\n</div>\\n\\n<style>\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoBC,QAAQ,eAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC,AACD,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
 };
 var prerender$5 = true;
 var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$5);
   return `${$$result.head += `${$$result.title = `<title>Home</title>`, ""}`, ""}
 
-<section class="${"svelte-1bgohwt"}"><h1 class="${"svelte-1bgohwt"}">Benvenuto nel nuovino sitino</h1>
+<div class="${"content svelte-13qm1wo"}"><h1 class="${"svelte-13qm1wo"}">Benvenuto nel nuovino sitino</h1>
 
 	<h2>Chiss\xE0 se funziona... bah</h2>
 	<h2>Ah, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...
@@ -3124,7 +3170,7 @@ var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 		realt\xE0(si, di nuovo) dico che non \xE8 che non ho voglia di farlo, ma non me ne accorgo/non so
 		farlo... umilt\xE0 ragazzi... sempre))
 	</h2>
-</section>`;
+</div>`;
 });
 var index = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -3132,27 +3178,29 @@ var index = /* @__PURE__ */ Object.freeze({
   "default": Routes,
   prerender: prerender$5
 });
-var _layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {showIndicePath: 1}, {}, {})}
-${slots.default ? slots.default({}) : ``}`;
+var A__layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}`;
 });
-var __layout = /* @__PURE__ */ Object.freeze({
+var a__layout = /* @__PURE__ */ Object.freeze({
   __proto__: null,
   [Symbol.toStringTag]: "Module",
-  "default": _layout
+  "default": A__layout
 });
 var css$4 = {
-  code: "section.svelte-1bgohwt{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}h1.svelte-1bgohwt{width:100%}",
-  map: '{"version":3,"file":"Italiano.svelte","sources":["Italiano.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>Italiano</h1>\\n\\n\\t<h2>cosevarie</h2>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAcC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
+  code: "section.svelte-1jlhe5t{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}",
+  map: '{"version":3,"file":"Italiano.svelte","sources":["Italiano.svelte"],"sourcesContent":["\\t<script>\\n\\t\\timport IndicePath from \'$lib/IndicePath/index.svelte\';\\n\\t</script>\\n\\n\\n<script context=\\"module\\" lang=\\"ts\\">import snarkdown from \'snarkdown\';\\nconst source = `\\n\\t# This is a header`;\\nlet md = \'_this_ is very very is **easy** to ``use``.\';\\nlet html = snarkdown(md);\\nconsole.log(html);\\nexport const prerender = true;\\n</script>\\n\\n\\n<IndicePath />\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t{@html snarkdown(md)}\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA0BC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC"}'
 };
+var md = "_this_ is very very is **easy** to ``use``.";
+var html = (0, import_snarkdown.default)(md);
+console.log(html);
 var prerender$4 = true;
 var Italiano = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$4);
-  return `${$$result.head += `${$$result.title = `<title>Home</title>`, ""}`, ""}
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
 
-<section class="${"svelte-1bgohwt"}"><h1 class="${"svelte-1bgohwt"}">Italiano</h1>
+${$$result.head += `${$$result.title = `<title>Home</title>`, ""}`, ""}
 
-	<h2>cosevarie</h2>
+<section class="${"svelte-1jlhe5t"}"><!-- HTML_TAG_START -->${(0, import_snarkdown.default)(md)}<!-- HTML_TAG_END -->
 </section>`;
 });
 var Italiano$1 = /* @__PURE__ */ Object.freeze({
@@ -3161,14 +3209,45 @@ var Italiano$1 = /* @__PURE__ */ Object.freeze({
   "default": Italiano,
   prerender: prerender$4
 });
+var Prima_guerra_mondiale = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
+<h2>Date Importanti</h2>
+<ul><li><code>Inizia nel 1918</code> (Prima guerra mondiale), che cambier\xE0 la storia, finiscono gli imperi e nascono le forme statali</li>
+<li><code>Finisce nel 1991</code> (caduta dell\u2019URSS). Finisce il periodo fascista, le ideologie e il mondo diviso in modello comunista-liberista.</li>
+<li>\xC8 compresa anche la caduta del muro di Berlino(<code>1989</code>).</li>
+<li>\xC8 detto <strong>secolo breve</strong>(titolo dell\u2019opera di Hobsbawm).</li></ul>
+<h2>La societ\xE0 di massa</h2>
+<p>Definita dal sociologo francese <code>Le Bon</code> in <code>la psicologia delle folle</code>. Dice che per la prima volta c\u2019\xE8 un <strong>iperdemocrazia</strong>, (eccesso di democrazia), positivo ma omologante. Tutti hanno a disposizione beni e strumenti. <em>La societ\xE0 di massa \xE8 la societ\xE0 del pieno</em>: ovunque tu vada c\u2019\xE8 gente. si passa dal\u2019idea di <em>sogetto / divino</em> a quella di <em>massa / pieno</em>.</p>
+<p>Caratteristiche della societ\xE0 di massa:</p>
+<ul><li><p><strong>Incremento demografico:</strong> c\u2019\xE8 tanta natalit\xE0, aumento della vita media e le persone si spostano nelle citt\xE0.</p></li>
+<li><p><strong>Urbanesimo e nuove citt\xE0:</strong> Nelle citt\xE0 c\u2019\xE8 disponibilit\xE0 di lavoro, opportunit\xE0 culturali, di svago\u2026 Molte citt\xE0 europee diventano simbolo del 900.</p>
+<blockquote><p><strong>Evoluzione delle citt\xE0:</strong> Nascono dopo il 1000, hanno le mura, con all\u2019interno il potere politico e religioso, fuori la campagna \u2013&gt; Si trasforma, e anche i territori al di fuori vengono considerati citt\xE0 \u2013&gt; incrementa la popolazione e nascono esercizi commerciali \u2013&gt; Prima/seconda rivoluzione industriale: nasce la periferia, nascono periferie di industrie, citt\xE0 dormitorio, citt\xE0 ghetto\u2026 \u2013&gt; oggi si parla di citt\xE0 diffusa (ha un inizio ma la fine \xE8 sempre pi\xF9 dilatata).</p></blockquote></li>
+<li><p><strong>Pubblicit\xE0:</strong> Inizialmente era su carta(manifesti, cartelloni), oggi su Web/social. l\u2019industria ha tanti prodotti da vendere, quindi ti <code>induce a comprarli</code>, per il gusto di comprare. <strong>Consumare</strong> \xE8 il verbo del 900, frenesia dell\u2019acquisto. Nasce l\u2019esposizione universale(<code>EXPO</code>) come modo per pubblicizzare i prodotti. Viene costruita la torre Eiffel per l\u2019expo del 1900 di Parigi.</p></li>
+<li><p><strong>La belle epoque:</strong> Vengono definiti cos\xEC i primi 15 anni del Novecento, ovvero quando <code>le persone iniziano a divertirsi</code>. Nasce come <code>fare qualcosa di diverso</code>, come diversivo al lavoro. Si iniuzia ad andare a ballare, feste, Cabaret, casin\xF2, Vacanze, si utilizza la macchina per gli spostamenti etc\u2026 Si vede dal\u2019architettura delle citt\xE0(Gaud\xEC a Barcellona), palazzi decorati, case liberty di Mondello.</p></li>
+<li><p><strong>Progresso e esito della seconda rivoluzione industriale:</strong> \xC8 la Conseguenza dell\u2019innovazione scientifica, progresso arriva dall\u2019applicazione delle scoperte tecniche e scientifiche.</p>
+<blockquote><p><strong>I Riv. Industriale in Inghilterra</strong> per le vie di comunicazione(commercio triangolare), la rete ferroviaria molto avanzata, democrazia pi\xF9 antica(1688), rivoluzione agricola\u2026 Nasce la macchina a vapore, carbon coke, telaio meccanico.</p></blockquote>
+<p>Grazie alla <strong>I Riv. Industriale</strong> nasce l\u2019industria come luogo dell\u2019azione, e cambia il modo di produrre, la citt\xE0 e l\u2019educazione. nascono scuole tecniche, ingegneria(\xB11800).</p>
+<p><strong>La II Riv. Industriale</strong> nasce negli USA, poi si diffonde in Europa e Giappone. \xC8 la rivoluzione dell\u2019elettricit\xE0 e del petrolio. arriva l\u2019illuminazione, si velocizzano le produzioni, mezzi di trasporto, arriva la plastica\u2026 Viene illuminata NY(1883), arriva il telefono di Marconi, motore a scoppio di Benz, areoplano e l\u2019automobile. Henry Ford fu il primo ad applicare le innovazioni della rivoluzione. Introduce la catena di montaggio, migliorata dalla teoria Taylor(Taylorismo), secondo la quale bisogna applicare il concetto di tempo alla catena.</p>
+<blockquote><p><strong>Le altre rivoluzioni:</strong> La III Riv. Industriale \xE8 in America e Asia(1950), con l\u2019Elettronica, Informatica, il computer e Internet. Ora siamo nella IV Riv. Industriale, o industria 4.0, dove si utilizzano i robot e tutti i sistemi digitali.</p></blockquote></li>
+<li><p><strong>La societ\xE0 e le classi sociali della societ\xE0 di massa:</strong> Inizialmente nella societ\xE0 medioevale c\u2019erano nobili, clero e popolo. nel 1000, con l\u2019arrivo della citt\xE0 viene introdotta la borghesia(Borgo \u2013&gt; Citt\xE0), ceto sociale produttivo che lavora per vivere. Clero e Nobilt\xE0 vanno sempre diminuendo, fino al 1900, perdendo la loro centralit\xE0. <code>La socit\xE0 \xE8 quindi borghese</code>, con all\u2019interno le varie distinzioni.</p></li>
+<li><p><strong>I consumi:</strong> C\u2019\xE8 una grandissima <code>disponibilit\xE0 dei beni</code>, e la catena di montaggio riesce a produrre tantissimi pezzi. Nascono quindi i grandi magazzini(<em>Harrods</em> a Londra, <em>La Faiette</em> a Parigi\u2026).</p></li>
+<li><p><strong>I partiti:</strong> Sono organizzazioni di persone accumunate da idee politiche simili. Nascono con la Riv. Francese come <em>Club</em>, inizialmente si chiamavano <code>Partiti di notabili</code>, perch\xE8 erano composti da poche persone di ceti sociali alti, o con una propensione alla politica. Dal 900 si parla di <code>Partiti di massa</code>, con un maggior coinvolgimentio. \xC8 dovuto dall\u2019aumento dell\u2019istruzione e la gente si lasciava coinvolgere. Il voto passa al suffragio universale, quindi molte pi\xF9 persone aderiscono ai partiti.</p></li></ul>`;
+});
+var PrimaGuerraMondiale = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Prima_guerra_mondiale
+});
 var css$3 = {
   code: "section.svelte-1bgohwt{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}h1.svelte-1bgohwt{width:100%}",
-  map: '{"version":3,"file":"Il-Novecento.svelte","sources":["Il-Novecento.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>Il Novecento</h1>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAYC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
+  map: `{"version":3,"file":"Il-Novecento.svelte","sources":["Il-Novecento.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<script>\\n\\timport IndicePath from '$lib/IndicePath/index.svelte';\\n\\n\\tvar sectionName = 'sectname';\\n</script>\\n\\n<IndicePath />\\n\\n<svelte:head />\\n\\n<section>\\n\\t<h1>Il Novecento</h1>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAkBC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}`
 };
 var prerender$3 = true;
 var Il_Novecento = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$3);
-  return `${$$result.head += `${$$result.title = `<title>Home</title>`, ""}`, ""}
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
+
+${$$result.head += ``, ""}
 
 <section class="${"svelte-1bgohwt"}"><h1 class="${"svelte-1bgohwt"}">Il Novecento</h1>
 </section>`;
@@ -3180,114 +3259,120 @@ var IlNovecento = /* @__PURE__ */ Object.freeze({
   prerender: prerender$3
 });
 var css$2 = {
-  code: "section.svelte-1jb5iyw.svelte-1jb5iyw{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}.inline.svelte-1jb5iyw.svelte-1jb5iyw{text-align:left;display:flex}.inline.svelte-1jb5iyw>div.svelte-1jb5iyw{margin-block-start:0.83em;margin-block-end:0.83em}.indice-elem.svelte-1jb5iyw.svelte-1jb5iyw{width:100%;text-align:left}.indice-elem-data.svelte-1jb5iyw.svelte-1jb5iyw{opacity:0.6;text-align:right;margin-left:auto}",
-  map: `{"version":3,"file":"Storia.svelte","sources":["Storia.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">import { page } from '$app/stores';\\nexport const prerender = true;\\nvar pageType = 'Indice';\\nvar sectionName = 'Storia';\\nvar pageName = 'Maino';\\n</script>\\n\\n<svelte:head>\\n\\t<title>{pageName}</title>\\n</svelte:head>\\n\\n\\n\\n<section>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\n\\n\\t.inline {\\n\\t\\ttext-align: left;\\n\\t\\tdisplay: flex;\\n\\t}\\n\\t.inline > div {\\n\\t\\tmargin-block-start: 0.83em;\\n\\t\\tmargin-block-end: 0.83em;\\n\\t}\\n\\t\\n\\t.indice-elem {\\n\\t\\twidth: 100%;\\n\\t\\ttext-align: left;\\n\\t}\\n\\n\\t.indice-elem-data {\\n\\t\\topacity: 0.6;\\n\\t\\ttext-align: right;\\n\\t\\tmargin-left: auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA0PC,OAAO,8BAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAID,OAAO,8BAAC,CAAC,AACR,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,sBAAO,CAAG,GAAG,eAAC,CAAC,AACd,kBAAkB,CAAE,MAAM,CAC1B,gBAAgB,CAAE,MAAM,AACzB,CAAC,AAED,YAAY,8BAAC,CAAC,AACb,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,IAAI,AACjB,CAAC,AAED,iBAAiB,8BAAC,CAAC,AAClB,OAAO,CAAE,GAAG,CACZ,UAAU,CAAE,KAAK,CACjB,WAAW,CAAE,IAAI,AAClB,CAAC"}`
+  code: "section.svelte-d66zo7.svelte-d66zo7{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}.inline.svelte-d66zo7.svelte-d66zo7{text-align:left;display:flex}.inline.svelte-d66zo7>div.svelte-d66zo7{margin-block-start:0.83em;margin-block-end:0.83em}.indice-elem.svelte-d66zo7.svelte-d66zo7{width:100%;text-align:left}.indice-elem-data.svelte-d66zo7.svelte-d66zo7{opacity:0.6;text-align:right;margin-left:auto}",
+  map: `{"version":3,"file":"Storia.svelte","sources":["Storia.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">import { page } from '$app/stores';\\nexport const prerender = true;\\nvar pageType = 'Indice';\\nvar sectionName;\\nvar pageName;\\n</script>\\n\\n<script>\\n\\timport IndicePath from '$lib/IndicePath/index.svelte';\\n</script>\\n\\n<IndicePath />\\n\\n<svelte:head>\\n\\t<title>{pageName}</title>\\n</svelte:head>\\n\\n<section>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\">\\n\\t\\t\\t\\t- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a>\\n\\t\\t\\t</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La prima guerra mondiale</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/Scuola/Storia/Il-Novecento\\"> - La divina commedia di alessandro manzoni</a>\\n\\t\\t</div>\\n\\t\\t<div style=\\"width: auto;\\" />\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n\\n\\t.inline {\\n\\t\\ttext-align: left;\\n\\t\\tdisplay: flex;\\n\\t}\\n\\t.inline > div {\\n\\t\\tmargin-block-start: 0.83em;\\n\\t\\tmargin-block-end: 0.83em;\\n\\t}\\n\\n\\t.indice-elem {\\n\\t\\twidth: 100%;\\n\\t\\ttext-align: left;\\n\\t}\\n\\n\\t.indice-elem-data {\\n\\t\\topacity: 0.6;\\n\\t\\ttext-align: right;\\n\\t\\tmargin-left: auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAmQC,OAAO,4BAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC,AAED,OAAO,4BAAC,CAAC,AACR,UAAU,CAAE,IAAI,CAChB,OAAO,CAAE,IAAI,AACd,CAAC,AACD,qBAAO,CAAG,GAAG,cAAC,CAAC,AACd,kBAAkB,CAAE,MAAM,CAC1B,gBAAgB,CAAE,MAAM,AACzB,CAAC,AAED,YAAY,4BAAC,CAAC,AACb,KAAK,CAAE,IAAI,CACX,UAAU,CAAE,IAAI,AACjB,CAAC,AAED,iBAAiB,4BAAC,CAAC,AAClB,OAAO,CAAE,GAAG,CACZ,UAAU,CAAE,KAAK,CACjB,WAAW,CAAE,IAAI,AAClB,CAAC"}`
 };
 var prerender$2 = true;
-var pageName = "Maino";
+var pageName;
 var Storia = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$2);
-  return `${$$result.head += `${$$result.title = `<title>${escape2(pageName)}</title>`, ""}`, ""}
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
 
+${$$result.head += `${$$result.title = `<title>${escape2(pageName)}</title>`, ""}`, ""}
 
-
-<section class="${"svelte-1jb5iyw"}"><div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+<section class="${"svelte-d66zo7"}"><div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
 			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, ex!/a&gt;
-			</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline svelte-1jb5iyw"}"><div class="${"svelte-1jb5iyw"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
-		<div style="${"width: auto;"}" class="${"svelte-1jb5iyw"}"></div>
-		<div class="${"indice-elem-data svelte-1jb5iyw"}">03/11/2021</div></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La prima guerra mondiale</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
+	<div class="${"indice-elem inline svelte-d66zo7"}"><div class="${"svelte-d66zo7"}"><a href="${"/Scuola/Storia/Il-Novecento"}">- La divina commedia di alessandro manzoni</a></div>
+		<div style="${"width: auto;"}" class="${"svelte-d66zo7"}"></div>
+		<div class="${"indice-elem-data svelte-d66zo7"}">03/11/2021</div></div>
 </section>`;
 });
 var Storia$1 = /* @__PURE__ */ Object.freeze({
@@ -3297,8 +3382,8 @@ var Storia$1 = /* @__PURE__ */ Object.freeze({
   prerender: prerender$2
 });
 var css$1 = {
-  code: ".content.svelte-zuz0ii{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}",
-  map: `{"version":3,"file":"scuola.svelte","sources":["scuola.svelte"],"sourcesContent":["<script context=\\"module\\">\\n\\timport { browser, dev } from '$app/env';\\n\\n\\t// we don't need any JS on this page, though we'll load\\n\\t// it in dev so that we get hot module replacement...\\n\\texport const hydrate = dev;\\n\\n\\t// ...but if the client-side router is already loaded\\n\\t// (i.e. we came here from elsewhere in the app), use it\\n\\texport const router = browser;\\n\\n\\t// since there's no dynamic data here, we can prerender\\n\\t// it so that it gets served as a static asset in prod\\n\\texport const prerender = true;\\n\\texport let showIndicePath=1;\\n\\n</script>\\n\\n<svelte:head>\\n\\t<title>Scuola</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto nella sezione scuola</h1>\\n\\n\\t<p>Qui troverai tutti gli appunti divisi per materie etc...</p>\\n\\n\\t<p>Materie:</p>\\n\\n\\t<p class=\\"link-holder\\">\\n\\t\\t<a sveltekit:prefetch href=\\"/Scuola/Italiano\\">- Italiano</a>\\n\\t\\t<br />\\n\\t\\t<a sveltekit:prefetch href=\\"/Scuola/Storia\\">- Storia</a>\\n\\t</p>\\n\\n</div>\\n\\n<style>\\n\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n\\n\\n</style>\\n"],"names":[],"mappings":"AAuCC,QAAQ,cAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC"}`
+  code: ".content.svelte-cf77e8{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}",
+  map: `{"version":3,"file":"scuola.svelte","sources":["scuola.svelte"],"sourcesContent":["<script context=\\"module\\">\\n\\timport { browser, dev } from '$app/env';\\n\\n\\t// we don't need any JS on this page, though we'll load\\n\\t// it in dev so that we get hot module replacement...\\n\\texport const hydrate = dev;\\n\\n\\t// ...but if the client-side router is already loaded\\n\\t// (i.e. we came here from elsewhere in the app), use it\\n\\texport const router = browser;\\n\\n\\t// since there's no dynamic data here, we can prerender\\n\\t// it so that it gets served as a static asset in prod\\n\\texport const prerender = true;\\n\\texport let showIndicePath = 1;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Scuola</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto nella sezione scuola</h1>\\n\\n\\t<p>Qui troverai tutti gli appunti divisi per materie etc...</p>\\n\\n\\t<p>Materie:</p>\\n\\n\\t<p class=\\"link-holder\\">\\n\\t\\t<a sveltekit:prefetch href=\\"/Scuola/Italiano\\">- Italiano</a>\\n\\t\\t<br />\\n\\t\\t<a sveltekit:prefetch href=\\"/Scuola/Storia\\">- Storia</a>\\n\\t</p>\\n</div>\\n\\n<style>\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoCC,QAAQ,cAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC"}`
 };
 var hydrate$1 = dev;
 var router$1 = browser;
@@ -3308,7 +3393,7 @@ var Scuola = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$1);
   return `${$$result.head += `${$$result.title = `<title>Scuola</title>`, ""}`, ""}
 
-<div class="${"content svelte-zuz0ii"}"><h1>Benvenuto nella sezione scuola</h1>
+<div class="${"content svelte-cf77e8"}"><h1>Benvenuto nella sezione scuola</h1>
 
 	<p>Qui troverai tutti gli appunti divisi per materie etc...</p>
 
@@ -3317,7 +3402,6 @@ var Scuola = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	<p class="${"link-holder"}"><a sveltekit:prefetch href="${"/Scuola/Italiano"}">- Italiano</a>
 		<br>
 		<a sveltekit:prefetch href="${"/Scuola/Storia"}">- Storia</a></p>
-
 </div>`;
 });
 var scuola = /* @__PURE__ */ Object.freeze({

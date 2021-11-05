@@ -32,8 +32,6 @@
 	</div>
 </header>
 
-
-
 <style>
 	header {
 		display: flex;
