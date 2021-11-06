@@ -5,14 +5,18 @@
 	var sectionName = pathArray[2];
 	var pageName = pathArray[3];
 	//var sectionName, pageName;
-
 </script>
 
 <div id="title-box" class="inline">
 	<div>
 		<a href="/scuola/{sectionName}">{sectionName}</a>
 	</div>
-	<div style="margin-left:10px;     color: var(--heading-color);	" class:hidden={typeof pageName === 'undefined'}>/{pageName}</div>
+	<div
+		style="margin-left:10px;     color: var(--heading-color);	"
+		class:hidden={typeof pageName === 'undefined'}
+	>
+		/{pageName}
+	</div>
 </div>
 
 <style>
@@ -27,9 +31,4 @@
 	#title-box {
 		font-size: 1.6rem !important;
 	}
-
-	.hidden {
-		visibility: hidden;
-	}
-
 </style>

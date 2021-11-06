@@ -1,4 +1,7 @@
 <script context="module">
+	import { page } from '$app/stores';
+	import IndiceElement from '$lib/IndiceElement/index.svelte';
+
 	import { browser, dev } from '$app/env';
 
 	// we don't need any JS on this page, though we'll load
@@ -25,11 +28,8 @@
 
 	<p>Materie:</p>
 
-	<p class="link-holder">
-		<a sveltekit:prefetch href="/scuola/Italiano">- Italiano</a>
-		<br />
-		<a sveltekit:prefetch href="/scuola/Storia">- Storia</a>
-	</p>
+	<IndiceElement pageURL={$page.path} pageName={"Storia"} date={'noDate'} />
+	<IndiceElement pageURL={$page.path} pageName={"Italiano"} date={'noDate'} />
 </div>
 
 <style>
