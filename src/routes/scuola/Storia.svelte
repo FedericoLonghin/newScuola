@@ -16,9 +16,9 @@
 </svelte:head>
 
 <section>
-	<IndiceElement pageURL={$page.path} pageName={"Il-Novecento"} date={'06/11/2021'} />
-	<IndiceElement pageURL={$page.path} pageName={"Prima-guerra-mondiale"} date={'06/11/2021'} />
-	<IndiceElement pageURL={$page.path} pageName={"La-visione-dell'uomo-nel-positivo"} date={'06/11/2021'} />
+	<IndiceElement pageURL={$page.path} pageName={"Il Novecento"} date={'06/11/2021'} />
+	<IndiceElement pageURL={$page.path} pageName={"Prima guerra mondiale"} date={'06/11/2021'} />
+	<IndiceElement pageURL={$page.path} pageName={"La visione dell'uomo nel positivo"} date={'06/11/2021'} />
 
 </section>
 

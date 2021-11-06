@@ -28,8 +28,8 @@
 
 	<p>Materie:</p>
 
-	<IndiceElement pageURL={$page.path} pageName={"Storia"} date={'noDate'} />
-	<IndiceElement pageURL={$page.path} pageName={"Italiano"} date={'noDate'} />
+	<IndiceElement pageURL={$page.path} pageName={'Storia'} date={'noDate'} />
+	<IndiceElement pageURL={$page.path} pageName={'Italiano'} date={'noDate'} />
 </div>
 
 <style>

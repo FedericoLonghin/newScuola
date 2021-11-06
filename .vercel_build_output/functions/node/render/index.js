@@ -2896,9 +2896,9 @@ function init(settings) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-a87d1729.js",
+      file: "/./_app/start-25fb9d51.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-a87d1729.js", "/./_app/chunks/vendor-c12218c7.js"]
+      js: ["/./_app/start-25fb9d51.js", "/./_app/chunks/vendor-c12218c7.js"]
     },
     fetched: void 0,
     floc: false,
@@ -3033,7 +3033,7 @@ var module_lookup = {
     return About$1;
   })
 };
-var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-c838237e.js", "css": ["/./_app/assets/pages/__layout.svelte-75c30209.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/__layout.svelte-c838237e.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-48509c4a.js", "css": [], "js": ["/./_app/error.svelte-48509c4a.js", "/./_app/chunks/vendor-c12218c7.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-88faaaab.js", "css": ["/./_app/assets/pages/index.svelte-8196204d.css"], "js": ["/./_app/pages/index.svelte-88faaaab.js", "/./_app/chunks/vendor-c12218c7.js"], "styles": null}, "src/routes/scuola/a__layout.svelte": {"entry": "/./_app/pages/scuola/a__layout.svelte-3243c406.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/a__layout.svelte-3243c406.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-e56e4e47.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js"], "styles": null}, "src/routes/scuola/Italiano.svelte": {"entry": "/./_app/pages/scuola/Italiano.svelte-edd3c4f6.js", "css": ["/./_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Italiano.svelte-edd3c4f6.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-e56e4e47.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js"], "styles": null}, "src/routes/scuola/Storia/La-visione-dell-uomo-nel-positivo.md": {"entry": "/./_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-2a03321b.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-2a03321b.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-e56e4e47.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js"], "styles": null}, "src/routes/scuola/Storia/Prima-guerra-mondiale.md": {"entry": "/./_app/pages/scuola/Storia/Prima-guerra-mondiale.md-db9e0d58.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia/Prima-guerra-mondiale.md-db9e0d58.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-e56e4e47.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js"], "styles": null}, "src/routes/scuola/Storia/Il-Novecento.svelte": {"entry": "/./_app/pages/scuola/Storia/Il-Novecento.svelte-9b55b0a6.js", "css": ["/./_app/assets/pages/scuola/Storia/Il-Novecento.svelte-a7d5c656.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia/Il-Novecento.svelte-9b55b0a6.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-e56e4e47.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js"], "styles": null}, "src/routes/scuola/Storia.svelte": {"entry": "/./_app/pages/scuola/Storia.svelte-87bf2aad.js", "css": ["/./_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia.svelte-87bf2aad.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-5836847e.js", "/./_app/chunks/index-e56e4e47.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-baba1a7b.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/scuola.svelte-baba1a7b.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-84410af4.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/About.svelte-84410af4.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}};
+var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-8bbad35c.js", "css": ["/./_app/assets/pages/__layout.svelte-75c30209.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/__layout.svelte-8bbad35c.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-48509c4a.js", "css": [], "js": ["/./_app/error.svelte-48509c4a.js", "/./_app/chunks/vendor-c12218c7.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-88faaaab.js", "css": ["/./_app/assets/pages/index.svelte-8196204d.css"], "js": ["/./_app/pages/index.svelte-88faaaab.js", "/./_app/chunks/vendor-c12218c7.js"], "styles": null}, "src/routes/scuola/a__layout.svelte": {"entry": "/./_app/pages/scuola/a__layout.svelte-f061684e.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/a__layout.svelte-f061684e.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-94375af2.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, "src/routes/scuola/Italiano.svelte": {"entry": "/./_app/pages/scuola/Italiano.svelte-10a865a7.js", "css": ["/./_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Italiano.svelte-10a865a7.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-94375af2.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, "src/routes/scuola/Storia/La-visione-dell-uomo-nel-positivo.md": {"entry": "/./_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-577ad5f9.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-577ad5f9.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-94375af2.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, "src/routes/scuola/Storia/Prima-guerra-mondiale.md": {"entry": "/./_app/pages/scuola/Storia/Prima-guerra-mondiale.md-5b7fb307.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia/Prima-guerra-mondiale.md-5b7fb307.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-94375af2.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, "src/routes/scuola/Storia/Il-Novecento.svelte": {"entry": "/./_app/pages/scuola/Storia/Il-Novecento.svelte-83cc9d8c.js", "css": ["/./_app/assets/pages/scuola/Storia/Il-Novecento.svelte-a7d5c656.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia/Il-Novecento.svelte-83cc9d8c.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/index-94375af2.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, "src/routes/scuola/Storia.svelte": {"entry": "/./_app/pages/scuola/Storia.svelte-9999c523.js", "css": ["/./_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css", "/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css"], "js": ["/./_app/pages/scuola/Storia.svelte-9999c523.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/stores-52090410.js", "/./_app/chunks/index-4cc4db53.js", "/./_app/chunks/index-94375af2.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-664fe7f2.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/scuola.svelte-664fe7f2.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/env-a13806e5.js", "/./_app/chunks/index-4cc4db53.js", "/./_app/chunks/stores-52090410.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-84410af4.js", "css": ["/./_app/assets/pages/scuola.svelte-cb810066.css"], "js": ["/./_app/pages/About.svelte-84410af4.js", "/./_app/chunks/vendor-c12218c7.js", "/./_app/chunks/env-a13806e5.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -3302,20 +3302,21 @@ var IlNovecento = /* @__PURE__ */ Object.freeze({
 });
 var IndiceElement = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let {pageURL} = $$props;
-  let {pageName: pageName2} = $$props;
+  let {pageName: pageName2 = ""} = $$props;
   let {date} = $$props;
+  var fullURL = pageURL + "/" + pageName2.replace(" ", "-").replace("'", "-");
   if ($$props.pageURL === void 0 && $$bindings.pageURL && pageURL !== void 0)
     $$bindings.pageURL(pageURL);
   if ($$props.pageName === void 0 && $$bindings.pageName && pageName2 !== void 0)
     $$bindings.pageName(pageName2);
   if ($$props.date === void 0 && $$bindings.date && date !== void 0)
     $$bindings.date(date);
-  return `<div class="${"indice-elem inline"}"><div><a${add_attribute("href", pageURL, 0)}>- Il novecento</a></div>
+  return `<div class="${"indice-elem inline"}"><div><a${add_attribute("href", fullURL, 0)}>- ${escape2(pageName2)}</a></div>
 	${date !== "noDate" ? `<div class="${"indice-elem-data"}">${escape2(date)}</div>` : ``}</div>`;
 });
 var css$2 = {
   code: "section.svelte-1jlhe5t{display:flex;flex-direction:column;justify-content:center;align-items:center;flex:1}",
-  map: `{"version":3,"file":"Storia.svelte","sources":["Storia.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\nvar pageName;\\n</script>\\n\\n<script>\\n\\timport { page } from '$app/stores';\\n\\timport IndiceElement from '$lib/IndiceElement/index.svelte';\\n\\timport IndicePath from '$lib/IndicePath/index.svelte';\\n</script>\\n\\n<IndicePath />\\n\\n<svelte:head>\\n\\t<title>{pageName}</title>\\n</svelte:head>\\n\\n<section>\\n\\t<IndiceElement pageURL={$page.path} pageName={\\"Il-Novecento\\"} date={'06/11/2021'} />\\n\\t<IndiceElement pageURL={$page.path} pageName={\\"Prima-guerra-mondiale\\"} date={'06/11/2021'} />\\n\\t<IndiceElement pageURL={$page.path} pageName={\\"La-visione-dell'uomo-nel-positivo\\"} date={'06/11/2021'} />\\n\\n\\n\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - Il novecento</a>\\n\\t\\t</div>\\n\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Prima-guerra-mondiale\\"> - Prima guerra mondiale </a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n\\t<div class=\\"indice-elem inline\\">\\n\\t\\t<div>\\n\\t\\t\\t<a href=\\"/scuola/Storia/Il-Novecento\\"> - La visione dell'uomo nel positivismo</a>\\n\\t\\t</div>\\n\\t\\t<div class=\\"indice-elem-data\\">03/11/2021</div>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AA8NC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC"}`
+  map: `{"version":3,"file":"Storia.svelte","sources":["Storia.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\nvar pageName;\\n</script>\\n\\n<script>\\n\\timport { page } from '$app/stores';\\n\\timport IndiceElement from '$lib/IndiceElement/index.svelte';\\n\\timport IndicePath from '$lib/IndicePath/index.svelte';\\n</script>\\n\\n<IndicePath />\\n\\n<svelte:head>\\n\\t<title>{pageName}</title>\\n</svelte:head>\\n\\n<section>\\n\\t<IndiceElement pageURL={$page.path} pageName={\\"Il-Novecento\\"} date={'06/11/2021'} />\\n\\t<IndiceElement pageURL={$page.path} pageName={\\"Prima-guerra-mondiale\\"} date={'06/11/2021'} />\\n\\t<IndiceElement pageURL={$page.path} pageName={\\"La-visione-dell'uomo-nel-positivo\\"} date={'06/11/2021'} />\\n\\n</section>\\n\\n<style>\\n\\tsection {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: column;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tflex: 1;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAwBC,OAAO,eAAC,CAAC,AACR,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,MAAM,CACtB,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,IAAI,CAAE,CAAC,AACR,CAAC"}`
 };
 var prerender$2 = true;
 var pageName;
@@ -3344,80 +3345,6 @@ ${$$result.head += `${$$result.title = `<title>${escape2(pageName)}</title>`, ""
     date: "06/11/2021"
   }, {}, {})}
 
-
-
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- Il novecento</a></div>
-
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Prima-guerra-mondiale"}">- Prima guerra mondiale </a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
-	<div class="${"indice-elem inline"}"><div><a href="${"/scuola/Storia/Il-Novecento"}">- La visione dell&#39;uomo nel positivismo</a></div>
-		<div class="${"indice-elem-data"}">03/11/2021</div></div>
 </section>`;
 });
 var Storia$1 = /* @__PURE__ */ Object.freeze({
@@ -3428,13 +3355,16 @@ var Storia$1 = /* @__PURE__ */ Object.freeze({
 });
 var css$1 = {
   code: ".content.svelte-cf77e8{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}",
-  map: `{"version":3,"file":"scuola.svelte","sources":["scuola.svelte"],"sourcesContent":["<script context=\\"module\\">\\n\\timport { browser, dev } from '$app/env';\\n\\n\\t// we don't need any JS on this page, though we'll load\\n\\t// it in dev so that we get hot module replacement...\\n\\texport const hydrate = dev;\\n\\n\\t// ...but if the client-side router is already loaded\\n\\t// (i.e. we came here from elsewhere in the app), use it\\n\\texport const router = browser;\\n\\n\\t// since there's no dynamic data here, we can prerender\\n\\t// it so that it gets served as a static asset in prod\\n\\texport const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Scuola</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto nella sezione scuola</h1>\\n\\n\\t<p>Qui troverai tutti gli appunti divisi per materie etc...</p>\\n\\n\\t<p>Materie:</p>\\n\\n\\t<div class=\\"indice-elem inline inline-sm\\">\\n\\t\\t<div>\\n\\t\\t\\t<a sveltekit:prefetch href=\\"/scuola/Italiano\\">- Italiano</a>\\n\\t\\t</div>\\n\\t</div>\\n\\n\\t<div class=\\"indice-elem inline inline-sm\\">\\n\\t\\t<div>\\n\\t\\t\\t<a sveltekit:prefetch href=\\"/scuola/Storia\\">- Storia</a>\\n\\t\\t</div>\\n\\t</div>\\n</div>\\n\\n<style>\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAyCC,QAAQ,cAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC"}`
+  map: `{"version":3,"file":"scuola.svelte","sources":["scuola.svelte"],"sourcesContent":["<script context=\\"module\\">\\n\\timport { page } from '$app/stores';\\n\\timport IndiceElement from '$lib/IndiceElement/index.svelte';\\n\\n\\timport { browser, dev } from '$app/env';\\n\\n\\t// we don't need any JS on this page, though we'll load\\n\\t// it in dev so that we get hot module replacement...\\n\\texport const hydrate = dev;\\n\\n\\t// ...but if the client-side router is already loaded\\n\\t// (i.e. we came here from elsewhere in the app), use it\\n\\texport const router = browser;\\n\\n\\t// since there's no dynamic data here, we can prerender\\n\\t// it so that it gets served as a static asset in prod\\n\\texport const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Scuola</title>\\n</svelte:head>\\n\\n<div class=\\"content\\">\\n\\t<h1>Benvenuto nella sezione scuola</h1>\\n\\n\\t<p>Qui troverai tutti gli appunti divisi per materie etc...</p>\\n\\n\\t<p>Materie:</p>\\n\\n\\t<IndiceElement pageURL={$page.path} pageName={'Storia'} date={'noDate'} />\\n\\t<IndiceElement pageURL={$page.path} pageName={'Italiano'} date={'noDate'} />\\n</div>\\n\\n<style>\\n\\t.content {\\n\\t\\twidth: 100%;\\n\\t\\tmax-width: var(--column-width);\\n\\t\\tmargin: var(--column-margin-top) auto 0 auto;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAmCC,QAAQ,cAAC,CAAC,AACT,KAAK,CAAE,IAAI,CACX,SAAS,CAAE,IAAI,cAAc,CAAC,CAC9B,MAAM,CAAE,IAAI,mBAAmB,CAAC,CAAC,IAAI,CAAC,CAAC,CAAC,IAAI,AAC7C,CAAC"}`
 };
 var hydrate$1 = dev;
 var router$1 = browser;
 var prerender$1 = true;
 var Scuola = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $page, $$unsubscribe_page;
+  $$unsubscribe_page = subscribe(page, (value) => $page = value);
   $$result.css.add(css$1);
+  $$unsubscribe_page();
   return `${$$result.head += `${$$result.title = `<title>Scuola</title>`, ""}`, ""}
 
 <div class="${"content svelte-cf77e8"}"><h1>Benvenuto nella sezione scuola</h1>
@@ -3443,9 +3373,16 @@ var Scuola = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 	<p>Materie:</p>
 
-	<div class="${"indice-elem inline inline-sm"}"><div><a sveltekit:prefetch href="${"/scuola/Italiano"}">- Italiano</a></div></div>
-
-	<div class="${"indice-elem inline inline-sm"}"><div><a sveltekit:prefetch href="${"/scuola/Storia"}">- Storia</a></div></div>
+	${validate_component(IndiceElement, "IndiceElement").$$render($$result, {
+    pageURL: $page.path,
+    pageName: "Storia",
+    date: "noDate"
+  }, {}, {})}
+	${validate_component(IndiceElement, "IndiceElement").$$render($$result, {
+    pageURL: $page.path,
+    pageName: "Italiano",
+    date: "noDate"
+  }, {}, {})}
 </div>`;
 });
 var scuola = /* @__PURE__ */ Object.freeze({
