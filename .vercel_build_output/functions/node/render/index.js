@@ -2920,7 +2920,7 @@ function init(settings) {
 }
 var empty = () => ({});
 var manifest = {
-  assets: [{"file": "favicon.png", "size": 3624, "type": "image/png"}, {"file": "manifest.webmanifest", "size": 885, "type": "application/manifest+json"}, {"file": "pencil-512x512.png", "size": 3624, "type": "image/png"}, {"file": "robots.txt", "size": 70, "type": "text/plain"}],
+  assets: [{"file": "favicon.png", "size": 3624, "type": "image/png"}, {"file": "manifest.webmanifest", "size": 351, "type": "application/manifest+json"}, {"file": "pencil-512x512.png", "size": 3624, "type": "image/png"}, {"file": "robots.txt", "size": 70, "type": "text/plain"}],
   layout: "src/routes/__layout.svelte",
   error: ".svelte-kit/build/components/error.svelte",
   routes: [
