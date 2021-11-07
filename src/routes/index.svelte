@@ -6,7 +6,7 @@
 	<title>Home</title>
 </svelte:head>
 
-<div class="content">
+<section>
 	<h1>Benvenuto nel nuovino sitino</h1>
 
 	<h2>Chissà se funziona... bah</h2>
@@ -16,14 +16,9 @@
 		realtà(si, di nuovo) dico che non è che non ho voglia di farlo, ma non me ne accorgo/non so
 		farlo... umiltà ragazzi... sempre))
 	</h2>
-</div>
+</section>
 
 <style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
 	h1 {
 		width: 100%;
 	}

@@ -1,1 +1,8 @@
-.content.svelte-13qm1wo{width:100%;max-width:var(--column-width);margin:var(--column-margin-top) auto 0 auto}h1.svelte-13qm1wo{width:100%}
+.content.svelte-13qm1wo {
+	width: 100%;
+	max-width: var(--column-width);
+	margin: var(--column-margin-top) auto 0 auto;
+}
+h1.svelte-13qm1wo {
+	width: 100%;
+}

@@ -132,3 +132,17 @@ button:focus:not(:focus-visible) {
 .hidden {
 	visibility: hidden;
 }
+.content {
+	width: 100%;
+	max-width: var(--column-width);
+	margin: var(--column-margin-top) auto 0 auto;
+}
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	flex: 1;
+
+	max-width: var(--column-width);
+	margin: var(--column-margin-top) auto 0 auto;
+}

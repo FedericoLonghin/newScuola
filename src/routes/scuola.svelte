@@ -20,22 +20,18 @@
 <svelte:head>
 	<title>Scuola</title>
 </svelte:head>
+<section>
 
-<div class="content">
 	<h1>Benvenuto nella sezione scuola</h1>
-
+	
 	<p>Qui troverai tutti gli appunti divisi per materie etc...</p>
-
+	
 	<p>Materie:</p>
-
+	
 	<IndiceElement pageURL={$page.path} pageName={'Storia'} date={'noDate'} />
 	<IndiceElement pageURL={$page.path} pageName={'Italiano'} date={'noDate'} />
-</div>
+</section>
+
 
 <style>
-	.content {
-		width: 100%;
-		max-width: var(--column-width);
-		margin: var(--column-margin-top) auto 0 auto;
-	}
 </style>

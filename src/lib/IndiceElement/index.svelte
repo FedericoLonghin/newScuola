@@ -2,10 +2,8 @@
 	export var pageURL;
 	export var pageName = '';
 	export var date;
-	var fullURL = (pageURL +'/'+  pageName).replace(/ /g,"-").replace(/'/g,"-");
+	var fullURL = (pageURL + '/' + pageName).replace(/ /g, '-').replace(/'/g, '-');
 	console.log(fullURL);
-
-
 </script>
 
 <div class="indice-elem inline">
