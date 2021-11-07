@@ -25,8 +25,8 @@
 		display: flex;
 	}
 	.inline > div {
-		margin-block-start: 0.83em;
-		margin-block-end: 0.83em;
+		margin-block-start: 0.43em;
+		margin-block-end: 0.43em;
 	}
 	#title-box {
 		font-size: 1.6rem !important;

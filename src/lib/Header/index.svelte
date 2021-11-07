@@ -22,7 +22,7 @@
 	<div class="corner" />
 
 </header>
-
+<div style="height: 3em; wight:auto;"></div>
 <style>
 
 	header {
