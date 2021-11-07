@@ -1,0 +1,15 @@
+{
+	"pagesSummary": [
+		{
+			"name": "Storia",
+			"date": "noDate",
+			"url": "scuola/Storia",
+			"slaves": [
+				{ "name": "Il novecento", "date": "07/11/2021", "url": "/scuola/Storia/Il-Novecento" },
+				{ "name": "Prima guerra mondiale", "date": "07/11/2021", "url": "/scuola/Storia/Prima-guerra-mondiale"},
+				{ "name": "La visione dell'uomo nel positivismo", "date": "07/11/2021", "url": "/scuola/Storia/La-visione-dell-uomo-nel-positivo"}
+			]
+		},
+		{ "name": "Italiano", "url": "scuola/Italiano", "date": "noDate" }
+	]
+}

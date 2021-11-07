@@ -5,50 +5,42 @@
 		<link rel="icon" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<title>Home</title>
-		<link rel="manifest" href="/manifest.webmanifest" data-svelte="svelte-1r84mds" />
-		<meta
-			name="description"
-			content="questo è il nuovo sitoTest di Federico Longhin"
-			data-svelte="svelte-1r84mds"
-		/>
-		<meta name="apple-mobile-web-app-capable" content="yes" data-svelte="svelte-1r84mds" />
-		<link rel="apple-touch-icon" href="/pencil-512x512.png" data-svelte="svelte-1r84mds" />
-		<meta name="msapplication-TileColor" content="#48e5c2" data-svelte="svelte-1r84mds" />
-		<meta name="theme-color" content="#333333" data-svelte="svelte-1r84mds" />
+		<title>Home</title><link rel="manifest" href="/manifest.webmanifest" data-svelte="svelte-1r84mds"><meta name="description" content="questo è il nuovo sitoTest di Federico Longhin" data-svelte="svelte-1r84mds"><meta name="apple-mobile-web-app-capable" content="yes" data-svelte="svelte-1r84mds"><link rel="apple-touch-icon" href="/pencil-512x512.png" data-svelte="svelte-1r84mds"><meta name="msapplication-TileColor" content="#48e5c2" data-svelte="svelte-1r84mds"><meta name="theme-color" content="#333333" data-svelte="svelte-1r84mds">
 
-		<link rel="modulepreload" href="/./_app/start-25fb9d51.js" />
-		<link rel="modulepreload" href="/./_app/chunks/vendor-c12218c7.js" />
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-8bbad35c.js" />
-		<link rel="modulepreload" href="/./_app/chunks/stores-52090410.js" />
-		<link rel="modulepreload" href="/./_app/pages/scuola/Italiano.svelte-10a865a7.js" />
-		<link rel="modulepreload" href="/./_app/chunks/index-94375af2.js" />
-		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css" />
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-75c30209.css" />
-		<link rel="stylesheet" href="/./_app/assets/index.svelte_svelte&type=style&lang-87aef973.css" />
-		<link rel="stylesheet" href="/./_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css" />
+		
+
+		<link rel="modulepreload" href="/./_app/start-dfcac49f.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-7a4d6a7b.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-8640813e.js">
+		<link rel="modulepreload" href="/./_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js">
+		<link rel="modulepreload" href="/./_app/pages/scuola/Italiano.svelte-2d39b364.js">
+		<link rel="modulepreload" href="/./_app/chunks/index-b96ef414.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-711810b1.css">
+		<link rel="stylesheet" href="/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css">
 
 		<script type="module">
-			import { start } from '/./_app/start-25fb9d51.js';
+			import { start } from "/./_app/start-dfcac49f.js";
 			start({
-				target: document.querySelector('#svelte'),
-				paths: { base: '', assets: '/.' },
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
 				session: {},
 				host: location.host,
 				route: true,
 				spa: false,
-				trailing_slash: 'never',
+				trailing_slash: "never",
 				hydrate: {
 					status: 200,
 					error: null,
 					nodes: [
-						import('/./_app/pages/__layout.svelte-8bbad35c.js'),
-						import('/./_app/pages/scuola/Italiano.svelte-10a865a7.js')
+						import("/./_app/pages/__layout.svelte-8640813e.js"),
+						import("/./_app/pages/scuola/Italiano.svelte-2d39b364.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
-						path: '/scuola/Italiano',
-						query: new URLSearchParams(''),
+						path: "/scuola/Italiano",
+						query: new URLSearchParams(""),
 						params: {}
 					}
 				}
@@ -57,46 +49,34 @@
 	</head>
 	<body>
 		<div id="svelte">
-			<header class="svelte-1vytpj">
-				<div class="corner svelte-1vytpj"></div>
 
-				<nav class="svelte-1vytpj">
-					<svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1vytpj">
-						<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="svelte-1vytpj"></path>
-					</svg>
-					<ul class="svelte-1vytpj">
-						<li class="svelte-1vytpj">
-							<a sveltekit:prefetch href="/" class="svelte-1vytpj">Home</a>
-						</li>
-						<li class="svelte-1vytpj active">
-							<a sveltekit:prefetch href="/scuola" class="svelte-1vytpj">Scuola</a>
-						</li>
-						<li class="svelte-1vytpj">
-							<a sveltekit:prefetch href="/About" class="svelte-1vytpj">About</a>
-						</li>
-					</ul>
-					<svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-1vytpj">
-						<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="svelte-1vytpj"></path>
-					</svg>
-				</nav>
 
-				<div class="corner svelte-1vytpj"></div>
-			</header>
-			<main class="svelte-193j25t">
-				<div id="title-box" class="inline svelte-2oaaq3">
-					<div class="svelte-2oaaq3"><a href="/scuola/Italiano">Italiano</a></div>
-					<div style="margin-left: 10px; color: var(--heading-color)" class="svelte-2oaaq3 hidden">
-						/undefined
-					</div>
-				</div>
 
-				<section class="svelte-1jlhe5t">
-					<!-- HTML_TAG_START --><em>this</em> is very very is <strong>easy</strong> to
-					`<code>use</code>`.<!-- HTML_TAG_END -->
-				</section>
-			</main>
 
-			<footer class="svelte-193j25t"><p>Federico Longhin - 2021</p></footer>
-		</div>
+<header class="svelte-19l1me1"><div class="corner svelte-19l1me1"></div>
+	<nav class="svelte-19l1me1"><svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-19l1me1"><path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" class="svelte-19l1me1"></path></svg>
+<ul class="svelte-19l1me1"><li class="svelte-19l1me1"><a sveltekit:prefetch href="/" class="svelte-19l1me1">Home</a></li>
+	<li class="svelte-19l1me1 active"><a sveltekit:prefetch href="/scuola" class="svelte-19l1me1">Scuola</a></li>
+	<li class="svelte-19l1me1"><a sveltekit:prefetch href="/About" class="svelte-19l1me1">About</a></li></ul>
+<svg viewBox="0 0 2 3" aria-hidden="true" class="svelte-19l1me1"><path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" class="svelte-19l1me1"></path></svg></nav>
+	<div class="corner svelte-19l1me1"></div></header>
+<div style="height: 3em; wight:auto;"></div>
+<main class="svelte-193j25t"><div id="title-box" class="inline svelte-lu9gcz"><div class="svelte-lu9gcz"><a href="/scuola/Italiano">Italiano</a></div>
+	<div style="margin-left:10px; color: var(--heading-color); " class="svelte-lu9gcz hidden">/undefined</div>
+</div>
+
+
+
+<section class="svelte-1jlhe5t"><!-- HTML_TAG_START --><em>this</em> is very very is <strong>easy</strong> to `<code>use</code>`.<!-- HTML_TAG_END -->
+</section></main>
+
+<footer class="svelte-193j25t"><p>Federico Longhin - 2021</p></footer>
+
+
+
+
+
+	
+</div>
 	</body>
 </html>

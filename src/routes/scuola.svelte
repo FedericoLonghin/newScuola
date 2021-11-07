@@ -1,9 +1,5 @@
 <script context="module">
-	import { page } from '$app/stores';
-	import IndiceElement from '$lib/IndiceElement/index.svelte';
-
 	import { browser, dev } from '$app/env';
-
 	// we don't need any JS on this page, though we'll load
 	// it in dev so that we get hot module replacement...
 	export const hydrate = dev;
@@ -17,21 +13,24 @@
 	export const prerender = true;
 </script>
 
+<script>
+	import RaccoltaIndiceElement from '$lib/RaccoltaIndiceElement/index.svelte';
+	import * as json from './jason.json';
+</script>
+
 <svelte:head>
 	<title>Scuola</title>
 </svelte:head>
+
 <section>
-
 	<h1>Benvenuto nella sezione scuola</h1>
-	
-	<p>Qui troverai tutti gli appunti divisi per materie etc...</p>
-	
-	<p>Materie:</p>
-	
-	<IndiceElement pageURL={$page.path} pageName={'Storia'} date={'noDate'} />
-	<IndiceElement pageURL={$page.path} pageName={'Italiano'} date={'noDate'} />
-</section>
 
+	<p>Qui troverai tutti gli appunti divisi per materie etc...</p>
+
+	<p>Materie:</p>
+
+	<RaccoltaIndiceElement json={json.pagesSummary} />
+</section>
 
 <style>
 </style>

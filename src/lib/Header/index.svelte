@@ -20,32 +20,28 @@
 		</svg>
 	</nav>
 	<div class="corner" />
-
 </header>
-<div style="height: 3em; wight:auto;"></div>
-<style>
+<div style="height: 3em; wight:auto;" />
 
+<style>
 	header {
 		display: flex;
 		justify-content: space-between;
 		position: fixed;
 		width: 100%;
-		background-color:rgba(51,51,51,.8);
+		background-color: rgba(51, 51, 51, 0.8);
 		z-index: 100;
-
 	}
 
 	.corner {
 		width: auto;
 		height: 3em;
-
 	}
 
 	nav {
 		display: flex;
 		justify-content: center;
 		--background: #5e5e5e;
-	
 	}
 
 	svg {
