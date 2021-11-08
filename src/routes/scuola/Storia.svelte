@@ -4,7 +4,6 @@
 </script>
 
 <script>
-	import IndiceElement from '$lib/IndiceElement/index.svelte';
 	import IndicePath from '$lib/IndicePath/index.svelte';
 
 	import RaccoltaIndiceElement from '$lib/RaccoltaIndiceElement/index.svelte';
@@ -12,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Scuola</title>
+	<title>Storia</title>
 </svelte:head>
 
 <IndicePath />
@@ -21,5 +20,3 @@
 	<RaccoltaIndiceElement json={json.pagesSummary[0].slaves} />
 </section>
 
-<style>
-</style>

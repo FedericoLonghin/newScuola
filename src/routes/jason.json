@@ -5,19 +5,45 @@
 			"date": "noDate",
 			"url": "scuola/Storia",
 			"slaves": [
-				{ "name": "Il novecento", "date": "07/11/2021", "url": "/scuola/Storia/Il-Novecento" },
+				{ "name": "Il novecento", "date": "20/10/2021", "url": "/scuola/Storia/Il-Novecento" },
 				{
-					"name": "Prima guerra mondiale",
-					"date": "07/11/2021",
-					"url": "/scuola/Storia/Prima-guerra-mondiale"
+					"name": "L'età di Giolitti",
+					"date": "20/10/2021",
+					"url": "/scuola/Storia/L-età-di-Giolitti"
 				},
 				{
-					"name": "La visione dell'uomo nel positivismo",
-					"date": "07/11/2021",
-					"url": "/scuola/Storia/La-visione-dell-uomo-nel-positivo"
+					"name": "Venti di guerra",
+					"date": "27/10/2021",
+					"url": "/scuola/Storia/Venti-di-guerra"
 				}
 			]
 		},
-		{ "name": "Italiano", "url": "scuola/Italiano", "date": "noDate" }
+		{ "name": "Italiano", "url": "scuola/Italiano", "date": "noDate", "slaves": [
+			{
+				"name": "Età del realismo e del positivismo",
+				"date": "23/10/2021",
+				"url": "/scuola/Italiano/Età-del-realismo-e-del-positivismo"
+			},{
+				"name": "La visone dell'uomo nel positivismo",
+				"date": "23/10/2021",
+				"url": "/scuola/Italiano/La-visione-dell-uomo-nel-positivismo"
+			},{
+				"name": "Il naturalismo",
+				"date": "23/10/2021",
+				"url": "/scuola/Italiano/Il-naturalismo"
+			},{
+				"name": "Il verismo",
+				"date": "23/10/2021",
+				"url": "/scuola/Italiano/Il-verismo"
+			},{
+				"name": "L'evoluzione del romanzo",
+				"date": "23/10/2021",
+				"url": "/scuola/Italiano/L-evoluzione-del-romanzo"
+			},{
+				"name": "Giovanni Verga",
+				"date": "26/10/2021",
+				"url": "/scuola/Italiano/Giovanni-Verga"
+			}
+		]}
 	]
 }
