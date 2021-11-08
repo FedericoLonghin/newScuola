@@ -34,14 +34,14 @@ const u = {
 	p = (e) => [u.prefix, e, u.suffix].filter((e) => e && e.length > 0).join('-'),
 	d = (e) => e || p(u.precache),
 	f = (e) => e || p(u.runtime);
-function g(e, t) {
+function y(e, t) {
 	const s = t();
 	return e.waitUntil(s), s;
 }
 try {
 	self['workbox:precaching:6.1.5'] && _();
 } catch (F) {}
-function y(e) {
+function g(e) {
 	if (!e) throw new l('add-to-cache-list-unexpected-type', { entry: e });
 	if ('string' == typeof e) {
 		const t = new URL(e, location.href);
@@ -226,13 +226,13 @@ class q {
 				: null;
 		try {
 			await p.put(n, d ? i.clone() : i);
-		} catch (g) {
+		} catch (y) {
 			throw (
-				('QuotaExceededError' === g.name &&
+				('QuotaExceededError' === y.name &&
 					(await (async function () {
 						for (const e of U) await e();
 					})()),
-				g)
+				y)
 			);
 		}
 		for (const c of this.iterateCallbacks('cacheDidUpdate'))
@@ -422,7 +422,7 @@ class T {
 		const t = [];
 		for (const s of e) {
 			'string' == typeof s ? t.push(s) : s && void 0 === s.revision && t.push(s.url);
-			const { cacheKey: e, url: a } = y(s),
+			const { cacheKey: e, url: a } = g(s),
 				n = 'string' != typeof s && s.revision ? 'reload' : 'default';
 			if (this._urlsToCacheKeys.has(a) && this._urlsToCacheKeys.get(a) !== e)
 				throw new l('add-to-cache-list-conflicting-entries', {
@@ -446,7 +446,7 @@ class T {
 		}
 	}
 	install(e) {
-		return g(e, async () => {
+		return y(e, async () => {
 			const t = new w();
 			this.strategy.plugins.push(t);
 			for (const [n, r] of this._urlsToCacheKeys) {
@@ -462,7 +462,7 @@ class T {
 		});
 	}
 	activate(e) {
-		return g(e, async () => {
+		return y(e, async () => {
 			const e = await self.caches.open(this.strategy.cacheName),
 				t = await e.keys(),
 				s = new Set(this._urlsToCacheKeys.values()),
@@ -695,32 +695,31 @@ self.addEventListener('message', (e) => {
 }),
 	I([
 		...[
-			'/_app/start-a59768fc.js',
+			'/_app/start-3d101064.js',
 			'/_app/assets/start-a8cd1609.css',
-			'/_app/pages/__layout.svelte-8640813e.js',
-			'/_app/assets/pages/__layout.svelte-711810b1.css',
-			'/_app/error.svelte-fe63080b.js',
-			'/_app/pages/index.svelte-2f5eed9e.js',
+			'/_app/pages/__layout.svelte-36436b01.js',
+			'/_app/assets/pages/__layout.svelte-5cbc905f.css',
+			'/_app/error.svelte-5f0d0a54.js',
+			'/_app/pages/index.svelte-c42c151f.js',
 			'/_app/assets/pages/index.svelte-b170537a.css',
-			'/_app/pages/scuola/Italiano.svelte-2d39b364.js',
-			'/_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css',
-			'/_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-45f78fc2.js',
-			'/_app/pages/scuola/Storia/Prima-guerra-mondiale.md-bf97ee91.js',
-			'/_app/pages/scuola/Storia/Il-Novecento.svelte-228c6ec3.js',
+			'/_app/pages/scuola/Italiano.svelte-c5f353a3.js',
+			'/_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-779945dd.js',
+			'/_app/pages/scuola/Storia/Prima-guerra-mondiale.svelte-0d508517.js',
+			'/_app/pages/scuola/Storia/Il-Novecento.svelte-7c73f1e6.js',
 			'/_app/assets/pages/scuola/Storia/Il-Novecento.svelte-a7d5c656.css',
-			'/_app/pages/scuola/Storia.svelte-2bf6ea6c.js',
-			'/_app/pages/scuola.svelte-15b7d449.js',
-			'/_app/pages/About.svelte-03ee42ae.js',
+			'/_app/pages/scuola/Storia.svelte-88c4fd62.js',
+			'/_app/pages/scuola.svelte-7ae686fa.js',
+			'/_app/pages/About.svelte-9a56df15.js',
 			'/_app/assets/pages/About.svelte-9b1330ce.css',
-			'/_app/chunks/vendor-7a4d6a7b.js',
-			'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+			'/_app/chunks/vendor-df74d1be.js',
+			'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 			'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css',
-			'/_app/chunks/index-b96ef414.js',
-			'/_app/chunks/jason-aafa386e.js'
+			'/_app/chunks/index-a03e767c.js',
+			'/_app/chunks/jason-f2a0d3d0.js'
 		].map((e) => ({ url: e, revision: null })),
 		...['/favicon.png', '/manifest.webmanifest', '/pencil-512x512.png', '/robots.txt'].map((e) => ({
 			url: e,
-			revision: '1636379983330'
+			revision: '1636388053335'
 		}))
 	]),
 	(function (e) {
@@ -728,7 +727,7 @@ self.addEventListener('message', (e) => {
 		S(new E(t, e));
 	})(H);
 const D = ['/', '/scuola'];
-I(D.map((e) => ({ url: e, revision: '1636379983330' })));
+I(D.map((e) => ({ url: e, revision: '1636388053335' })));
 S(
 	({ url: e, request: t, event: s }) => D.some((t) => e.pathname === t),
 	new (class extends k {

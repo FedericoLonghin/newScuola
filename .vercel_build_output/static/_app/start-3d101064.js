@@ -42,7 +42,7 @@ import {
 	A as T,
 	B as U,
 	C as D
-} from './chunks/vendor-7a4d6a7b.js';
+} from './chunks/vendor-df74d1be.js';
 function V(t) {
 	let e, r, s;
 	const o = [t[2] || {}];
@@ -394,78 +394,77 @@ const J = {},
 	},
 	F = [
 		() =>
-			X(() => import('./pages/__layout.svelte-8640813e.js'), [
-				'/_app/pages/__layout.svelte-8640813e.js',
-				'/_app/assets/pages/__layout.svelte-711810b1.css',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+			X(() => import('./pages/__layout.svelte-36436b01.js'), [
+				'/_app/pages/__layout.svelte-36436b01.js',
+				'/_app/assets/pages/__layout.svelte-5cbc905f.css',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 				'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css'
 			]),
 		() =>
-			X(() => import('./error.svelte-fe63080b.js'), [
-				'/_app/error.svelte-fe63080b.js',
-				'/_app/chunks/vendor-7a4d6a7b.js'
+			X(() => import('./error.svelte-5f0d0a54.js'), [
+				'/_app/error.svelte-5f0d0a54.js',
+				'/_app/chunks/vendor-df74d1be.js'
 			]),
 		() =>
-			X(() => import('./pages/index.svelte-2f5eed9e.js'), [
-				'/_app/pages/index.svelte-2f5eed9e.js',
+			X(() => import('./pages/index.svelte-c42c151f.js'), [
+				'/_app/pages/index.svelte-c42c151f.js',
 				'/_app/assets/pages/index.svelte-b170537a.css',
-				'/_app/chunks/vendor-7a4d6a7b.js'
+				'/_app/chunks/vendor-df74d1be.js'
 			]),
 		() =>
-			X(() => import('./pages/scuola/Italiano.svelte-2d39b364.js'), [
-				'/_app/pages/scuola/Italiano.svelte-2d39b364.js',
-				'/_app/assets/pages/scuola/Italiano.svelte-bcdbeabc.css',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/index-b96ef414.js',
-				'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+			X(() => import('./pages/scuola/Italiano.svelte-c5f353a3.js'), [
+				'/_app/pages/scuola/Italiano.svelte-c5f353a3.js',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/index-a03e767c.js',
+				'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 				'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css'
 			]),
 		() =>
-			X(() => import('./pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-45f78fc2.js'), [
-				'/_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-45f78fc2.js',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/index-b96ef414.js',
-				'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+			X(() => import('./pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-779945dd.js'), [
+				'/_app/pages/scuola/Storia/La-visione-dell-uomo-nel-positivo.md-779945dd.js',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/index-a03e767c.js',
+				'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 				'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css'
 			]),
 		() =>
-			X(() => import('./pages/scuola/Storia/Prima-guerra-mondiale.md-bf97ee91.js'), [
-				'/_app/pages/scuola/Storia/Prima-guerra-mondiale.md-bf97ee91.js',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/index-b96ef414.js',
-				'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+			X(() => import('./pages/scuola/Storia/Prima-guerra-mondiale.svelte-0d508517.js'), [
+				'/_app/pages/scuola/Storia/Prima-guerra-mondiale.svelte-0d508517.js',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/index-a03e767c.js',
+				'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 				'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css'
 			]),
 		() =>
-			X(() => import('./pages/scuola/Storia/Il-Novecento.svelte-228c6ec3.js'), [
-				'/_app/pages/scuola/Storia/Il-Novecento.svelte-228c6ec3.js',
+			X(() => import('./pages/scuola/Storia/Il-Novecento.svelte-7c73f1e6.js'), [
+				'/_app/pages/scuola/Storia/Il-Novecento.svelte-7c73f1e6.js',
 				'/_app/assets/pages/scuola/Storia/Il-Novecento.svelte-a7d5c656.css',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/index-b96ef414.js',
-				'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/index-a03e767c.js',
+				'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 				'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css'
 			]),
 		() =>
-			X(() => import('./pages/scuola/Storia.svelte-2bf6ea6c.js'), [
-				'/_app/pages/scuola/Storia.svelte-2bf6ea6c.js',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/index-b96ef414.js',
-				'/_app/chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js',
+			X(() => import('./pages/scuola/Storia.svelte-88c4fd62.js'), [
+				'/_app/pages/scuola/Storia.svelte-88c4fd62.js',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/index-a03e767c.js',
+				'/_app/chunks/index.svelte_svelte&type=style&lang-e0661adb.js',
 				'/_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css',
-				'/_app/chunks/jason-aafa386e.js'
+				'/_app/chunks/jason-f2a0d3d0.js'
 			]),
 		() =>
-			X(() => import('./pages/scuola.svelte-15b7d449.js'), [
-				'/_app/pages/scuola.svelte-15b7d449.js',
-				'/_app/chunks/vendor-7a4d6a7b.js',
-				'/_app/chunks/jason-aafa386e.js'
+			X(() => import('./pages/scuola.svelte-7ae686fa.js'), [
+				'/_app/pages/scuola.svelte-7ae686fa.js',
+				'/_app/chunks/vendor-df74d1be.js',
+				'/_app/chunks/jason-f2a0d3d0.js'
 			]),
 		() =>
-			X(() => import('./pages/About.svelte-03ee42ae.js'), [
-				'/_app/pages/About.svelte-03ee42ae.js',
+			X(() => import('./pages/About.svelte-9a56df15.js'), [
+				'/_app/pages/About.svelte-9a56df15.js',
 				'/_app/assets/pages/About.svelte-9b1330ce.css',
-				'/_app/chunks/vendor-7a4d6a7b.js'
+				'/_app/chunks/vendor-df74d1be.js'
 			])
 	],
 	H = [

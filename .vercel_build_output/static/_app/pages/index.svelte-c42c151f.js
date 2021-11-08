@@ -15,7 +15,7 @@ import {
 	f,
 	H as v,
 	I as m
-} from '../chunks/vendor-7a4d6a7b.js';
+} from '../chunks/vendor-df74d1be.js';
 function p(o) {
 	let n, a, p, z, g, q, E, b, H, x;
 	return {
@@ -30,7 +30,7 @@ function p(o) {
 				(b = s()),
 				(H = e('h2')),
 				(x = i(
-					'Ah, questo sito è ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\n\t\t(in realtà è solo una scusa per non poter giudicare le monnezze che non ho voglia di sistemare(in\n\t\trealtà(si, di nuovo) dico che non è che non ho voglia di farlo, ma non me ne accorgo/non so\n\t\tfarlo... umiltà ragazzi... sempre))'
+					'Ah, questo sito è ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\n\t\t(in realtà è solo una scusa per non poter giudicare le monnezze che non ho voglia di\n\t\tsistemare(in realtà(si, di nuovo) dico che non è che non ho voglia di farlo, ma non me ne\n\t\taccorgo/non so farlo... umiltà ragazzi... sempre))'
 				)),
 				this.h();
 		},
@@ -47,7 +47,7 @@ function p(o) {
 			var d = l(H);
 			(x = u(
 				d,
-				'Ah, questo sito è ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\n\t\t(in realtà è solo una scusa per non poter giudicare le monnezze che non ho voglia di sistemare(in\n\t\trealtà(si, di nuovo) dico che non è che non ho voglia di farlo, ma non me ne accorgo/non so\n\t\tfarlo... umiltà ragazzi... sempre))'
+				'Ah, questo sito è ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\n\t\t(in realtà è solo una scusa per non poter giudicare le monnezze che non ho voglia di\n\t\tsistemare(in realtà(si, di nuovo) dico che non è che non ho voglia di farlo, ma non me ne\n\t\taccorgo/non so farlo... umiltà ragazzi... sempre))'
 			)),
 				d.forEach(c),
 				s.forEach(c),

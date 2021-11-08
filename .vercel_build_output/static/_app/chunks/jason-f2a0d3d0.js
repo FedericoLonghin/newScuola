@@ -9,15 +9,15 @@ import {
 	a as r,
 	g as i,
 	d as c,
-	n as u,
-	b as d,
+	n as d,
+	b as u,
 	f as h,
 	H as m,
 	h as f,
 	l as v,
 	I as g,
 	V as p
-} from './vendor-7a4d6a7b.js';
+} from './vendor-df74d1be.js';
 function I(a, e, t) {
 	const l = a.slice();
 	return (l[1] = e[t]), l;
@@ -36,7 +36,7 @@ function D(a) {
 			(t = i(l, o)), l.forEach(c), this.h();
 		},
 		h() {
-			d(e, 'class', 'indice-elem-data');
+			u(e, 'class', 'indice-elem-data');
 		},
 		m(a, l) {
 			h(a, e, l), m(e, t);
@@ -83,21 +83,21 @@ function S(a) {
 				(p = i(o, E)),
 				o.forEach(c),
 				n.forEach(c),
-				(S = u(l)),
+				(S = d(l)),
 				V && V.l(l),
-				(j = u(l)),
+				(j = d(l)),
 				l.forEach(c),
 				this.h();
 		},
 		h() {
-			d(v, 'href', (I = a[1].url)), d(e, 'class', 'indice-elem inline');
+			u(v, 'href', (I = a[1].url)), u(e, 'class', 'indice-elem inline');
 		},
 		m(a, l) {
 			h(a, e, l), m(e, t), m(t, v), m(v, g), m(v, p), m(e, S), V && V.m(e, null), m(e, j);
 		},
 		p(a, t) {
 			1 & t && E !== (E = a[1].name + '') && f(p, E),
-				1 & t && I !== (I = a[1].url) && d(v, 'href', I),
+				1 & t && I !== (I = a[1].url) && u(v, 'href', I),
 				'noDate' !== a[1].date
 					? V
 						? V.p(a, t)

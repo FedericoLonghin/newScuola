@@ -12,17 +12,17 @@ import {
 	a as f,
 	g as i,
 	d as m,
-	b as v,
-	o as u,
-	f as d,
+	b as d,
+	o as v,
+	f as u,
 	H as g,
 	I as p,
 	v as $,
 	r as b,
 	w as x
-} from '../../../chunks/vendor-7a4d6a7b.js';
-import { I } from '../../../chunks/index-b96ef414.js';
-import '../../../chunks/index.svelte_svelte&type=style&lang-ca8b6e23.js';
+} from '../../../chunks/vendor-df74d1be.js';
+import { I } from '../../../chunks/index-a03e767c.js';
+import '../../../chunks/index.svelte_svelte&type=style&lang-e0661adb.js';
 function j(s) {
 	let a, e, j, k, w, E, N;
 	return (
@@ -45,10 +45,10 @@ function j(s) {
 				(E = i(n, 'Il Novecento')), n.forEach(m), t.forEach(m), this.h();
 			},
 			h() {
-				v(w, 'class', 'svelte-1bgohwt'), v(k, 'class', 'svelte-1bgohwt');
+				d(w, 'class', 'svelte-1bgohwt'), d(k, 'class', 'svelte-1bgohwt');
 			},
 			m(s, t) {
-				u(a, s, t), d(s, e, t), d(s, j, t), d(s, k, t), g(k, w), g(w, E), (N = !0);
+				v(a, s, t), u(s, e, t), u(s, j, t), u(s, k, t), g(k, w), g(w, E), (N = !0);
 			},
 			p: p,
 			i(s) {

@@ -8,17 +8,17 @@ import {
 	c,
 	a as i,
 	g as o,
-	d as n,
-	n as v,
-	b as d,
+	d,
+	n,
+	b as v,
 	G as h,
 	F as f,
 	f as p,
 	H as u,
 	I as g,
 	J as m
-} from './vendor-7a4d6a7b.js';
-import { p as x } from './index.svelte_svelte&type=style&lang-ca8b6e23.js';
+} from './vendor-df74d1be.js';
+import { p as x } from './index.svelte_svelte&type=style&lang-e0661adb.js';
 function I(s) {
 	let a, e, m, x, I, b, E, y;
 	return {
@@ -39,24 +39,24 @@ function I(s) {
 			e = c(l, 'DIV', { class: !0 });
 			var r = i(e);
 			m = c(r, 'A', { href: !0 });
-			var d = i(m);
-			(x = o(d, s[0])),
-				d.forEach(n),
-				r.forEach(n),
-				(I = v(l)),
+			var v = i(m);
+			(x = o(v, s[0])),
+				v.forEach(d),
+				r.forEach(d),
+				(I = n(l)),
 				(b = c(l, 'DIV', { style: !0, class: !0 }));
 			var h = i(b);
-			(E = o(h, '/')), (y = o(h, s[1])), h.forEach(n), l.forEach(n), this.h();
+			(E = o(h, '/')), (y = o(h, s[1])), h.forEach(d), l.forEach(d), this.h();
 		},
 		h() {
-			d(m, 'href', '/scuola/' + s[0]),
-				d(e, 'class', 'svelte-lu9gcz'),
+			v(m, 'href', '/scuola/' + s[0]),
+				v(e, 'class', 'svelte-lu9gcz'),
 				h(b, 'margin-left', '10px'),
 				h(b, 'color', 'var(--heading-color)'),
-				d(b, 'class', 'svelte-lu9gcz'),
+				v(b, 'class', 'svelte-lu9gcz'),
 				f(b, 'hidden', void 0 === s[1]),
-				d(a, 'id', 'title-box'),
-				d(a, 'class', 'inline svelte-lu9gcz');
+				v(a, 'id', 'title-box'),
+				v(a, 'class', 'inline svelte-lu9gcz');
 		},
 		m(s, t) {
 			p(s, a, t), u(a, e), u(e, m), u(m, x), u(a, I), u(a, b), u(b, E), u(b, y);
@@ -65,7 +65,7 @@ function I(s) {
 		i: g,
 		o: g,
 		d(s) {
-			s && n(a);
+			s && d(a);
 		}
 	};
 }

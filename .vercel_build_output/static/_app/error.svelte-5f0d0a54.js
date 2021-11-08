@@ -9,31 +9,31 @@ import {
 	g as c,
 	d as u,
 	f as p,
-	H as l,
-	h as d,
-	k as f,
+	H as d,
+	h as f,
+	k as l,
 	l as i,
 	n as m,
 	I as h
-} from './chunks/vendor-7a4d6a7b.js';
+} from './chunks/vendor-df74d1be.js';
 function k(s) {
 	let r,
 		a,
-		f = s[1].stack + '';
+		l = s[1].stack + '';
 	return {
 		c() {
-			(r = t('pre')), (a = e(f));
+			(r = t('pre')), (a = e(l));
 		},
 		l(s) {
 			r = o(s, 'PRE', {});
 			var t = n(r);
-			(a = c(t, f)), t.forEach(u);
+			(a = c(t, l)), t.forEach(u);
 		},
 		m(s, t) {
-			p(s, r, t), l(r, a);
+			p(s, r, t), d(r, a);
 		},
 		p(s, r) {
-			2 & r && f !== (f = s[1].stack + '') && d(a, f);
+			2 & r && l !== (l = s[1].stack + '') && f(a, l);
 		},
 		d(s) {
 			s && u(r);
@@ -54,10 +54,10 @@ function v(s) {
 		c() {
 			(r = t('h1')),
 				(a = e(s[0])),
-				(v = f()),
+				(v = l()),
 				(E = t('p')),
 				(g = e(P)),
-				(x = f()),
+				(x = l()),
 				$ && $.c(),
 				(H = i());
 		},
@@ -69,11 +69,11 @@ function v(s) {
 			(g = c(p, P)), p.forEach(u), (x = m(t)), $ && $.l(t), (H = i());
 		},
 		m(s, t) {
-			p(s, r, t), l(r, a), p(s, v, t), p(s, E, t), l(E, g), p(s, x, t), $ && $.m(s, t), p(s, H, t);
+			p(s, r, t), d(r, a), p(s, v, t), p(s, E, t), d(E, g), p(s, x, t), $ && $.m(s, t), p(s, H, t);
 		},
 		p(s, [r]) {
-			1 & r && d(a, s[0]),
-				2 & r && P !== (P = s[1].message + '') && d(g, P),
+			1 & r && f(a, s[0]),
+				2 & r && P !== (P = s[1].message + '') && f(g, P),
 				s[1].stack
 					? $
 						? $.p(s, r)

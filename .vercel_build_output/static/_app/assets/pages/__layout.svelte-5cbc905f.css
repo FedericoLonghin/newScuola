@@ -223,11 +223,6 @@ input {
 button:focus:not(:focus-visible) {
 	outline: 0;
 }
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
-}
 .li {
 	color: #48e5c2;
 	background-color: #d2691e;
@@ -275,6 +270,56 @@ section {
 	flex: 1;
 	max-width: var(--column-width);
 	margin: var(--column-margin-top) auto 0 auto;
+}
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+	section {
+		min-width: 700px;
+	}
+}
+@media (min-width: 1000px) {
+	section {
+		min-width: 900px;
+	}
+}
+:root {
+	--color1: rgb(216, 87, 42);
+	--color2: rgb(171, 135, 255);
+	--color3: rgb(72, 229, 194);
+	--color4: rgb(236, 8, 104);
+	--color5: rgb(239, 71, 111);
+	line-height: 24px;
+}
+mbld {
+	color: var(--color5);
+	font-weight: 900;
+	font-size: 1rem;
+}
+coso {
+	background-color: #3d3d3d;
+	padding: 10px;
+	border-radius: 0 5px 5px 0;
+	border-left-color: var(--color5);
+	border-left-style: solid;
+}
+mh1 {
+	color: var(--color5);
+	font-weight: 900;
+	font-size: 1.4rem;
+}
+mh2 {
+	color: var(--color5);
+	font-weight: 900;
+	font-size: 1.2rem;
+}
+mhi {
+	color: #333;
+	font-weight: 700;
+	padding: 2px;
+	background-color: rgba(171, 135, 255, 0.8);
+	border-radius: 2px;
 }
 main.svelte-193j25t {
 	flex: 1;

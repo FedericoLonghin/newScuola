@@ -10,18 +10,18 @@ import {
 	d as c,
 	n as u,
 	c as l,
-	a as p,
-	g as f,
-	m as h,
-	f as v,
-	H as d,
+	a as d,
+	g as p,
+	m as f,
+	f as h,
+	H as v,
 	o as m,
 	I as $,
 	v as g,
 	r as E,
 	w as j
-} from '../chunks/vendor-7a4d6a7b.js';
-import { R as k, p as x } from '../chunks/jason-aafa386e.js';
+} from '../chunks/vendor-df74d1be.js';
+import { R as k, p as x } from '../chunks/jason-f2a0d3d0.js';
 function S(a) {
 	let e, s, S, w, z, B, H, I, M, O, P, Q, b;
 	return (
@@ -46,20 +46,20 @@ function S(a) {
 				i('[data-svelte="svelte-ddcvn1"]', document.head).forEach(c),
 					(e = u(a)),
 					(s = l(a, 'SECTION', {}));
-				var t = p(s);
+				var t = d(s);
 				S = l(t, 'H1', {});
-				var r = p(S);
-				(w = f(r, 'Benvenuto nella sezione scuola')), r.forEach(c), (z = u(t)), (B = l(t, 'P', {}));
-				var n = p(B);
-				(H = f(n, 'Qui troverai tutti gli appunti divisi per materie etc...')),
+				var r = d(S);
+				(w = p(r, 'Benvenuto nella sezione scuola')), r.forEach(c), (z = u(t)), (B = l(t, 'P', {}));
+				var n = d(B);
+				(H = p(n, 'Qui troverai tutti gli appunti divisi per materie etc...')),
 					n.forEach(c),
 					(I = u(t)),
 					(M = l(t, 'P', {}));
-				var o = p(M);
-				(O = f(o, 'Materie:')),
+				var o = d(M);
+				(O = p(o, 'Materie:')),
 					o.forEach(c),
 					(P = u(t)),
-					h(Q.$$.fragment, t),
+					f(Q.$$.fragment, t),
 					t.forEach(c),
 					this.h();
 			},
@@ -67,17 +67,17 @@ function S(a) {
 				document.title = 'Scuola';
 			},
 			m(a, t) {
-				v(a, e, t),
-					v(a, s, t),
-					d(s, S),
-					d(S, w),
-					d(s, z),
-					d(s, B),
-					d(B, H),
-					d(s, I),
-					d(s, M),
-					d(M, O),
-					d(s, P),
+				h(a, e, t),
+					h(a, s, t),
+					v(s, S),
+					v(S, w),
+					v(s, z),
+					v(s, B),
+					v(B, H),
+					v(s, I),
+					v(s, M),
+					v(M, O),
+					v(s, P),
 					m(Q, s, null),
 					(b = !0);
 			},

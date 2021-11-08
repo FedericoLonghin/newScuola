@@ -16,23 +16,22 @@
 		diviso in modello comunista-liberista.
 	</li>
 	<li>
-
-    È compresa anche la caduta del muro di Berlino(<mhi>1989</mhi>). 
-  </li>
-    <li>
-      È detto <mbld>Secolo breve </mbld>(titolo dell'opera di Hobsbawm).
-    </li>
-    <ul>
-
-      <li>
-        <mbld>Titolo rientrato:</mbld> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni necessitatibus aliquid, modi sequi porro non doloremque aut ex in aperiam!
-      </li>
-    </ul>
-
+		È compresa anche la caduta del muro di Berlino(<mhi>1989</mhi>).
+	</li>
+	<li>
+		È detto <mbld>Secolo breve </mbld>(titolo dell'opera di Hobsbawm).
+	</li>
+	<ul>
+		<li>
+			<mbld>Titolo rientrato:</mbld> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni
+			necessitatibus aliquid, modi sequi porro non doloremque aut ex in aperiam!
+			<br />
+		</li>
+	</ul>
 </ul>
-<coso>
+<mblq>
 	<mbld>Lorem ipsum</mbld> dolor sit amet consectetur adipisicing elit. Eius accusamus et laboriosam
 	deserunt repudiandae explicabo voluptate. A neque quasi nesciunt dolore vitae dicta asperiores illum
 	rerum mollitia ipsam at voluptate possimus alias, minus nostrum? Quidem nulla atque numquam, laudantium
 	eligendi expedita corrupti at officia, rerum quod consequuntur dolorem ad quos.
-</coso>
+</mblq>

@@ -1,7 +1,7 @@
 import {
 	S as t,
-	i as s,
-	s as e,
+	i as e,
+	s,
 	k as a,
 	e as i,
 	t as o,
@@ -15,13 +15,13 @@ import {
 	f as d,
 	H as f,
 	I as v
-} from '../chunks/vendor-7a4d6a7b.js';
+} from '../chunks/vendor-df74d1be.js';
 function m(t) {
-	let s, e, m, b, g, E, S, k, z;
+	let e, s, m, b, g, E, S, k, z;
 	return {
 		c() {
-			(s = a()),
-				(e = i('div')),
+			(e = a()),
+				(s = i('div')),
 				(m = i('h1')),
 				(b = o('About')),
 				(g = a()),
@@ -35,9 +35,9 @@ function m(t) {
 		},
 		l(t) {
 			l('[data-svelte="svelte-1ine71f"]', document.head).forEach(n),
-				(s = r(t)),
-				(e = u(t, 'DIV', { class: !0 }));
-			var a = c(e);
+				(e = r(t)),
+				(s = u(t, 'DIV', { class: !0 }));
+			var a = c(s);
 			m = u(a, 'H1', {});
 			var i = c(m);
 			(b = h(i, 'About')), i.forEach(n), (g = r(a)), (E = u(a, 'P', {}));
@@ -53,16 +53,16 @@ function m(t) {
 		h() {
 			(document.title = 'About'),
 				p(k, 'href', 'https://github.com/FedericoLonghin/newWebsite'),
-				p(e, 'class', 'content svelte-cf77e8');
+				p(s, 'class', 'content svelte-cf77e8');
 		},
 		m(t, a) {
-			d(t, s, a), d(t, e, a), f(e, m), f(m, b), f(e, g), f(e, E), f(E, S), f(E, k), f(k, z);
+			d(t, e, a), d(t, s, a), f(s, m), f(m, b), f(s, g), f(s, E), f(E, S), f(E, k), f(k, z);
 		},
 		p: v,
 		i: v,
 		o: v,
 		d(t) {
-			t && n(s), t && n(e);
+			t && n(e), t && n(s);
 		}
 	};
 }
@@ -71,7 +71,7 @@ const b = !1,
 	E = !0;
 export default class extends t {
 	constructor(t) {
-		super(), s(this, t, null, m, e, {});
+		super(), e(this, t, null, m, s, {});
 	}
 }
 export { b as hydrate, E as prerender, g as router };
