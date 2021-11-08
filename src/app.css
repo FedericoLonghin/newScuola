@@ -89,12 +89,6 @@ button:focus:not(:focus-visible) {
 	outline: none;
 }
 
-@media (min-width: 720px) {
-	h1 {
-		font-size: 2.4rem;
-	}
-}
-
 .li {
 	color: #48e5c2;
 	background-color: chocolate;
@@ -145,4 +139,19 @@ section {
 
 	max-width: var(--column-width);
 	margin: var(--column-margin-top) auto 0 auto;
+}
+
+@media (min-width: 720px) {
+	h1 {
+		font-size: 2.4rem;
+	}
+	section {
+		min-width: 700px;
+	}
+}
+
+@media (min-width: 1000px) {
+	section {
+		min-width: 900px;
+	}
 }

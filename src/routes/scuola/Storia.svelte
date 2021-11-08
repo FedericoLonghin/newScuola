@@ -1,10 +1,9 @@
 <script context="module" lang="ts">
+	import { page } from '$app/stores';
 	export const prerender = true;
-	var pageName;
 </script>
 
 <script>
-	import { page } from '$app/stores';
 	import IndiceElement from '$lib/IndiceElement/index.svelte';
 	import IndicePath from '$lib/IndicePath/index.svelte';
 
@@ -12,17 +11,15 @@
 	import * as json from '../jason.json';
 </script>
 
-<IndicePath />
 <svelte:head>
-	<title>{pageName}</title>
+	<title>Scuola</title>
 </svelte:head>
 
-
+<IndicePath />
 
 <section>
 	<RaccoltaIndiceElement json={json.pagesSummary[0].slaves} />
-	
-	</section>
-	
+</section>
+
 <style>
 </style>

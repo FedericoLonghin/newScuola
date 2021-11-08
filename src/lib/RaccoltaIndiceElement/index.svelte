@@ -1,6 +1,4 @@
 <script>
-	import { page } from '$app/stores';
-
 	export let json = [{ name: '', date: '', url: '', slaves: '' }];
 	console.log(json[0].url);
 </script>
