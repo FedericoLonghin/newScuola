@@ -155,3 +155,44 @@ section {
 		min-width: 900px;
 	}
 }
+
+/*Markdown*/
+:root {
+	--color1: rgb(216, 87, 42);
+	--color2: rgb(171, 135, 255);
+	--color3: rgb(72, 229, 194);
+	--color4: rgb(236, 8, 104);
+	--color5: rgb(239, 71, 111);
+	line-height: 24px;
+}
+
+mbld {
+	color: var(--color5);
+	font-weight: 900;
+	font-size: 1rem;
+}
+coso {
+	background-color: #3d3d3d;
+	padding: 10px;
+	border-radius: 0 5px 5px 0;
+	border-left-color: var(--color5);
+	border-left-style: solid;
+}
+mh1 {
+	color: var(--color5);
+	font-weight: 900;
+	font-size: 1.4rem;
+}
+mh2 {
+	color: var(--color5);
+	font-weight: 900;
+	font-size: 1.2rem;
+}
+mhi {
+	color: #333333;
+	font-weight: bold;
+	padding: 2px;
+
+	background-color: rgba(171, 135, 255, 0.8);
+	border-radius: 2px;
+}
