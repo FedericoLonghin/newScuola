@@ -1,5 +1,7 @@
-<script>	import IndicePath from '$lib/IndicePath/index.svelte';</script>
 <IndicePath/>
+<script>
+  import IndicePath from '$lib/IndicePath/index.svelte';
+  </script>
 
 ## Date Importanti
 
@@ -39,3 +41,5 @@ Caratteristiche della società di massa:
 - **I consumi:** C'è una grandissima `disponibilità dei beni`, e la catena di montaggio riesce a produrre tantissimi pezzi. Nascono quindi i grandi magazzini(_Harrods_ a Londra, _La Faiette_ a Parigi...).
 
 - **I partiti:** Sono organizzazioni di persone accumunate da idee politiche simili. Nascono con la Riv. Francese come _Club_, inizialmente si chiamavano `Partiti di notabili`, perchè erano composti da poche persone di ceti sociali alti, o con una propensione alla politica. Dal 900 si parla di `Partiti di massa`, con un maggior coinvolgimentio. È dovuto dall'aumento dell'istruzione e la gente si lasciava coinvolgere. Il voto passa al suffragio universale, quindi molte più persone aderiscono ai partiti.
+
+
