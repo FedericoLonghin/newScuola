@@ -4,6 +4,7 @@
 
 <script>
 	import RaccoltaIndiceElement from '$lib/RaccoltaIndiceElement/index.svelte';
+	import IndiceElement from '$lib/IndiceElement/index.svelte';
 	import * as json from './jason.json';
 </script>
 
@@ -19,7 +20,7 @@
 	<p>Materie:</p>
 
 	<RaccoltaIndiceElement json={json.pagesSummary} />
-	
+	<IndiceElement pageName="Storia" pageURL="/scuola" date="oggi" />
 </section>
 
 <style>

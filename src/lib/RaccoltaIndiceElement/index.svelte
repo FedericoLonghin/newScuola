@@ -5,9 +5,9 @@
 
 {#each json as pages}
 	<div class="indice-elem inline">
-		<div>
+	
 			<a href={pages.url}> - {pages.name}</a>
-		</div>
+		
 		{#if pages.date !== 'noDate'}
 			<div class="indice-elem-data">{pages.date}</div>
 		{/if}

@@ -118,6 +118,11 @@ button:focus:not(:focus-visible) {
 .inline > div {
 	margin-block-start: 0.83em;
 	margin-block-end: 0.83em;
+}.inline > a {
+	margin-block-start: 0.83em;
+	margin-block-end: 0.83em;
+		display: flex;
+		width: 100%;
 }
 .inline-sm > div {
 	margin-block-start: 0.41em;
