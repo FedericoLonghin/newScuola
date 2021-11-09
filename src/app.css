@@ -177,17 +177,28 @@ blockquote {
     border-left-color: var(--color5);
     border-left-style: solid;
 }
+blockquote > p{
+	margin: 5px 5px 5px 0px;
+}
 
 h2 {
     color: var(--color5);
     font-weight: 900;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+}h3 {
+    color: var(--color1);
+    font-weight: 900;
+    font-size: 1.1rem;
 }
 code {
     color: #333333;
     font-weight: bold;
     padding: 2px;
+	white-space: pre-line; 
 
     background-color: rgba(171, 135, 255, 0.8);
     border-radius: 2px;
 }
+
+
+
