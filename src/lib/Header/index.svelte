@@ -29,7 +29,7 @@
 		justify-content: space-between;
 		position: fixed;
 		width: 100%;
-		background-color: rgba(51, 51, 51, 0.8);
+		background-image: linear-gradient( rgb(51,51,51), rgba(51, 51, 51, .2));
 		z-index: 100;
 	}
 
