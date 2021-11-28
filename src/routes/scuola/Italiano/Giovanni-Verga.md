@@ -108,3 +108,23 @@ La famiglia quindi si impoverisce, e prende diverse strade:
 - Padron 'Ntoni è costretto a morire in ospedale
 
 Alessi insieme alla moglie e Mena riescono a reimpossessarsi della casa, valorizzando il nome del malavoglia, in quanto non hanno mai lasciato  il posto e si sono adattati all'ambiente.
+
+I malavogliasi concludono con la figura di `Rocco Spatu`. È un finale particolare, perchè Verga mette in relazione 'Ntoni e Rocco. I due amici erano assolutamente contro l'ideale dell'ostrica. I due volevano abbandonare Aci Trezza. Mentre 'Ntoni se ne è andato, rocco pur ribellandosi, è sempre stato ad Acitrezza, e si è adattato (in modo diverso da AlessI). Il finale dice che `ci sono diverse modalità di adattamento`, alcune più oneste (come Alessi), altre più disoneste (Rocco). 'Ntoni non ha rispettato l'ideale dell'ostrica, come Bastianazzo, e l'ambiente lo ha distrutto.
+
+
+## Novelle rusticane:
+
+Sono una serie di `novelle ambientate in Sicilia`, attorno al tema della **roba**, ovvero i `beni materiali` e la `volontà di arricchirsi`. Verga dice che dal più povero al più ricco tutti sono destinati alla morte, e spiega il rapporto tra l'`avere le cose e il modo in cui si vive`.
+Conclude dicendo:
+
+```
+Così quando era vicino alla morte, quando qualcuno gli disse che doveva pensare all'anima, non alla roba, usciì nel cortile e con passo incerto, e con il bastone ammazzava le anatre, e urlava "roba mia vieni con me"
+```
+
+
+## Mastro Don Gesualdo:
+
+È un `romanzo a protagonista` (contrario di corale) pubblicato nel `1889`. È incentrato sulla figura di Mastro Don Gesualdo. In questo romanzo il pessismismo è ancora più accentuato, nessuno ha uno spiraglio di possibilità. La storia è ambientata a `Vizzini`, un paese nell'entroterra siciliano nella zona di Catania. Il protagonista è Gesualdo Motta, un muratore che si è arricchito grazie al suo lavoro. 
+Anche se era ricco `non aveva alcun peso sociale`, quindi decisa Bianca Trao, una donna di una famiglia nobile ormai decaduta. Il suo ambiente (i muratori) non lo guardano più, perchè ha sposato un nobile, e i nobili non lo accettano in quanto muratore. 
+Sua figlia, Isabella, sposerà il duca di Leyra. 
+La sua famiglia lo odia, perchè ha passato la vita solo in cerca di arricchirsi, quando muore la moglie, e lui è vecchio, viene accolto nel palazzo del genero, per ottenere i suoi soldi, e viene accudito dai servitori.
