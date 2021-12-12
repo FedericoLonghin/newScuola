@@ -1,3 +1,8 @@
+<IndicePath/>
+<script>
+  import IndicePath from '$lib/IndicePath/index.svelte';
+  </script>
+
 ## Cose generali:
 Detta anche grande guerra, iniziò nel `giugno 1914`.
 
@@ -62,4 +67,29 @@ Il parlamento come l'opinione pubblica era diviso al suo interno tra neutralisti
 
 L'Italia nel `Maggio 1915 entra in guerra`, l'esercito era guidato dal generale `Luigi Cadorna`, che si occupò di costruire il fronte Italiano. Cadorna era un piemontese, apparteneva quindi ai liberali come Cavour e Giolitti che avevano fatto la storia d'Italia. Era molto severo nei confronti del suo esercito, infatti era convinto che l'esercito fosse carne da cannone. Non aveva nessuna attenzione nei confronti dei militari, e coloro che cercavano di fuggire venivano uccisi come disertori. L'esercito era disposto nel fronte italiano, lungo 650km, un fronte che andava dal trentino al Friuli Venezia Giulia. Era una trincea che separava l'Italia dall'impero, era costruito in zone impervie(montagne) (Trento, rovereto, monte Grappa, Asiago, Belluno, Feltre, VittorioV, etc. fino al carso(catena montuosa di roccia carsica, quindi una roccia che si erode facilmente. Ci sono tante grotte, perchè l'acqua erode la roccia)). Alcune di queste zone non erano ben difese, quindi era facile sfondare la trincea. Truppe erano posizionate nei grandi fiumi(Piave, Isonzo(furono combattute 11 battaglie sull'isonzo)). 
 
-Dopo Caporetto Cadorna fu sostituito da `Armando Diaz`.  
+
+
+## 1916 sul fronte occidentale:
+L'esercito tedesco si addentra nel territorio francese per arrivare a Parigi. Scoppia la `battaglia di Verdun` ne 1916 (dura 4 mesi), una carneficina, ma i francesi riescono a fermare i Tedeschi. A nord di Parigi c'è la `battaglia delle somme`, nel 1916, combattuta tra inglesi e tedeschi in territorio francese.
+La Germania avvia una guerra sottomarina contro l'Inghilterra, si scontrano nel mare del nord (`Battaglia dello Jutland`). l'Inghilterra riuscì a bloccare moltissime navi di approvvigionamento (vittoria sul piano navale inglese).
+
+## 1917 sul fronte Orientale:
+La russia riesce a bloccare l'avanzata tedesca, ma nel 1917 si ritira dalla guerra. Erano scoppiate le `rivoluzioni di Febbraio e Ottobre`. Si dichiara quindi sconfitta, e perderà diversi territori.
+
+## 1916 in Italia:
+L'italia subisce la `spedizione punitiva dell'Austria Ungheria`, che bombarda la zona del trentino. L'esercito Italiano riesce a bloccare l'avanzata, e scoppiano diverse battaglie sull'Isonzo, sul montegrappa, l'altopiano di Asiago e il Carso. A fianco dell'esercito austriaco si unisce quello tedesco, che ritorna dal fronte orientale. Per l'Italia il 1917 è un anno terribile, perchè c'è `Caporetto`, una sconfitta pesantissima. È una cittadina della Slovenia, dove l'esercito fu colto alla sprovvista, in quanto le trincee erano state bombardate furono sganciate le granate di gas. Il generale cadorna fu sostituito da `Armando Diaz`.
+
+## Intervento degli USA:
+Non si erano mai occupati di quello che succedeva fuori dall'America, entrano in guerra per `garantire la pace e l'autodeterminazione dei popoli`. In realtà vogliono la pace come condizione per il commercio. Intervengono come `paese Associato`, non Alleato. Gli USA entrano in guerra nel 1915, in seguito all'affondamento del transatlantico "Lusitania" da parte di un U-Boat tedesco.
+
+## Conclusione della guerra:
+Diaz diede una nuova motivazione ai soldati, che vinsero la `battaglia di Vittorio Veneto`. Il` 4 novembre 1918 finisce la guerra per l'Italia`, con la firma dell'armistizio. i tedeschi sono costretti a ritirarsi dalla Francia, e l'imperatore tedesco si nasconde, viste le sollecitazioni della flotta militare. La Germania diventa una Repubblica, la `repubblica di Weimar`.
+
+## Conferenza di Parigi:
+All'interno della conferenza molti stati volevano colpire serveramente la causa della guerra, invece gli USA dovevano ripristinare la pace e far rispettare i `14 punti di Wilson`. In realtà i punti non furono seguiti e la Germania fu colpita come causa della prima guerra mondiale. i 14 punti derivano da un discorso che il presidente aveva fatto alla nazione nel gennaio 1918. tra questi c'è:
+- `Promuovere la diplomazia`, abolendo la diplomazia segreta.
+- `Libertà dei mari`, per la quale gli stati possono navigare rispettando un tot miglia marine.
+- `Riduzione degli armamenti`, riconvertendo le industrie.
+- `Autodeterminazione dei popoli`, i popoli hanno il diritto di decidere da soli i confini e la strategia militare. 
+
+Fu creata la `società delle nazioni`, con sede a Ginevra. È un organizzazione il cui scopo è il rispetto dei principi. Dopo la seconda guerra mondiale si chiamerà ONU. 
