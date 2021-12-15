@@ -191,10 +191,13 @@ h2 {
     color: var(--color5);
     font-weight: 900;
     font-size: 1.3rem;
+	margin-bottom: 0;
 }h3 {
     color: var(--color1);
     font-weight: 900;
     font-size: 1.1rem;
+	margin-bottom: 0;
+
 }
 code {
     color: #333333;
