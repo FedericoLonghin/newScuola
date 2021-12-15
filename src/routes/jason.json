@@ -21,6 +21,12 @@
 					"date": "07/12/2021",
 					"url": "/scuola/Storia/Prima-guerra-mondiale"
 				}
+				,
+				{
+					"name": "Genocidio degli Armeni",
+					"date": "15/12/2021",
+					"url": "/scuola/Storia/Genocidio-degli-Armeni"
+				}
 			]
 		},
 		{ "name": "Italiano", "url": "scuola/Italiano", "date": "noDate", "slaves": [
