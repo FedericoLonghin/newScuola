@@ -23,7 +23,7 @@
 </main>
 
 <footer>
-	<p>Federico Longhin - 2021</p>
+	<p>Federico Longhin - 2022</p>
 </footer>
 
 <ReloadPrompt />
