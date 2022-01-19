@@ -2872,9 +2872,9 @@ function init(settings) {
     amp: false,
     dev: false,
     entry: {
-      file: "/./_app/start-41fdd975.js",
+      file: "/./_app/start-39743f45.js",
       css: ["/./_app/assets/start-a8cd1609.css"],
-      js: ["/./_app/start-41fdd975.js", "/./_app/chunks/vendor-ce374a0d.js"]
+      js: ["/./_app/start-39743f45.js", "/./_app/chunks/vendor-ce374a0d.js"]
     },
     fetched: void 0,
     floc: false,
@@ -2935,6 +2935,13 @@ var manifest = {
     },
     {
       type: "page",
+      pattern: /^\/scuola\/Italiano\/Età-del-decadentismo\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/scuola/Italiano/Et\xE0-del-decadentismo.md"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
       pattern: /^\/scuola\/Italiano\/I-promessi-sposi\/?$/,
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/scuola/Italiano/I-promessi-sposi.md"],
@@ -2966,6 +2973,20 @@ var manifest = {
       pattern: /^\/scuola\/Italiano\/?$/,
       params: empty,
       a: ["src/routes/__layout.svelte", "src/routes/scuola/Italiano.svelte"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/scuola\/Storia\/Genocidio-degli-Armeni\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/scuola/Storia/Genocidio-degli-Armeni.md"],
+      b: [".svelte-kit/build/components/error.svelte"]
+    },
+    {
+      type: "page",
+      pattern: /^\/scuola\/Storia\/Prima-guerra-mondiale\/?$/,
+      params: empty,
+      a: ["src/routes/__layout.svelte", "src/routes/scuola/Storia/Prima-guerra-mondiale.md"],
       b: [".svelte-kit/build/components/error.svelte"]
     },
     {
@@ -3043,6 +3064,9 @@ var module_lookup = {
   "src/routes/scuola/Italiano/L-evoluzione-del-romanzo.md": () => Promise.resolve().then(function() {
     return LEvoluzioneDelRomanzo;
   }),
+  "src/routes/scuola/Italiano/Et\xE0-del-decadentismo.md": () => Promise.resolve().then(function() {
+    return Et_DelDecadentismo;
+  }),
   "src/routes/scuola/Italiano/I-promessi-sposi.md": () => Promise.resolve().then(function() {
     return IPromessiSposi;
   }),
@@ -3057,6 +3081,12 @@ var module_lookup = {
   }),
   "src/routes/scuola/Italiano.svelte": () => Promise.resolve().then(function() {
     return Italiano$1;
+  }),
+  "src/routes/scuola/Storia/Genocidio-degli-Armeni.md": () => Promise.resolve().then(function() {
+    return GenocidioDegliArmeni;
+  }),
+  "src/routes/scuola/Storia/Prima-guerra-mondiale.md": () => Promise.resolve().then(function() {
+    return PrimaGuerraMondiale;
   }),
   "src/routes/scuola/Storia/L-et\xE0-di-Giolitti.md": () => Promise.resolve().then(function() {
     return LEt_DiGiolitti;
@@ -3077,7 +3107,7 @@ var module_lookup = {
     return About$1;
   })
 };
-var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-b58e7004.js", "css": ["/./_app/assets/pages/__layout.svelte-d177f051.css", "/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/__layout.svelte-b58e7004.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-e254b435.js", "css": [], "js": ["/./_app/error.svelte-e254b435.js", "/./_app/chunks/vendor-ce374a0d.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-b244a618.js", "css": ["/./_app/assets/pages/index.svelte-b170537a.css"], "js": ["/./_app/pages/index.svelte-b244a618.js", "/./_app/chunks/vendor-ce374a0d.js"], "styles": null}, "src/routes/scuola/Italiano/La-visione-dell-uomo-nel-positivismo.md": {"entry": "/./_app/pages/scuola/Italiano/La-visione-dell-uomo-nel-positivismo.md-1744e067.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/La-visione-dell-uomo-nel-positivismo.md-1744e067.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Et\xE0-del-realismo-e-del-positivismo.md": {"entry": "/./_app/pages/scuola/Italiano/Et\xE0-del-realismo-e-del-positivismo.md-c403c38b.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Et\xE0-del-realismo-e-del-positivismo.md-c403c38b.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/L-evoluzione-del-romanzo.md": {"entry": "/./_app/pages/scuola/Italiano/L-evoluzione-del-romanzo.md-02008b52.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/L-evoluzione-del-romanzo.md-02008b52.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/I-promessi-sposi.md": {"entry": "/./_app/pages/scuola/Italiano/I-promessi-sposi.md-3b1e3ab5.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/I-promessi-sposi.md-3b1e3ab5.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Giovanni-Verga.md": {"entry": "/./_app/pages/scuola/Italiano/Giovanni-Verga.md-33105bab.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Giovanni-Verga.md-33105bab.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Il-naturalismo.md": {"entry": "/./_app/pages/scuola/Italiano/Il-naturalismo.md-d9661ed9.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Il-naturalismo.md-d9661ed9.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Il-verismo.md": {"entry": "/./_app/pages/scuola/Italiano/Il-verismo.md-f209959b.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Il-verismo.md-f209959b.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano.svelte": {"entry": "/./_app/pages/scuola/Italiano.svelte-20e29829.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano.svelte-20e29829.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js", "/./_app/chunks/jason-8c787c0f.js"], "styles": null}, "src/routes/scuola/Storia/L-et\xE0-di-Giolitti.md": {"entry": "/./_app/pages/scuola/Storia/L-et\xE0-di-Giolitti.md-c44993da.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/L-et\xE0-di-Giolitti.md-c44993da.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia/Venti-di-guerra.md": {"entry": "/./_app/pages/scuola/Storia/Venti-di-guerra.md-d58bfacc.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/Venti-di-guerra.md-d58bfacc.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia/Il-Novecento.md": {"entry": "/./_app/pages/scuola/Storia/Il-Novecento.md-25d19c81.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/Il-Novecento.md-25d19c81.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia.svelte": {"entry": "/./_app/pages/scuola/Storia.svelte-3050a40f.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia.svelte-3050a40f.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js", "/./_app/chunks/jason-8c787c0f.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-3acfb3a8.js", "css": [], "js": ["/./_app/pages/scuola.svelte-3acfb3a8.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/jason-8c787c0f.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-a12afb4f.js", "css": ["/./_app/assets/pages/About.svelte-9b1330ce.css"], "js": ["/./_app/pages/About.svelte-a12afb4f.js", "/./_app/chunks/vendor-ce374a0d.js"], "styles": null}};
+var metadata_lookup = {"src/routes/__layout.svelte": {"entry": "/./_app/pages/__layout.svelte-c33bc58d.js", "css": ["/./_app/assets/pages/__layout.svelte-ad86439f.css", "/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/__layout.svelte-c33bc58d.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, ".svelte-kit/build/components/error.svelte": {"entry": "/./_app/error.svelte-e254b435.js", "css": [], "js": ["/./_app/error.svelte-e254b435.js", "/./_app/chunks/vendor-ce374a0d.js"], "styles": null}, "src/routes/index.svelte": {"entry": "/./_app/pages/index.svelte-05f1da87.js", "css": ["/./_app/assets/pages/index.svelte-b170537a.css"], "js": ["/./_app/pages/index.svelte-05f1da87.js", "/./_app/chunks/vendor-ce374a0d.js"], "styles": null}, "src/routes/scuola/Italiano/La-visione-dell-uomo-nel-positivismo.md": {"entry": "/./_app/pages/scuola/Italiano/La-visione-dell-uomo-nel-positivismo.md-d2da79a1.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/La-visione-dell-uomo-nel-positivismo.md-d2da79a1.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Et\xE0-del-realismo-e-del-positivismo.md": {"entry": "/./_app/pages/scuola/Italiano/Et\xE0-del-realismo-e-del-positivismo.md-5617caa1.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Et\xE0-del-realismo-e-del-positivismo.md-5617caa1.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/L-evoluzione-del-romanzo.md": {"entry": "/./_app/pages/scuola/Italiano/L-evoluzione-del-romanzo.md-02008b52.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/L-evoluzione-del-romanzo.md-02008b52.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Et\xE0-del-decadentismo.md": {"entry": "/./_app/pages/scuola/Italiano/Et\xE0-del-decadentismo.md-223d3504.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Et\xE0-del-decadentismo.md-223d3504.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/I-promessi-sposi.md": {"entry": "/./_app/pages/scuola/Italiano/I-promessi-sposi.md-5ac4b513.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/I-promessi-sposi.md-5ac4b513.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Giovanni-Verga.md": {"entry": "/./_app/pages/scuola/Italiano/Giovanni-Verga.md-71d868b7.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Giovanni-Verga.md-71d868b7.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Il-naturalismo.md": {"entry": "/./_app/pages/scuola/Italiano/Il-naturalismo.md-d9661ed9.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Il-naturalismo.md-d9661ed9.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano/Il-verismo.md": {"entry": "/./_app/pages/scuola/Italiano/Il-verismo.md-f209959b.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano/Il-verismo.md-f209959b.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Italiano.svelte": {"entry": "/./_app/pages/scuola/Italiano.svelte-a9b1951b.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Italiano.svelte-a9b1951b.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js", "/./_app/chunks/jason-e9c1f559.js"], "styles": null}, "src/routes/scuola/Storia/Genocidio-degli-Armeni.md": {"entry": "/./_app/pages/scuola/Storia/Genocidio-degli-Armeni.md-df4d637b.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/Genocidio-degli-Armeni.md-df4d637b.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia/Prima-guerra-mondiale.md": {"entry": "/./_app/pages/scuola/Storia/Prima-guerra-mondiale.md-37eb3cb4.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/Prima-guerra-mondiale.md-37eb3cb4.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia/L-et\xE0-di-Giolitti.md": {"entry": "/./_app/pages/scuola/Storia/L-et\xE0-di-Giolitti.md-c44993da.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/L-et\xE0-di-Giolitti.md-c44993da.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia/Venti-di-guerra.md": {"entry": "/./_app/pages/scuola/Storia/Venti-di-guerra.md-35cd1236.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/Venti-di-guerra.md-35cd1236.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia/Il-Novecento.md": {"entry": "/./_app/pages/scuola/Storia/Il-Novecento.md-25d19c81.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia/Il-Novecento.md-25d19c81.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js"], "styles": null}, "src/routes/scuola/Storia.svelte": {"entry": "/./_app/pages/scuola/Storia.svelte-d6a304cd.js", "css": ["/./_app/assets/index.svelte_svelte&type=style&lang-618fbc1b.css"], "js": ["/./_app/pages/scuola/Storia.svelte-d6a304cd.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/index-b4e920e1.js", "/./_app/chunks/index.svelte_svelte&type=style&lang-f80beb00.js", "/./_app/chunks/jason-e9c1f559.js"], "styles": null}, "src/routes/scuola.svelte": {"entry": "/./_app/pages/scuola.svelte-bc45a936.js", "css": [], "js": ["/./_app/pages/scuola.svelte-bc45a936.js", "/./_app/chunks/vendor-ce374a0d.js", "/./_app/chunks/jason-e9c1f559.js"], "styles": null}, "src/routes/About.svelte": {"entry": "/./_app/pages/About.svelte-a12afb4f.js", "css": ["/./_app/assets/pages/About.svelte-9b1330ce.css"], "js": ["/./_app/pages/About.svelte-a12afb4f.js", "/./_app/chunks/vendor-ce374a0d.js"], "styles": null}};
 async function load_component(file) {
   return {
     module: await module_lookup[file](),
@@ -3111,6 +3141,16 @@ var pagesSummary = [
         name: "Venti di guerra",
         date: "27/10/2021",
         url: "/scuola/Storia/Venti-di-guerra"
+      },
+      {
+        name: "Prima guerra mondiale",
+        date: "07/12/2021",
+        url: "/scuola/Storia/Prima-guerra-mondiale"
+      },
+      {
+        name: "Genocidio degli Armeni",
+        date: "15/12/2021",
+        url: "/scuola/Storia/Genocidio-degli-Armeni"
       }
     ]
   },
@@ -3153,6 +3193,11 @@ var pagesSummary = [
         name: "Giovanni Verga",
         date: "26/10/2021",
         url: "/scuola/Italiano/Giovanni-Verga"
+      },
+      {
+        name: "Et\xE0 del decadentismo",
+        date: "19/01/2022",
+        url: "/scuola/Italiano/Et\xE0-del-decadentismo"
       }
     ]
   }
@@ -3191,21 +3236,21 @@ var page = {
   }
 };
 var css$5 = {
-  code: "header.svelte-19l1me1.svelte-19l1me1{display:flex;justify-content:space-between;position:fixed;width:100%;background-color:rgba(51, 51, 51, 0.8);z-index:100}.corner.svelte-19l1me1.svelte-19l1me1{width:auto;height:3em}nav.svelte-19l1me1.svelte-19l1me1{display:flex;justify-content:center;--background:#5e5e5e}svg.svelte-19l1me1.svelte-19l1me1{width:2em;height:3em;display:block}path.svelte-19l1me1.svelte-19l1me1{fill:var(--background)}ul.svelte-19l1me1.svelte-19l1me1{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--background);background-size:contain}li.svelte-19l1me1.svelte-19l1me1{position:relative;height:100%}li.active.svelte-19l1me1.svelte-19l1me1::before{--size:6px;content:'';width:0;height:0;position:absolute;top:0;left:calc(50% - var(--size));border:var(--size) solid transparent;border-top:var(--size) solid var(--accent-color)}nav.svelte-19l1me1 a.svelte-19l1me1{display:flex;height:100%;align-items:center;padding:0 1em;color:var(--heading-color);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:10%;text-decoration:none;transition:color 0.2s linear}a.svelte-19l1me1.svelte-19l1me1:hover{color:var(--accent-color)}",
-  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\n</script>\\n\\n<header>\\n\\t<div class=\\"corner\\" />\\n\\t<nav>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t\\t<ul>\\n\\t\\t\\t<li class:active={$page.path === '/'}><a sveltekit:prefetch href=\\"/\\">Home</a></li>\\n\\t\\t\\t<li class:active={$page.path.split('/')[1] === 'scuola'}>\\n\\t\\t\\t\\t<a sveltekit:prefetch href=\\"/scuola\\">Scuola</a>\\n\\t\\t\\t</li>\\n\\t\\t\\t<li class:active={$page.path === '/About'}><a sveltekit:prefetch href=\\"/About\\">About</a></li>\\n\\t\\t</ul>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t</nav>\\n\\t<div class=\\"corner\\" />\\n</header>\\n<div style=\\"height: 3em; wight:auto;\\" />\\n\\n<style>\\n\\theader {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tposition: fixed;\\n\\t\\twidth: 100%;\\n\\t\\tbackground-color: rgba(51, 51, 51, 0.8);\\n\\t\\tz-index: 100;\\n\\t}\\n\\n\\t.corner {\\n\\t\\twidth: auto;\\n\\t\\theight: 3em;\\n\\t}\\n\\n\\tnav {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\t--background: #5e5e5e;\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 2em;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: block;\\n\\t}\\n\\n\\tpath {\\n\\t\\tfill: var(--background);\\n\\t}\\n\\n\\tul {\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tlist-style: none;\\n\\t\\tbackground: var(--background);\\n\\t\\tbackground-size: contain;\\n\\t}\\n\\n\\tli {\\n\\t\\tposition: relative;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\tli.active::before {\\n\\t\\t--size: 6px;\\n\\t\\tcontent: '';\\n\\t\\twidth: 0;\\n\\t\\theight: 0;\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: calc(50% - var(--size));\\n\\t\\tborder: var(--size) solid transparent;\\n\\t\\tborder-top: var(--size) solid var(--accent-color);\\n\\t}\\n\\n\\tnav a {\\n\\t\\tdisplay: flex;\\n\\t\\theight: 100%;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 0 1em;\\n\\t\\tcolor: var(--heading-color);\\n\\t\\tfont-weight: 700;\\n\\t\\tfont-size: 0.8rem;\\n\\t\\ttext-transform: uppercase;\\n\\t\\tletter-spacing: 10%;\\n\\t\\ttext-decoration: none;\\n\\t\\ttransition: color 0.2s linear;\\n\\t}\\n\\n\\ta:hover {\\n\\t\\tcolor: var(--accent-color);\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAyBC,MAAM,8BAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,IAAI,CACX,gBAAgB,CAAE,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,GAAG,CAAC,CACvC,OAAO,CAAE,GAAG,AACb,CAAC,AAED,OAAO,8BAAC,CAAC,AACR,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,GAAG,AACZ,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,YAAY,CAAE,OAAO,AACtB,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,KAAK,AACf,CAAC,AAED,IAAI,8BAAC,CAAC,AACL,IAAI,CAAE,IAAI,YAAY,CAAC,AACxB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,IAAI,YAAY,CAAC,CAC7B,eAAe,CAAE,OAAO,AACzB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,AACb,CAAC,AAED,EAAE,qCAAO,QAAQ,AAAC,CAAC,AAClB,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,GAAG,CAAC,CAAC,CAAC,IAAI,MAAM,CAAC,CAAC,CAC7B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,WAAW,CACrC,UAAU,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,IAAI,cAAc,CAAC,AAClD,CAAC,AAED,kBAAG,CAAC,CAAC,eAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,CAAC,CAAC,GAAG,CACd,KAAK,CAAE,IAAI,eAAe,CAAC,CAC3B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,KAAK,CAAC,IAAI,CAAC,MAAM,AAC9B,CAAC,AAED,+BAAC,MAAM,AAAC,CAAC,AACR,KAAK,CAAE,IAAI,cAAc,CAAC,AAC3B,CAAC"}`
+  code: "header.svelte-1gt6y4w.svelte-1gt6y4w{display:flex;justify-content:space-between;position:fixed;width:100%;background-image:linear-gradient( rgb(51,51,51), rgba(51, 51, 51, .2));z-index:100}.corner.svelte-1gt6y4w.svelte-1gt6y4w{width:auto;height:3em}nav.svelte-1gt6y4w.svelte-1gt6y4w{display:flex;justify-content:center;--background:#5e5e5e}svg.svelte-1gt6y4w.svelte-1gt6y4w{width:2em;height:3em;display:block}path.svelte-1gt6y4w.svelte-1gt6y4w{fill:var(--background)}ul.svelte-1gt6y4w.svelte-1gt6y4w{position:relative;padding:0;margin:0;height:3em;display:flex;justify-content:center;align-items:center;list-style:none;background:var(--background);background-size:contain}li.svelte-1gt6y4w.svelte-1gt6y4w{position:relative;height:100%}li.active.svelte-1gt6y4w.svelte-1gt6y4w::before{--size:6px;content:'';width:0;height:0;position:absolute;top:0;left:calc(50% - var(--size));border:var(--size) solid transparent;border-top:var(--size) solid var(--accent-color)}nav.svelte-1gt6y4w a.svelte-1gt6y4w{display:flex;height:100%;align-items:center;padding:0 1em;color:var(--heading-color);font-weight:700;font-size:0.8rem;text-transform:uppercase;letter-spacing:10%;text-decoration:none;transition:color 0.2s linear}a.svelte-1gt6y4w.svelte-1gt6y4w:hover{color:var(--accent-color)}",
+  map: `{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script lang=\\"ts\\">import { page } from '$app/stores';\\n</script>\\n\\n<header>\\n\\t<div class=\\"corner\\" />\\n\\t<nav>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t\\t<ul>\\n\\t\\t\\t<li class:active={$page.path === '/'}><a sveltekit:prefetch href=\\"/\\">Home</a></li>\\n\\t\\t\\t<li class:active={$page.path.split('/')[1] === 'scuola'}>\\n\\t\\t\\t\\t<a sveltekit:prefetch href=\\"/scuola\\">Scuola</a>\\n\\t\\t\\t</li>\\n\\t\\t\\t<li class:active={$page.path === '/About'}><a sveltekit:prefetch href=\\"/About\\">About</a></li>\\n\\t\\t</ul>\\n\\t\\t<svg viewBox=\\"0 0 2 3\\" aria-hidden=\\"true\\">\\n\\t\\t\\t<path d=\\"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z\\" />\\n\\t\\t</svg>\\n\\t</nav>\\n\\t<div class=\\"corner\\" />\\n</header>\\n<div style=\\"height: 3em; wight:auto;\\" />\\n\\n<style>\\n\\theader {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\tposition: fixed;\\n\\t\\twidth: 100%;\\n\\t\\tbackground-image: linear-gradient( rgb(51,51,51), rgba(51, 51, 51, .2));\\n\\t\\tz-index: 100;\\n\\t}\\n\\n\\t.corner {\\n\\t\\twidth: auto;\\n\\t\\theight: 3em;\\n\\t}\\n\\n\\tnav {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\t--background: #5e5e5e;\\n\\t}\\n\\n\\tsvg {\\n\\t\\twidth: 2em;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: block;\\n\\t}\\n\\n\\tpath {\\n\\t\\tfill: var(--background);\\n\\t}\\n\\n\\tul {\\n\\t\\tposition: relative;\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\theight: 3em;\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: center;\\n\\t\\talign-items: center;\\n\\t\\tlist-style: none;\\n\\t\\tbackground: var(--background);\\n\\t\\tbackground-size: contain;\\n\\t}\\n\\n\\tli {\\n\\t\\tposition: relative;\\n\\t\\theight: 100%;\\n\\t}\\n\\n\\tli.active::before {\\n\\t\\t--size: 6px;\\n\\t\\tcontent: '';\\n\\t\\twidth: 0;\\n\\t\\theight: 0;\\n\\t\\tposition: absolute;\\n\\t\\ttop: 0;\\n\\t\\tleft: calc(50% - var(--size));\\n\\t\\tborder: var(--size) solid transparent;\\n\\t\\tborder-top: var(--size) solid var(--accent-color);\\n\\t}\\n\\n\\tnav a {\\n\\t\\tdisplay: flex;\\n\\t\\theight: 100%;\\n\\t\\talign-items: center;\\n\\t\\tpadding: 0 1em;\\n\\t\\tcolor: var(--heading-color);\\n\\t\\tfont-weight: 700;\\n\\t\\tfont-size: 0.8rem;\\n\\t\\ttext-transform: uppercase;\\n\\t\\tletter-spacing: 10%;\\n\\t\\ttext-decoration: none;\\n\\t\\ttransition: color 0.2s linear;\\n\\t}\\n\\n\\ta:hover {\\n\\t\\tcolor: var(--accent-color);\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAyBC,MAAM,8BAAC,CAAC,AACP,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,aAAa,CAC9B,QAAQ,CAAE,KAAK,CACf,KAAK,CAAE,IAAI,CACX,gBAAgB,CAAE,iBAAiB,IAAI,EAAE,CAAC,EAAE,CAAC,EAAE,CAAC,CAAC,CAAC,KAAK,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,EAAE,CAAC,CAAC,CACvE,OAAO,CAAE,GAAG,AACb,CAAC,AAED,OAAO,8BAAC,CAAC,AACR,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,GAAG,AACZ,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,YAAY,CAAE,OAAO,AACtB,CAAC,AAED,GAAG,8BAAC,CAAC,AACJ,KAAK,CAAE,GAAG,CACV,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,KAAK,AACf,CAAC,AAED,IAAI,8BAAC,CAAC,AACL,IAAI,CAAE,IAAI,YAAY,CAAC,AACxB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,IAAI,CACb,eAAe,CAAE,MAAM,CACvB,WAAW,CAAE,MAAM,CACnB,UAAU,CAAE,IAAI,CAChB,UAAU,CAAE,IAAI,YAAY,CAAC,CAC7B,eAAe,CAAE,OAAO,AACzB,CAAC,AAED,EAAE,8BAAC,CAAC,AACH,QAAQ,CAAE,QAAQ,CAClB,MAAM,CAAE,IAAI,AACb,CAAC,AAED,EAAE,qCAAO,QAAQ,AAAC,CAAC,AAClB,MAAM,CAAE,GAAG,CACX,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,CAAC,CACR,MAAM,CAAE,CAAC,CACT,QAAQ,CAAE,QAAQ,CAClB,GAAG,CAAE,CAAC,CACN,IAAI,CAAE,KAAK,GAAG,CAAC,CAAC,CAAC,IAAI,MAAM,CAAC,CAAC,CAC7B,MAAM,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,WAAW,CACrC,UAAU,CAAE,IAAI,MAAM,CAAC,CAAC,KAAK,CAAC,IAAI,cAAc,CAAC,AAClD,CAAC,AAED,kBAAG,CAAC,CAAC,eAAC,CAAC,AACN,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,IAAI,CACZ,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,CAAC,CAAC,GAAG,CACd,KAAK,CAAE,IAAI,eAAe,CAAC,CAC3B,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,MAAM,CACjB,cAAc,CAAE,SAAS,CACzB,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAAI,CACrB,UAAU,CAAE,KAAK,CAAC,IAAI,CAAC,MAAM,AAC9B,CAAC,AAED,+BAAC,MAAM,AAAC,CAAC,AACR,KAAK,CAAE,IAAI,cAAc,CAAC,AAC3B,CAAC"}`
 };
 var Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;
   $$unsubscribe_page = subscribe(page, (value) => $page = value);
   $$result.css.add(css$5);
   $$unsubscribe_page();
-  return `<header class="${"svelte-19l1me1"}"><div class="${"corner svelte-19l1me1"}"></div>
-	<nav class="${"svelte-19l1me1"}"><svg viewBox="${"0 0 2 3"}" aria-hidden="${"true"}" class="${"svelte-19l1me1"}"><path d="${"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z"}" class="${"svelte-19l1me1"}"></path></svg>
-		<ul class="${"svelte-19l1me1"}"><li class="${["svelte-19l1me1", $page.path === "/" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/"}" class="${"svelte-19l1me1"}">Home</a></li>
-			<li class="${["svelte-19l1me1", $page.path.split("/")[1] === "scuola" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/scuola"}" class="${"svelte-19l1me1"}">Scuola</a></li>
-			<li class="${["svelte-19l1me1", $page.path === "/About" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/About"}" class="${"svelte-19l1me1"}">About</a></li></ul>
-		<svg viewBox="${"0 0 2 3"}" aria-hidden="${"true"}" class="${"svelte-19l1me1"}"><path d="${"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z"}" class="${"svelte-19l1me1"}"></path></svg></nav>
-	<div class="${"corner svelte-19l1me1"}"></div></header>
+  return `<header class="${"svelte-1gt6y4w"}"><div class="${"corner svelte-1gt6y4w"}"></div>
+	<nav class="${"svelte-1gt6y4w"}"><svg viewBox="${"0 0 2 3"}" aria-hidden="${"true"}" class="${"svelte-1gt6y4w"}"><path d="${"M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z"}" class="${"svelte-1gt6y4w"}"></path></svg>
+		<ul class="${"svelte-1gt6y4w"}"><li class="${["svelte-1gt6y4w", $page.path === "/" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/"}" class="${"svelte-1gt6y4w"}">Home</a></li>
+			<li class="${["svelte-1gt6y4w", $page.path.split("/")[1] === "scuola" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/scuola"}" class="${"svelte-1gt6y4w"}">Scuola</a></li>
+			<li class="${["svelte-1gt6y4w", $page.path === "/About" ? "active" : ""].join(" ").trim()}"><a sveltekit:prefetch href="${"/About"}" class="${"svelte-1gt6y4w"}">About</a></li></ul>
+		<svg viewBox="${"0 0 2 3"}" aria-hidden="${"true"}" class="${"svelte-1gt6y4w"}"><path d="${"M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z"}" class="${"svelte-1gt6y4w"}"></path></svg></nav>
+	<div class="${"corner svelte-1gt6y4w"}"></div></header>
 <div style="${"height: 3em; wight:auto;"}"></div>`;
 });
 var browser = false;
@@ -3284,7 +3329,7 @@ var error2 = /* @__PURE__ */ Object.freeze({
 });
 var css$1 = {
   code: "h1.svelte-1yo0drd{width:100%}",
-  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>Benvenuto nel nuovino sitino</h1>\\n\\n\\t<h2>Chiss\xE0 se funziona... bah</h2>\\n\\t<h2>\\n\\t\\tAh, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\\n\\t\\t(in realt\xE0 \xE8 solo una scusa per non poter giudicare le monnezze che non ho voglia di\\n\\t\\tsistemare(in realt\xE0(si, di nuovo) dico che non \xE8 che non ho voglia di farlo, ma non me ne\\n\\t\\taccorgo/non so farlo... umilt\xE0 ragazzi... sempre))\\n\\t</h2>\\n</section>\\n\\n<style>\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoBC,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
+  map: '{"version":3,"file":"index.svelte","sources":["index.svelte"],"sourcesContent":["<script context=\\"module\\" lang=\\"ts\\">export const prerender = true;\\n</script>\\n\\n<svelte:head>\\n\\t<title>Home</title>\\n</svelte:head>\\n\\n<section>\\n\\t<h1>Benvenuto nel nuovino sitino</h1>\\n\\n\\t<p>Chiss\xE0 se funziona... bah</p>\\n\\t<p>\\n\\t\\tAh, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...\\n\\t\\t(in realt\xE0 \xE8 solo una scusa per non poter giudicare le monnezze che non ho voglia di\\n\\t\\tsistemare(in realt\xE0(si, di nuovo) dico che non \xE8 che non ho voglia di farlo, ma non me ne\\n\\t\\taccorgo/non so farlo... umilt\xE0 ragazzi... sempre))\\n\\t</p>\\n</section>\\n\\n<style>\\n\\th1 {\\n\\t\\twidth: 100%;\\n\\t}\\n</style>\\n"],"names":[],"mappings":"AAoBC,EAAE,eAAC,CAAC,AACH,KAAK,CAAE,IAAI,AACZ,CAAC"}'
 };
 var prerender$4 = true;
 var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -3293,12 +3338,12 @@ var Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 <section><h1 class="${"svelte-1yo0drd"}">Benvenuto nel nuovino sitino</h1>
 
-	<h2>Chiss\xE0 se funziona... bah</h2>
-	<h2>Ah, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...
+	<p>Chiss\xE0 se funziona... bah</p>
+	<p>Ah, questo sito \xE8 ancora in sviluppo, quindi ci sta che qualcosa faccia schifo/non funzioni...
 		(in realt\xE0 \xE8 solo una scusa per non poter giudicare le monnezze che non ho voglia di
 		sistemare(in realt\xE0(si, di nuovo) dico che non \xE8 che non ho voglia di farlo, ma non me ne
 		accorgo/non so farlo... umilt\xE0 ragazzi... sempre))
-	</h2>
+	</p>
 </section>`;
 });
 var index = /* @__PURE__ */ Object.freeze({
@@ -3328,7 +3373,6 @@ Il positivismo considera <code>il progresso come un&#39;obbiettivo centrale</cod
 Il processo di evoluzione avviene sulla base di alcuni principi:<ul><li><code>Lotta per l&#39;esistenza</code>: Sopravvivono i pi\xF9 forti.</li>
 <li><code>Adattamento all&#39;ambiente</code>: Sopravvive chi sa adattarsi.</li></ul></li></ul>
 <blockquote><p><strong>Teorie sull\u2019evoluzione:</strong> Prima di Darwin si credeva che l\u2019uomo fosse creato da un disegno divino, per dar senso al mondo (serviva qualcuno dotato di intelligenza che apprezzasse).
-\\
 Darwin dice che c\u2019\xE8 stato il big bang, seguito dall\u2019evoluzione. </p></blockquote>`;
 });
 var LaVisioneDellUomoNelPositivismo = /* @__PURE__ */ Object.freeze({
@@ -3342,7 +3386,6 @@ var EtuC3uA0_del_realismo_e_del_positivismo = create_ssr_component(($$result, $$
 <h3>Unit\xE0 d\u2019Italia:</h3>
 <p>Avviene nel <code>1860</code> grazie a Cavour(diplomatico, liberal moderato), che espone i problemi Italiani al processo di Parigi(Guerra di Crimea) e Garibaldi (liberal Democratico) che porta i mille in Sicilia, fino a Teano. </p>
 <p>Il veneto si unisce nel <code>1866</code> (Terza guerra di indipendenza). Nel <code>1870</code> i bersaglieri entrano a Porta Pia e prendono Roma.
-\\
 L\u2019Italia nasce come Monarchia cosituzionale (statuto Albertino (<code>1848</code>)).</p>
 <p>Problemi tra le realt\xE0 del nord e sud(Brigantaggio meridionale):</p>
 <ul><li><strong>Leva obbligatoria</strong> (che toglieva i lavoratori dai campi)</li>
@@ -3395,6 +3438,16 @@ var LEvoluzioneDelRomanzo = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": L_evoluzione_del_romanzo
 });
+var EtuC3uA0_del_decadentismo = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
+<h2>Contesto storico</h2>
+<p>\xC8 un fenomeno </p>`;
+});
+var Et_DelDecadentismo = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": EtuC3uA0_del_decadentismo
+});
 var I_promessi_sposi = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
 <h2>Caratteri generali del romanzo:</h2>
@@ -3435,7 +3488,6 @@ Lucia congeda le amiche e dice che il matrimonio \xE8 rinviato a causa della sal
 <h2>Capitolo 4:</h2>
 <p><strong>Padre Cristoforo</strong> si avvia dal convento di Pescarenico verso casa di Lucia. </p>
 <p>Inizia la biografia di fra Cristoforo. Il suo nome di Battesimo \xE8 Lodovico, figio di un mercante e nato in citt\xE0. \xC8 un <code>protettore degli oppressi</code>, e per questo deve ricorrere spesso all\u2019uso della violenza. Un giorno, assieme ai suoi bravi, incontra un suo rivale, con il quale nasce un duello. Il nobile pugnala il maggiordomo di Lodovico, Cristoforo, quindi lui lo pugnala.
-\\
 Si rifugia quindi presso un convento di cappuccini, dove scopre la sua vocazione e a 30 anni lascia tutto quello che ha e diventa frate. </p>
 <p>Prima di partire per il noviziato Cristoforo fa visita ai parenti del morto per chiedere il perdono. Grazie alla sua umilt\xE0 trasforma la festa mondana in un occasione di perdono sicero. </p>
 <p>Cristoforo arriva a casa di Lucia. </p>
@@ -3496,9 +3548,8 @@ var Giovanni_Verga = create_ssr_component(($$result, $$props, $$bindings, slots)
 <h2>Opere:</h2>
 <p>Si dividono in <code>pre-veriste</code> e <code>veriste</code>, separate da \u201CNedda\u201D, del <code>1874</code>.</p>
 <h3>Opere pre veriste:</h3>
-<p>Sono tutti romanzi, con una <code>dimensione romantica</code>, i protagonisti sono <code>borghesi</code>, ci son <code>storie di sentimenti</code>, l\u2019ambiente di riferimento \xE8 <code>Firenze</code>, la narrazione viene <code>commentata</code> e gli aspetti negativi delle narrazioni dipendono da <code>delusioni personali</code>.
-\\
-Le opere in questione sono:</p>
+<p>Sono tutti romanzi, con una <code>dimensione romantica</code>, i protagonisti sono <code>borghesi</code>, ci son <code>storie di sentimenti</code>, l\u2019ambiente di riferimento \xE8 <code>Firenze</code>, la narrazione viene <code>commentata</code> e gli aspetti negativi delle narrazioni dipendono da <code>delusioni personali</code>.</p>
+<p>Le opere in questione sono:</p>
 <ul><li><code>Eva</code></li>
 <li><code>Eros</code></li>
 <li><code>Tigre reale</code></li>
@@ -3524,14 +3575,71 @@ Le opere in questione sono:</p>
 <td>Romanzo</td>
 <td>1889</td></tr></tbody></table>
 <blockquote><p><strong>Nedda</strong> \xE8 la prima novella con caratteri veristi scritta da Verga. \xC8 ambientata in Sicilia, \xE8 la storia di una donna povera che \xE8 costretta a raccogliere olive. La madre \xE8 malata, e anche il fidanzato (malaria). Ha un figlio prima del matrimonio, quindi viene derisa dall\u2019ambiente siciliano, e considerata amorale. Il fidanzato muore prima della nascita del figlio, potando un ulivo. Quando nascer\xE0 morir\xE0 anche il figlio. Verga evidenzia che <code>il destino umano \xE8 il prodotto delle forze naturali</code>, di cui non abbiamo controllo. Svevo dice \u201Cper fortuna l\u2019uomo si distrae facilmente\u201D, indicando che non ci pensa in continuazione e va avanti con la sua vita.
-\\
 Il componimento \xE8 romantico perch\xE8 gli aspetti negativi hanno come motivazione le <code>delusioni personali</code>, e il racconto viene <code>commentato</code>. \xC8  verista perch\xE8 i protagonisti sono gli <code>umili</code>, e l\u2019ambiente \xE8 la <code>Sicilia</code>. </p></blockquote>
-<h3>I temi e la tecnica:</h3>
+<h3>Il ciclo dei vinti:</h3>
+<p>\xC8 un ciclo di 5 romanzi volto a descrivere come <code>l&#39;uomo di ogni classe sociale sia un vinto</code>. Parla di questo ciclo in una lettera ad un amico, dove spiega le sue intenzioni, inizialmente era intitolato <code>la marea</code>.
+Verga si ferma durante la scriuttura del terzo libro, in quanto narrava una realt\xE0 semp0re pi\xF9 simile alla sua, ed era difficile garantire l\u2019impersonalit\xE0 dell\u2019arte.</p>
+<p>I romanzi della Marea dovevano essere:</p>
+<ul><li><code>Padron &#39;Ntoni</code></li>
+<li><code>Mastro on Gesualdo</code></li>
+<li><code>La Duchessa di Leyra</code></li>
+<li><code>L&#39;onorevole Scipioni</code></li>
+<li><code>l&#39;uomo di lusso</code></li></ul>
+<h2>I temi e la tecnica:</h2>
 <p>Verga ha una <strong>visione pessimista e di sfiducia</strong> nel progresso umano: considera il processo centrale nella sua dimensione generale, ma andalizzando le dinamiche particolari esso manifesta i suoi limiti. Ha una <code>visione pessimista</code> della vita, perch\xE8 si fonda unicamente sui fatti.</p>
 <p>La vita dell\u2019uomo \xE8 una <strong>lotta per la sopravvivenza</strong>, dove l\u2019uomo deve adeguarsi e lottare altrimenti \u201D<code>il mondo come un pesce vorace lo inghiotte</code>\u201C.</p>
 <p><strong>La famiglia</strong> \xE8 un aspetto fondamentale in cui crede Verga, intesa come luogo di riparo e salvezza dal mondo. Lui la consider\xE0 per\xF2 come legame economico, che ti garantisce un <code>benessere economico e sociale</code>. </p>
 <p>I <strong>beni materiali</strong> sono un concetto fondamentali nelle opere di Verga, definiti come <code>roba</code>. nelle opere \u201CNovelle rusticane\u201D e \u201CMastro Don Gesualdo\u201D sono il tema domanante.</p>
-<p>L\u2019<strong>idea di vinto</strong> e il concetto di <strong>sovrastruttura</strong>: usa come protagonisti delle opere i vinti, o il ceto basso, in quanto negli umili \xE8 pi\xF9 facile capire le leggi che governano la realt\xE0. Nei ricchi sono presenti le sovrastrutture (<code>soldi, cultura, immagini sociali, ...</code>) che impediscono di comprendere l\u2019uomo. </p>`;
+<p>L\u2019<strong>idea di vinto</strong> e il concetto di <strong>sovrastruttura</strong>: usa come protagonisti delle opere i vinti, o il ceto basso, in quanto negli umili \xE8 pi\xF9 facile capire le leggi che governano la realt\xE0. Nei ricchi sono presenti le sovrastrutture (<code>soldi, cultura, immagini sociali, ...</code>) che impediscono di comprendere l\u2019uomo.
+Manzoni segue l\u2019idea religiosa, secondo la quale gli umili sono perdenti, ma se si fidano di Dio a loro verr\xE0 affidato il regno dei cieli.
+Verga ha come obbiettivo quello di mostrare come <code>l&#39;uomo sia un vinto</code>, dalla classe sociale pi\xF9 bassa alla pi\xF9 alta. Vuole scrivere il <code>ciclo dei vinti</code>, ma all\u2019inizio del terzo libro si blocca, in quanto lo sente troppo vicino a lui e non riesce a garantire l\u2019impersonalit\xE0 dell\u2019arte. </p>
+<h2>Tecniche narrative:</h2>
+<p>Sono le tecniche che usa Verga per rappresentare il mondo che vuole raccontare:</p>
+<ul><li><p><strong>Eclissi dell\u2019autore:</strong> <code>L&#39;autore non esprime giudizi</code>, parla e pensa attraverso i personaggi. \xC8 caratterizzata dall\u2019uso della terza persona, il narratore \xE8 esterno quindi <code>l&#39;opera si fa da s\xE9.</code></p></li>
+<li><p><strong>Regressione:</strong> l\u2019autore regredisce al livello dei personaggi. usa la <code>lingua italiana</code> con la <code>sintassi del dialetto</code>.</p></li>
+<li><p><strong>Straniamento:</strong> C\u2019\xE8 una <code>divergenza tra il punto di vista dell&#39;autore e del personaggio</code>. L\u2019autore si stranea non commentando la vicienda, quindi ha un punto di vista diverso dal protagonista.</p></li>
+<li><p><strong>Discorso indiretto libero:</strong> \xC8 ancora pi\xF9 libero rispetto al discorso diretto. </p></li>
+<li><p><strong>Uso dei proverbi e modi di dire:</strong> <code>Pi\xF9 una societ\xE0 \xE8 arretrata, pi\xF9 \xE8 immobile</code>. Verga utilizza quindi molti proverbi e modi di dire perch\xE8 non cambiano mai, come una societ\xE0 immobile.</p></li></ul>
+<h2>Vita dei campi:</h2>
+<p>\xC8 una raccolta di novelle <code>ambientate in Sicilia</code> pubblicata nel <code>1860</code>. Il tema fondamentale \xE8 la <code>religione della famiglia</code>, una sorta di religione laica che fa da <code>riparo dal mondo </code>.</p>
+<p><strong>Fantasticheria</strong> \xC8 una novella, ma affronta temi e personaggi che verranno ripresi in \u201Ci Malavoglia\u201D. Affronta il concetto dell\u2019<code>ideale dell&#39;ostrica</code>. </p>
+<p>Parla di una signora borghese che passa in treno vicino ad Aci Trezza. Inizialmete pensa sia un bel paese, ma man mano che si addentra cambia idea, fino a voler partire dopo tre giorni. </p>
+<blockquote><p><strong>Ideale dell\u2019ostrica:</strong> definisce il concetto di adattamento all\u2019ambiente, se l\u2019ostrica si stacca dallo scoglio non produce pi\xF9 il mollusco. Gli uomini devono essere attaccati al loro ambiente e adattarsi ad esso rassegnandosi. <code>Nel caso della povera gente \xE8 stato il destino a farli cadere la, mentre in altre parti seminava principi e duchesse.</code></p></blockquote>
+<h2>I malavoglia:</h2>
+<h3>Caratteri generali:</h3>
+<p>\xC8 il primo <code>romanzo</code> di Verga, iviso in <code>15 capitoli</code> e pubblicato nel <code>1881</code>.
+Parla di una famiglia di pescatori di Aci Trezza, Vivevano nella <code>casa del nespolo</code> e il vero cognome \xE8 <code>Toscano</code>. Avevano cos\xEC tanta volgia di migliorare e arricchirsi che vengono chiamati ironicamente \u201CMalavoglia\u201D. Verga sottolinea il concetto per cui avevano cos\xEC tanta voglia di migliorarsi da diventare la loro rovina, non adattadosi all\u2019ambiente.
+la famiglia era composta da:</p>
+<p>La famiglia era composta da: <br>
+<code>Padron &#39;Ntoni</code>, il figlio <code>Bastianazzo</code> con la moglie detta <code>la Longa</code> e i nipoti: <code>&#39;Ntoni</code>, <code>Mena</code>, <code>Luca</code>, <code>Alessi</code> e <code>Lia</code>.
+Il romanzo inizia nel <code>1863</code>, e dura poco pi\xF9 di 10 anni. \xC8 presente una forte componente storica:</p>
+<ul><li><code>battaglia di Lissa</code> nella terza guerra di indipendenza(1866).</li>
+<li>questione delle <code>tasse e impatto in sicilia</code>.</li>
+<li>la <code>leva obbligatoria</code></li>
+<li>il <code>sistema clientelare</code> (usura).</li>
+<li>il <code>contrabbando</code>.</li>
+<li>il <code>colera</code> che in quegli anni colp\xEC il sud Italia.</li></ul>
+<h3>Storia:</h3>
+<p>\u2018Notni deve fare la leva militare (5 anni), quindi il nonno chiede alle autorit\xE0 di escluderlo. La richiesta non viene accettata, quindi insieme a Bastianazzo decidono di comprare dei <code>lupini da zio Crocifisso</code>, dando come garanzia la casa. Andando nel paese vicino (Riposto) per vendere i lupini la barca <code>provvidenza</code> affonda, facendo morire Bastianazzo. Sono stati quindi puniti dal destino, perch\xE8 volevano migliorare la loro vita. <br>
+La famiglia quindi si impoverisce, e prende diverse strade:</p>
+<ul><li>Luca si arruola nella marina e muore</li>
+<li>Lia va a prostituirsi</li>
+<li>Mena rimane nella casa, ma nessuno la sposa</li>
+<li>\u2018Ntoni se ne va in cerca di fortuna, ma finisce in galera per contrabbando</li>
+<li>La Longa muore di colera</li>
+<li>Alessi rimane nel posto</li>
+<li>Padron \u2018Ntoni \xE8 costretto a morire in ospedale</li></ul>
+<p>Alessi insieme alla moglie e Mena riescono a reimpossessarsi della casa, valorizzando il nome del malavoglia, in quanto non hanno mai lasciato  il posto e si sono adattati all\u2019ambiente.</p>
+<p>I malavogliasi concludono con la figura di <code>Rocco Spatu</code>. \xC8 un finale particolare, perch\xE8 Verga mette in relazione \u2018Ntoni e Rocco. I due amici erano assolutamente contro l\u2019ideale dell\u2019ostrica. I due volevano abbandonare Aci Trezza. Mentre \u2018Ntoni se ne \xE8 andato, rocco pur ribellandosi, \xE8 sempre stato ad Acitrezza, e si \xE8 adattato (in modo diverso da AlessI). Il finale dice che <code>ci sono diverse modalit\xE0 di adattamento</code>, alcune pi\xF9 oneste (come Alessi), altre pi\xF9 disoneste (Rocco). \u2018Ntoni non ha rispettato l\u2019ideale dell\u2019ostrica, come Bastianazzo, e l\u2019ambiente lo ha distrutto.</p>
+<h2>Novelle rusticane:</h2>
+<p>Sono una serie di <code>novelle ambientate in Sicilia</code>, attorno al tema della <strong>roba</strong>, ovvero i <code>beni materiali</code> e la <code>volont\xE0 di arricchirsi</code>. Verga dice che dal pi\xF9 povero al pi\xF9 ricco tutti sono destinati alla morte, e spiega il rapporto tra l\u2019<code>avere le cose e il modo in cui si vive</code>.
+Conclude dicendo:</p>
+<pre class="${"language-undefined"}"><!-- HTML_TAG_START -->${`<code class="language-undefined">Cos\xEC quando era vicino alla morte, quando qualcuno gli disse che doveva pensare all&#39;anima, non alla roba, usci\xEC nel cortile e con passo incerto, e con il bastone ammazzava le anatre, e urlava &quot;roba mia vieni con me&quot;</code>`}<!-- HTML_TAG_END --></pre>
+<h2>Mastro Don Gesualdo:</h2>
+<p>\xC8 un <code>romanzo a protagonista</code> (contrario di corale) pubblicato nel <code>1889</code>. \xC8 incentrato sulla figura di Mastro Don Gesualdo. In questo romanzo il pessismismo \xE8 ancora pi\xF9 accentuato, nessuno ha uno spiraglio di possibilit\xE0. La storia \xE8 ambientata a <code>Vizzini</code>, un paese nell\u2019entroterra siciliano nella zona di Catania. Il protagonista \xE8 Gesualdo Motta, un muratore che si \xE8 arricchito grazie al suo lavoro.
+Anche se era ricco <code>non aveva alcun peso sociale</code>, quindi decisa Bianca Trao, una donna di una famiglia nobile ormai decaduta. Il suo ambiente (i muratori) non lo guardano pi\xF9, perch\xE8 ha sposato un nobile, e i nobili non lo accettano in quanto muratore.
+Sua figlia, Isabella, sposer\xE0 il duca di Leyra.
+La sua famiglia lo odia, perch\xE8 ha passato la vita solo in cerca di arricchirsi, quando muore la moglie, e lui \xE8 vecchio, viene accolto nel palazzo del genero, per ottenere i suoi soldi, e viene accudito dai servitori.</p>`;
 });
 var GiovanniVerga = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -3574,7 +3682,8 @@ var RaccoltaIndiceElement = create_ssr_component(($$result, $$props, $$bindings,
   console.log(json[0].url);
   if ($$props.json === void 0 && $$bindings.json && json !== void 0)
     $$bindings.json(json);
-  return `${each(json, (pages) => `<div class="${"indice-elem inline"}"><div><a${add_attribute("href", pages.url, 0)}>- ${escape2(pages.name)}</a></div>
+  return `${each(json, (pages) => `<div class="${"indice-elem inline"}"><a${add_attribute("href", pages.url, 0)}>- ${escape2(pages.name)}</a>
+		
 		${pages.date !== "noDate" ? `<div class="${"indice-elem-data"}">${escape2(pages.date)}</div>` : ``}
 	</div>`)}`;
 });
@@ -3590,6 +3699,91 @@ var Italiano$1 = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": Italiano,
   prerender: prerender$3
+});
+var Genocidio_degli_Armeni = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
+<h2>Cose generali:</h2>
+<p>Quando parliamo di genocidio intendiamo la <code>morte di un gruppo consistente di persone</code>. Quello degli Armeni \xE8 meno conosciuto di quello degli ebrei in quanto i primi non hanno avuto la possibilit\xE0 di far sentire la loro voce, a causa dell\u2019oppressione turca. La Turchia infatti ancora oggi dichiara di non aver fatto nessun genocidio. \xC8 stato il primo genocidio del 1900. Gli armeni erano <code>cristiani</code>, profondamente <code>colti</code> e esperti nella conservazione dei manoscritti antichi.</p>
+<h2>Contesto storico:</h2>
+<p>Con la nascita della Repubblica turca,i <code>giovani turchi</code>, ufficiali dell\u2019esercito, decidono di sterminare la popolazione, in quanto credevano fossero alleati con i Russi. Il <code>24 aprile del 1915</code> dai turchi part\xEC l\u2019ordine di operare lo sterminio, ci furono arresti, deportazioni, crocifissioni, tra 1 e 1.5 milioni di morti. Per la prima volta si fece ampio uso di telegrafo e ferrovia, furono utilizzti i campi di concentramento.</p>`;
+});
+var GenocidioDegliArmeni = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Genocidio_degli_Armeni
+});
+var Prima_guerra_mondiale = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
+<h2>Cose generali:</h2>
+<p>Detta anche grande guerra, inizi\xF2 nel <code>giugno 1914</code>.</p>
+<p>Un\u2019auto percorre il centro di Sarajevo, capitale della Bosnia, Sarajevo apparteneva all\u2019impero austro-ungarico. In auto c\u2019era l\u2019<code>arciduca d&#39;Austria Francesco Ferdinando</code>, erede al trono degli Asburgo con la moglie. Erano in visita in Bosnia. L\u2019arciduca si era lamentato per le scarse misure di sicurezza, mentre l\u2019auto percorre la strada uno studente Serbo spara sulla macchina, e prima l\u2019arciduca e poi la moglie muoiono. </p>
+<p>Francesco Giuseppe(imperatore d\u2019Austria) ritenne la <code>Serbia colpevole del crimine</code>, quindi Guglielmo II (Germania) dichiara guerra alla Serbia. Nel 1914 quindi scatta il sistema delle alleanze, la Germania affiancata dall\u2019Austria dichiara guerra alla Serbia, e successivamente a Russia e Francia. L\u2019Inghilterra, come alleata, entra in guerra a fianco della Francia.</p>
+<p>Nell\u2019agosto del 1914 scoppia ufficialmente la I Guerra mondiale che opponeva la triplice alleanza e triplice Intesa. Inizialmente gli stati non erano consapevoli del disastro al quale l\u2019europa stava andando incontro, si pensava sarebbe stata una guerra lampo, e le decisioni venivano prese con superficialit\xE0. Gli stati si dimostrarono <code>incapaci di dominare gli eventi</code>, i soldati di entrambi gli schieramenti erano convinti che era il momento per dimostrare la loro forza e coraggio. In Europa si diffuse un <code>forte senso patriotico</code> per cui tutti ritenevano che la guerra avrebbe potuto essere il momento nel quale gli stati avrebbero potuto dimostrare la loro potenza.</p>
+<h3>1914-1916 sul fronte Occidentale:</h3>
+<p><code>Germania e Austria invadono il Belgio</code> per combattere l\u2019esercito Francese, e arrivano non lontano da Parigi, sul fiume Marna (1914).
+La Francia aveva costruito ai confini con la Germania la \u201D<code>linea Maginot</code>\u201D una linea fortificata per bloccare l\u2019avanzata della Germania.
+L\u2019Inghilterra adott\xE0 una strategia di <code>bloccco navale</code>, per la quale blocca i commerci di importazione della Germania.</p>
+<h3>1914 sul fronte Orientale:</h3>
+<p>Germania e Austria-Ungheria cercano di <code>addentrarsi in terrritorio russo</code>, e l\u2019avanzata si blocca in Polonia, ai <code>laghi Masuri</code>. L\u2019esercito Tedesco aveva come obbiettivo quello di arrivare in Russia, e conquistare i territori dell\u2019est (Pengermanesimo). </p>
+<p>Alla fine del 1915 <code>la guerra si blocca con un nulla di fatto</code>, non ci sono n\xE8 vinti, n\xE8 vincitori, e da entrambe le parti la guerra \xE8 in posizione di stallo. Gli allati riescono a bloccare l\u2019avanzata del nemico. </p>
+<blockquote><p><strong>Guerra di trincea:</strong> la prima guerra mondiale ha avuto una sua particolare modalit\xE0 di gestione della guerra. Dall\u2019epoca dei romani nei diversi momenti la guerra veniva fatta con le imbarcazioni, il cavallo\u2026 La prima guerra modiale \xE8 un <code>guerra di posizione combattuta nelle trincee</code>. Ad eccezione dei primi due anni, dove gli eserciti avanzarono in territorio nemico, la guerra diventa di posizione o tricea. I rispettivi eserciti facevno la guerra da fermi, scavavano fossati lunghissimi(trincee) e i soldati rimanevano li e aspettavano o organizzavano l\u2019attacco nemico.  </p></blockquote>
+<p>I soldati Italiani scavavano tre linee. Nella prima linea c\u2019erano i soldati che dovevano sferrare l\u2019attacco, e difendersi con le mitragliatrici.
+La prima mitragliatrice fu fatta in Fiat. Le industrie meccaniche erano industrie che lavoravano per la guerra, per la conversione delle industrie da civile a militare.
+I soldati Italiani avevano una divisa, i pantaloni e le fascie sui piedi. I soldati quando dovevano dormire, mangiare o cambiarsi andavano nella seconda linea, dove era possibile fare delle brevi pause, o nella terza quando le pause erano pi\xF9 lunghe. I soldati scrivevano, ma c\u2019era la censura. Facevano anche lavori manuali, lavoravano il legno e sistemavano le armi. Nella terza linea c\u2019erano spesso i feriti leggeri, quelli gravi morivano. Oltre alle tre linee c\u2019era la base medica e le cucine. I soldati mangiavano una volta al giorno. Gli adetti alla cucina con i muli si recavano lugo le linee di trincea. Nel momento in cui la guerra si stava prolungando anche il morale e la visione dei soldati sulla guerra cambiava. Erano molto meno incentivati.</p>
+<p>Nel corso della guerra gli eserciti ebbero armi sempre pi\xF9 letali, dalla baionetta alle mitragliatrici e i cannoni. Molti rimanevano invischiati nei fili spinati. In seguito si cominciano ad usare i <code>gas</code>, (nella seconda guerra mondiale il Zilcon B), usano il yprite, dal Belgio. Era un gas asfissiante, urticante, le persone manifestavano reazioni allergiche e diventavano ciechi. Furono create della maschere a gas(prima i francesi e inglesi, poi gli italiani).</p>
+<p>Nel 1914 entr\xF2 in guerra anche l\u2019<code>impero Turco Ottomano</code> a fianco dell\u2019Austria e Germania, perch\xE8 aveva tutti gli interessi a scontrarsi con la Russia, e voleva mantenere alcuni territori che erano colonie contese dall\u2019inghilterra. Gli inglesi e i francesi non riuscivano ad impiegare le truppe nel fronte della Germania, dell\u2019Austria e dell\u2019impero Ottomano, quindi mandavano dei colonelli(Lawrence d\u2019Arabia), i quali facevano leva nella popolazione e i civili diventavano militari. </p>
+<h3>Italia:</h3>
+<p>L\u2019Italia era alleata alla Germania e Austria-Ungheria, ma non entr\xF2 in guerra subito, poich\xE8 la Germania dichiar\xF2 guerra alla Serbia senza aver consultato l\u2019Italia, e l\u2019alleanza aveva uno scopo puramente difensivo. <code>L&#39;Italia si dichiara quindi neutrale</code>. All\u2019interno dello stato Italiano nasce un\u2019enorme discussione riguardo all\u2019intervento in guerra. Era re Vittorio Emanuele III e questo dibattito all\u2019interno del parlamento, avvalorato da forte richieste dagli alleati, port\xF2 ad una decisione: Il re e il primo ministro firmano il <code>patto di Londra (1915)</code>, per il quale entrano in guerra a fianco dell\u2019inghilterra, Francia e Russia. Era un patto segreto perch\xE8 il re e il primo ministro non coinvolsero il parlamento. </p>
+<p>L\u2019Italia si era sentita in primo luogo ingannata dalla Germania, e non aveva interesse ad entrare a fianco dell\u2019Austria e Germania, bens\xEC contro, per acquisire i territori irredenti(Friuli-Trentino), che erano occupati dall\u2019Austria-Ungheria.
+Il parlamento come l\u2019opinione pubblica era diviso al suo interno tra neutralisti (maggioranza) e interventisti. Non avevano per\xF2 le stesse motivazioni.</p>
+<p><strong>Erano neutralisti:</strong></p>
+<ul><li><code>I liberali di Giolitti</code><ul><li>Ritenevano che l\u2019italia non fosse preparata ad affrontare un conflitto, pensavano che anche senza intervenirte in guerra prima o poi avrebbero ottenuto i territori irredenti.</li></ul></li>
+<li><code>I cattolici</code><ul><li>Era contro la loro visione del mondo. La guerra per il mondo cattolico era un assurda strage.</li></ul></li>
+<li><code>Socialisti</code><ul><li>Ritenevano che in guerra va la povera gente/ceto basso. La guerra diventa per la popolazione un ulteriore impoverimento. I contadini che vanno in guerra lasciavano le terre incolte.</li></ul></li></ul>
+<p><strong>Gli interventisti:</strong></p>
+<ul><li>Il <code>corriere della sera</code><ul><li>Oggi \xE8 un giornale del centro. </li></ul></li>
+<li><code>Intellettuali</code> con posizioni moderate (centro).</li>
+<li><code>Casa editrice Einaudi</code></li>
+<li><code>I futuristi</code><ul><li>Movimento artistico, sopratutto pittori. Adoravano la modernit\xE0, dipingere le stazioni, macchine etc. Avevano scritto un manifesto nel quale elencavano i punti del loro programma.\u201Dla guerra \xE8 l\u2019unica igiene del mondo\u201D. </li></ul></li>
+<li><code>I nazionalisti</code><ul><li>Per loro la guerra era un modo per dimostrare la propria potenza. </li></ul></li>
+<li><code>I grandi industriali</code><ul><li>Con un economia di guerra e un sistema militare potevano produrre armi.</li></ul></li>
+<li><code>Benito Mussolini</code><ul><li>Era direttore del \u201CL\u2019Avanti\u201D, un giornale socialista. Era un uomo con formazione di sinistra. Quando i socialisti hanno deciso per il non intervento fu cacciato dal giornale, e poi dal partito socialista. Da quel momento manifest\xF2 apertamente le sue posizioni nazionaliste.</li></ul></li>
+<li><code>Gabriele d&#39;Annunzio</code><ul><li>\xC8 un poeta/intellettuale, nato a Pescara, si era costruito una mega villa al lago di Garda, che aveva chiamato \u201Cil vittoriale degli Italiani\u201D. La parola \u201CVittoria\u201D era un termine che andadva di moda durante la guerra. Era fortemente nazionalista, un megalomane, e guerrafondaio. Diventer\xE0 filofascista. D\u2019Annunzio ha fatto anche azioni militari per incitare gli Italiani a ribellarsi ed essere nazionalisti. </li></ul></li></ul>
+<p>L\u2019Italia nel <code>Maggio 1915 entra in guerra</code>, l\u2019esercito era guidato dal generale <code>Luigi Cadorna</code>, che si occup\xF2 di costruire il fronte Italiano. Cadorna era un piemontese, apparteneva quindi ai liberali come Cavour e Giolitti che avevano fatto la storia d\u2019Italia. Era molto severo nei confronti del suo esercito, infatti era convinto che l\u2019esercito fosse carne da cannone. Non aveva nessuna attenzione nei confronti dei militari, e coloro che cercavano di fuggire venivano uccisi come disertori. L\u2019esercito era disposto nel fronte italiano, lungo 650km, un fronte che andava dal trentino al Friuli Venezia Giulia. Era una trincea che separava l\u2019Italia dall\u2019impero, era costruito in zone impervie(montagne) (Trento, rovereto, monte Grappa, Asiago, Belluno, Feltre, Vittorio veneto, etc. fino al carso(catena montuosa di roccia carsica, quindi una roccia che si erode facilmente. Ci sono tante grotte, perch\xE8 l\u2019acqua erode la roccia)). Alcune di queste zone non erano ben difese, quindi era facile sfondare la trincea. Truppe erano posizionate nei grandi fiumi(Piave, Isonzo(furono combattute 11 battaglie sull\u2019isonzo)). </p>
+<h2>1916 sul fronte occidentale:</h2>
+<p>L\u2019esercito tedesco si addentra nel territorio francese per arrivare a Parigi. Scoppia la <code>battaglia di Verdun</code> ne 1916 (dura 4 mesi), una carneficina, ma i francesi riescono a fermare i Tedeschi. A nord di Parigi c\u2019\xE8 la <code>battaglia delle somme</code>, nel 1916, combattuta tra inglesi e tedeschi in territorio francese.
+La Germania avvia una guerra sottomarina contro l\u2019Inghilterra, si scontrano nel mare del nord (<code>Battaglia dello Jutland</code>). l\u2019Inghilterra riusc\xEC a bloccare moltissime navi di approvvigionamento (vittoria sul piano navale inglese).</p>
+<h2>1917 sul fronte Orientale:</h2>
+<p>La russia riesce a bloccare l\u2019avanzata tedesca, ma nel 1917 si ritira dalla guerra. Erano scoppiate le <code>rivoluzioni di Febbraio e Ottobre</code>. Si dichiara quindi sconfitta, e perder\xE0 diversi territori.</p>
+<h2>1916 in Italia:</h2>
+<p>L\u2019italia subisce la <code>spedizione punitiva dell&#39;Austria-Ungheria</code>, che bombarda la zona del trentino. L\u2019esercito Italiano riesce a bloccare l\u2019avanzata, e scoppiano diverse battaglie sull\u2019Isonzo, sul monte Grappa, l\u2019altopiano di Asiago e il Carso. A fianco dell\u2019esercito austriaco si unisce quello tedesco, che ritorna dal fronte orientale. Per l\u2019Italia il 1917 \xE8 un anno terribile, perch\xE8 c\u2019\xE8 <code>Caporetto</code>, una sconfitta pesantissima. \xC8 una cittadina della Slovenia, dove l\u2019esercito fu colto alla sprovvista, in quanto le trincee erano state bombardate furono sganciate le granate di gas. Il generale cadorna fu sostituito da <code>Armando Diaz</code>.</p>
+<h2>Intervento degli USA:</h2>
+<p>Non si erano mai occupati di quello che succedeva fuori dall\u2019America, entrano in guerra per <code>garantire la pace e l&#39;autodeterminazione dei popoli</code>. In realt\xE0 vogliono la pace come condizione per il commercio. Intervengono come <code>paese Associato</code>, non Alleato. Gli USA entrano in guerra nel 1915, in seguito all\u2019affondamento del transatlantico \u201CLusitania\u201D da parte di un U-Boat tedesco.</p>
+<h2>Conclusione della guerra:</h2>
+<p>Diaz diede una nuova motivazione ai soldati, che vinsero la <code>battaglia di Vittorio Veneto</code>. Il <code>4 novembre 1918 finisce la guerra per l&#39;Italia</code>, con la firma dell\u2019armistizio. I tedeschi sono costretti a ritirarsi dalla Francia, e l\u2019imperatore tedesco si nasconde, viste le sollecitazioni della flotta militare. La Germania diventa una Repubblica, la <code>repubblica di Weimar</code>.</p>
+<h2>Primo dopoguerra</h2>
+<p>Con la fine della prima guerra mondiale spariscono dalla scena europea i quattro imperi: Tedesco, austro-ungarico, Prusso e Ottomano.
+Si tiene la <strong>conferenza di Parigi</strong>, a Versailles, per decidere le sorti dei paesi. All\u2019interno della conferenza molti stati volevano colpire serveramente la causa della guerra, invece gli USA dovevano ripristinare la pace e far rispettare i <code>14 punti di Wilson</code>. In realt\xE0 i punti non furono seguiti e la Germania fu colpita come causa della prima guerra mondiale. i 14 punti derivano da un discorso che il presidente aveva fatto alla nazione nel gennaio 1918. Tra questi ci sono:</p>
+<ul><li><code>Promuovere la diplomazia</code>, abolendo la diplomazia segreta.</li>
+<li><code>Libert\xE0 dei mari</code>, per la quale gli stati possono navigare rispettando un tot miglia marine.</li>
+<li><code>Riduzione degli armamenti</code>, riconvertendo le industrie.</li>
+<li><code>Autodeterminazione dei popoli</code>, i popoli hanno il diritto di decidere da soli i confini e la strategia militare. </li></ul>
+<p>Fu creata la <code>societ\xE0 delle nazioni</code>, con sede a Ginevra. \xC8 un organizzazione il cui scopo \xE8 il rispetto dei principi. Dopo la seconda guerra mondiale si chiamer\xE0 ONU. </p>
+<h3>Germania:</h3>
+<p>Le viene tolto il <code>corridoio di Danzica</code>, vicino alla Polonia, per rendere pi\xF9 difficile un\u2019ipotetica espansione verso est. Fu privata di alcune <code>zone minerarie</code>, che passano sotto il controllo dalla Francia, perde le <code>colonie</code>, in particolare in Africa e deve restituire l\u2019<code>Alsazia e la Lorena</code> alla Francia. Deve inoltre <code>restituire i danni di guerra</code> in termini monetari ai paesi vincitori. L\u2019entit\xE0 dei danni portarono una enorme svalutazione del marco.</p>
+<h3>Austria-Ungheria:</h3>
+<p>Da parte dei suoi territori nascono la Polonia, Boemia, Cecoslovacchia etc. Viene privata del <code>Trentino, Friuli e Estria</code>, che vengono assegnati all\u2019Italia.</p>
+<h3>Russia:</h3>
+<p>Esce dalla guerra firando il trattato di <code>Brest-Litovsk</code> con la Germania, deve pagare le <code>indennit\xE0 di guerra</code> a Germania e Austria-Ungheria. Perde Estonia, Lituania, Ukraina etc, i giacimenti di carbone e ferro. Il controllo di alcune fabbriche pass\xF2 alla Germania.</p>
+<h3>Impero ottomanio:</h3>
+<p>Perse molti possedimenti in medio oriente e Irack.  Siria e Libia diventano autonomi, altri stati vengono controllati dai vincitori. Nasce la Turchia, che \xE8 quello che rimane del grande impero ottomano. </p>
+<h3>Italia:</h3>
+<p>Vince la guerra, ma viene considerata un vittoria mutilata, perch\xE8 non avr\xE0 tutti i territori promessi con il patto di Londra.</p>`;
+});
+var PrimaGuerraMondiale = /* @__PURE__ */ Object.freeze({
+  __proto__: null,
+  [Symbol.toStringTag]: "Module",
+  "default": Prima_guerra_mondiale
 });
 var L_etuC3uA0_di_Giolitti = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `${validate_component(IndicePath, "IndicePath").$$render($$result, {}, {}, {})}
@@ -3646,7 +3840,9 @@ var Venti_di_guerra = create_ssr_component(($$result, $$props, $$bindings, slots
 <li><p>la <strong>Politica agressiva della Germania:</strong> La Germania <code>nasce nel 1871</code>, e fin da subito addott\xF2 una politica che la collocasse in una posizione centrale in Europa. \xC8 riuscita nel suo tentativo egemone grazie ad un <code>gruppo di industriali</code> che manteneva alto il suo livello economico e in quanto disponeva di materiali e <code>materie prime</code>. Era fortemente militarizzata.</p>
 <blockquote><p><strong>Pangermanesimo:</strong> filosofia adottata dalla Germania che prevedeva il controllo dei popoli che parlano lingua tedesca (ex impero romano germanico, Austria, Ungheria, Polonia, Balcani, Ex Jugoslavia, nord Italia)</p></blockquote></li>
 <li><p>Il <strong>Razzismo:</strong> Iniziano a circolare le idee secondo cui alcuni popoli devono essere dominati e governati da altri.</p></li>
-<li><p><strong>Nazionalismi interni all\u2019impero Austro-Ungarico</strong>.</p></li></ul>`;
+<li><p><strong>Nazionalismi interni all\u2019impero austro-ungarico:</strong> Quando nel 1870 nasce la Germania da una parte abbiamo la Germania(Prussia), dall\u2019altra l\u2019impero Austro Ungarico. Questo non era solo Austria e Ungheria, ma comprendeva Austria, Ex Jugoslavia, e tutti i terrritori che poi sono diventati Russia, e che dopo la caduta dell\u2019URSS sono tornati nuovamente autonomi. L\u2019Impero Asburgico confina a Sud est con l\u2019impero ottomano (Grecia, Macedonia, Kosovo). Essendo un impero ci sono <code>popoli con culture e visioni</code> del mondo/religione tra loro diverse. La dinastia che governava l\u2019impero era gli asburgo, la convivenza tra questi popoli non era per niente pacifica, e l\u2019imperatore della dinastia degli asburgo, in particolare Francesco Giuseppe aveva in mente di creare una <code>monarchia Trialista</code>.</p></li>
+<li><p><strong>I Balcani:</strong> sono la <code>catena montuosa</code> che va dall\u2019europa centrale fino al mediterraneo.  In questi teritori c\u2019erano <code>profondi contrasti politici, economici e religiosi</code>, e in conseguenza delle guerre balcaniche del 1912-1913 erano nati nuovi stati autonomi, che si erano staccati in parte dall\u2019impero austroungarico, in parte dll\u2019ottomano. Tra tutti questi stati c\u2019era la <code>Serbia, che vuole diventare uno stato egemone all&#39;interno dei territori balcanici</code>. Dopo questo periodo la Serbia si \xE8 proposta nella guerra civile della ex jugoslavia. Nei balcani tuttavia nasce un fenomeno simile al pangermanesimo, il <code>panslavismo</code>, secondo il quale in tutta la zona dei balcani <code>ogni stato voleva avere l&#39;autonomia e una egemonia sugli altri</code>. Bisogna aggiungere il concetto di monarchia trialista, ovvero L\u2019Austria Ungheria vuole costruire un impero che veda insieme Austria + Ungheria+ Serbia. Se la serbia voleva essere egemone all\u2019interno dei balcani, e l\u2019austria ungheria voleva conglobare la serbia, scoppia un casino. </p></li>
+<li><p><strong>Corsa agli armamenti</strong>, overo il fatto che molti dei paesi europei alla fine dell\u2019800 e nei primi del 900 avevano come obbiettivo quello di rafforzare il loro apparato militare. </p></li></ul>`;
 });
 var VentiDiGuerra = /* @__PURE__ */ Object.freeze({
   __proto__: null,
@@ -3695,21 +3891,6 @@ var Storia$1 = /* @__PURE__ */ Object.freeze({
   [Symbol.toStringTag]: "Module",
   "default": Storia,
   prerender: prerender$2
-});
-create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  let {pageURL} = $$props;
-  let {pageName = ""} = $$props;
-  let {date} = $$props;
-  var fullURL = (pageURL + "/" + pageName).replace(/ /g, "-").replace(/'/g, "-");
-  console.log(fullURL);
-  if ($$props.pageURL === void 0 && $$bindings.pageURL && pageURL !== void 0)
-    $$bindings.pageURL(pageURL);
-  if ($$props.pageName === void 0 && $$bindings.pageName && pageName !== void 0)
-    $$bindings.pageName(pageName);
-  if ($$props.date === void 0 && $$bindings.date && date !== void 0)
-    $$bindings.date(date);
-  return `<div class="${"indice-elem inline"}"><div><a${add_attribute("href", fullURL, 0)}>- ${escape2(pageName)}</a></div>
-	${date !== "noDate" ? `<div class="${"indice-elem-data"}">${escape2(date)}</div>` : ``}</div>`;
 });
 var prerender$1 = true;
 var Scuola = create_ssr_component(($$result, $$props, $$bindings, slots) => {
