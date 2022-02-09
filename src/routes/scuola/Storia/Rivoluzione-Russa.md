@@ -18,7 +18,7 @@ La Russia `esce sconfitta dalla prima guerra mondiale`, a causa sopratutto delle
 ## Rivoluzione agraria
 Nel `1905` i contadini si ribellano alle condizioni in cui vivono e devono lavorare. È una `rivoluzione agraria`, chiedono una garanzia dei diritti e dei doveri e una più equa distribuzione dei terreni. Questa rivoluzione ha un esito positivo, perchè ricevono più terre, ma non hanno gli strumenti per lavorarle,  quindi nei fatti la rivoluzione del 1905 non porta a nulla. 
 
-## Rivoluzione di Febbraio :
+## Rivoluzione di Febbraio:
 
 A `Febbraio del 1917` nelle fabbriche di Pietrogrado e Mosca si impone uno sciopero Generale. Gli operai si ritrovano nella `prospettiva Nevski`. L'esercito, controllato dallo zar Nikola II, intervenne per bloccare lo sciopero, ma si rifiutò di sparare sui manifestanti, disubbidendo allo Zar. I manifestanti insieme ai soldati saccheggiarono l'arsenale, cioè il luogo dove lo Zar a San Pietroburgo conservava le armi. Si parla di guerra civile perchè è una parte della popolazione contro lo Zar e i suoi fedeli.
 Come esito questa rivoluzione ha la `nascita della repubblica`, quindi un esito positivo. Cade l'impero e nasce la repubblica dove la Duma deve interfacciarsi con lo zar. Grazie a questa rivoluzione nascono i `Soviet`, ovvero organismi di autogoverno gestiti e voluti dal popolo. Nasce quindi un dualismo di potere, dove il popolo si da un suo autogoverno(soviet di Pietrogrado ) e il governo provvisorio(Zar). Nasce quindi la repubblica all'interno del dualismo di potere. 
@@ -50,19 +50,19 @@ Lenin ha una visione Marxista e comunista, però l'applicazione del Marxismo in 
 
 Lenin individua la `CEKA`, un'organizzazione che ha come obiettivo quello di realizzare il suo programma politico, una sorta di polizia di stato. È un esercito che risponde al partito, quindi allo stato. Le SS, SA e le camicie nere sono l'esercito di Hitler e Mussolini, nati come mano armata del partito. La CEKA aveva gli obiettivi di far rispettare le idee della dittatura del proletariato, e scovare coloro che erano contrari al sistema di Lenin.
 
-## Nascita dell'URSS
+## Nascita dell'URSS:
 Dal `1918 al 1922 `in Russia scoppia una guerra civile tra l'armata bianca e l'armata rossa, dove muoiono tantissime persone. È vinta dall'armata rossa e, grazie alla vittoria, `nel 1922 nasce URSS`, che rimarrà fino al 1991. Durante l'era comunista non c'era l'immigrazione, i barboni, la povertà. Quando cade l'URSS nascono i vari stati, e anche i balcani soffrono di questa situazione. Si crea una povertà enorme. È l'Unione delle Repubbliche Socialiste(comuniste) Sovietiche(da soivet).
 L' URSS avrà come presidente Lenin, che muore nel 1924. Il KGB È la derivazione moderna della CEKA, una polizia segreta che aveva come obiettivo di manere inaltetrato il sistema comunista. Putin era un esponente del KGB.
-Quando Lenin sale al potere egli esercità la "`mossa autoritaria`" o lotta al dissenso. Elimina quindi tutte le organizazioni rivoluzionarie(sindacati, partito menshevico) e i Soviet che avevano fatto la rivoluzione furono smantellati. La CEKA eliminò la famiglia reale che venne Giustiziata dopo essere stata imprigionata. Nikola II e la famiglia sparirono ne 1918. Si creò così la dittatura del partito comunista. 
+Quando Lenin sale al potere egli esercità la "`mossa autoritaria`" o lotta al dissenso. Elimina quindi tutte le organizazioni rivoluzionarie(sindacati, partito menshevico) e i Soviet che avevano fatto la rivoluzione furono smantellati. La CEKA eliminò la famiglia reale che venne Giustiziata dopo essere stata imprigionata. Nikola II e la famiglia sparirono nel 1918. Si creò così la dittatura del partito comunista. 
 La Russia è il primo stato, prima di Hitler e mussolini ad usare uno strumento di repressione che erano i campi di lavoro
 Coloro che dissentivano erano fisicamente eliminati o collocati nei campi di lavoro. Questa pratica fu usata sopratutto dagli inglesi nei confronti dei sud africani, essendo loro colonia, poi dai russi, che instituirono per gli oppositori politici i campi di lavoro. 
 
 Il pensiero comunista sul piano politico prevede assenza di proprietà privata, ugualianza tra le persone, distribuzione dei beni, garanzie uguali per tutti etc. Per un sistema politico comunista è centrale l'economia. Marx dice che lo stato comunista deve occuparsi principalmente dei beni materiali. L'istruzione arriva dopo. È importante avere un lavoro, una casa. In un sistema comunista lo stato deve avere assolutamente il controllo dell'economia, perchè controlla tutto, l'istruzione, sanità etc.
 
-Organizzazione dell'economia in Russia
+## Organizzazione dell'economia in Russia:
 - **Comunismo di guerra**, `(1917 - 1921)`, Lenin
 
-    È una organizzazione dell'economia di tipo comunista. Tutto è nelle mani dello stato, sia l'industria, l'agricoltura, che i sarvizi e lo stato paga l'agricoltore e l'operaio. È "di guerra" perchè è un organizzazione dell'economia degli anni delle rivoluzioni, della guerra, degli anni bui dove lo stato si rafforza per organizzare la sua economia. È un comunismo molto severo e stringente perchè siamo in un contesto di guerra.
+    È una organizzazione dell'economia di tipo comunista. Tutto è nelle mani dello stato, sia l'industria, l'agricoltura, che i servizi e lo stato paga l'agricoltore e l'operaio. È "di guerra" perchè è un organizzazione dell'economia degli anni delle rivoluzioni, della guerra, degli anni bui dove lo stato si rafforza per organizzare la sua economia. È un comunismo molto severo e stringente perchè siamo in un contesto di guerra.
 
 - **NEP** (nuova politica economica), `(1921 - 1924)`, Lenin
 
