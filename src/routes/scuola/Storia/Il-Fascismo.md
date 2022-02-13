@@ -66,6 +66,19 @@ Caratteristiche di questi sistemi:
 
 Fino al 1924 Mussolini ebbe enorme consenso, dava sicurezza alla popolazione. Con l'eccidio Matteotti il consenso iniziava a diminuire, perchè si comprendeva la mano armata e autoritaria del regime, accentuata poi dalla corruzione e i brogli nelle elezioni. A Mussolini non conveniva tenere la fase legalitaria, perchè non l'avrebbe potuta controllare. Addossa quindi al fascismo la `responsabilità dell'eccidio Matteotti`. Qui avviene il passaggio alla fase totalitaria.
 
+## Leggi fascistissime:
+Nel 1926 Mussolini emana le Leggi fasistissime, con le quali:
+- Diede `poteri straordinari al capo del governo`, si assegna oltre al potere legislativo (che gli spettava già), il potere legislativo (del parlamento) e giudiciario (dei giudici).
+- `abolì tutti i partiti` ad eccezione di quello fascista.
+- `Identificò lo stato con il partito fascista`, gli insegnanti, magistrati e impiegati pubblici dovevano giurare fedeltà al partito.
+- `Sciolse i sindacati`, tranne quelli fascisti.
+- `sciolse le associazioni libere e private`, trasformandole in appendici dello stato, guidate da esponenti del partito.
+- `definì antifascisti` gli oppositori e gli obbligò al confino, reclusione o pena di morte.
+- trasformò la `Ceka in Ovra`.
+- `abolì la libertà di stampa` e ne fece uno strumento di propaganda.
+- `obbligò tutti gli italiani ad iscriversi a partito fascista`, ed esibire la tessera per ogni impiego pubblico.
+
+
 ## Politica religiosa:
 Tra lo stato italiano, nato nel 1860 e lo stato della chiesa non c'era mai stato fino a quel momento un accordo che definisse le competenze, i catteri e autonomia dell'uno e dell'altro. Mussolini riuscì a fare quello che nessun re e ministro era riuscito a fare, i `patti lateranensi (1929)`, dove con papa Pio 11 concordano i rapporti tra stato e chiesa. Sono all'interno della costituzione Italiana all'articolo 7 e 8.
 Questi prevedono che:
