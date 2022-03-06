@@ -4,7 +4,7 @@
   </script>
 
 ## Caratteri generai:
-Nasce a San Mauro di Romagna nel `1855`. Il padre gestiva una grande tenuta agricola del principe di Torlonia. Passava la vita rinchiuso in casa lamentandosi, era un poeta estraneo dal vitalismo e dall'estetismo. il `10 Agosto 177` viene ucciso il padre mentre sta tornando a casa, probabilmente per una questione di terre. Da quel momento la famiglia comincia ad avere problemi economici, l'anno dopo muore la madre ea distanza di anni da 10 Fretelli restano Lui, Ida e Maria. Pascoli viveva nei confronti delle sorelle un affetto quasi morboso, quando Ida si sposa va ancora più in crisi, al punto che rimarrà per tutta li vita con Maria. Faceva l'insegnante di italiano e latino al liceo, poi insegnerà grammatica greca e latina all'università di Bologna e quando Carducci abbandonerà la cattedra anche letteratura italiana. Quando muore vrrà sepolto nella cappela di famiglia assieme alla sorella Maria.
+Nasce a San Mauro di Romagna nel `1855`. Il padre gestiva una grande tenuta agricola del principe di Torlonia. Passava la vita rinchiuso in casa lamentandosi, era un poeta estraneo dal vitalismo e dall'estetismo. Il `10 Agosto 1877` viene ucciso il padre mentre sta tornando a casa, probabilmente per una questione di terre. Da quel momento la famiglia comincia ad avere problemi economici, l'anno dopo muore la madre ea distanza di anni da 10 fratelli restano Lui, Ida e Maria. Pascoli viveva nei confronti delle sorelle un affetto quasi morboso, quando Ida si sposa va ancora più in crisi, al punto che rimarrà per tutta la vita con Maria. Faceva l'insegnante di italiano e latino al liceo, poi insegnerà grammatica greca e latina all'università di Bologna e quando Carducci abbandonerà la cattedra anche letteratura italiana. Quando muore vrrà sepolto nella cappela di famiglia assieme alla sorella Maria.
 
 ## Opere:
 ### In latino:
@@ -33,37 +33,32 @@ In ogni uomo c'è un fanciullino, che non ha solo paura ma anche tripudi e gioia
 
 ### Lavandare:
 ```
-Nel campo in parte grigio, e in parte nero *[1]*     
-Rimane un aratro senza buoi *[2]*       
+Nel campo in parte grigio, e in parte nero [1]    
+Rimane un aratro senza buoi [2]      
 Che sembra dimenticato tra la nebbia 
 
-E cadenzato dalla gora *[3]*    
-Arriva lo sciabordare delle lavandaie  *[4]*
-Con tonfi spessi e lunghe cantilene *[5]*
+E cadenzato dalla gora [3]   
+Arriva lo sciabordare delle lavandaie  [4]
+Con tonfi spessi e lunghe cantilene [5]
 
 
 Il vento soffia e dai rami degli alberi cadono le foglie
 E tu non ritorni ancora al tuo paese
 Quando sei partito come sono rimasta
 Come l'aratro in mezzo ad un campo coltivato 
-a maggese *[6]*
+a maggese [6]
 ```
-*[1]* La parte grigia è non arata, la parte nera è arata
-
-*[2]* Il lavoro dei campi era fatto dall'aratro trascinato dai buoi
-
-*[3]* E ritmato dal suono del ruscello incanalato
-
-*[4]* Senti il suono delle lavandaie che sciabordano (lavano)
-
-*[5]* Mentre lavavano spattevano le stoffe e si facevano compagnia con  canzoni
-
+*[1]* La parte grigia è non arata, la parte nera è arata<br>
+*[2]* Il lavoro dei campi era fatto dall'aratro trascinato dai buoi<br>
+*[3]* E ritmato dal suono del ruscello incanalato<br>
+*[4]* Senti il suono delle lavandaie che sciabordano (lavano)<br>
+*[5]* Mentre lavavano spattevano le stoffe e si facevano compagnia con  canzoni<br>
 *[6]* In parte coltivato, in parte no
 
 Pascoli sta facendo un quadro del paesaggio, siamo in campagna, in autunno, il vento soffia e mentre qualcuno procede all'aratura dei campi le donne si adoperano per lavare i panni. Apparte questa descrizione, il contenuto che vuole esprimere si concentra sulle parole: `Dimenticato, Non torni , Partisti e Rimasta`. Il contenuto non è così semplice perchè è la storia di chi se n'è andato e di chi andandosene ha lasciato solo qualcuno. È possibile comprendere come la poesia inizia con un aratro dimeticato e con un aratro collocato in mezzo ad un campo in parte coltivato, in parte no. Questa poesia iniziando e finendo con l'aratro abbia uno `schema circolare`, inizia e finisce nello stesso punto.  Per dare l'idea della musicalità del testo Pascoli evidenzia alcune parole: "mezzo grigio e mezzo nero", "in mezzo" la ripetizione della parola significa che ti manca qualcosa, aprire un testo con il concetto di mezzo vuol dire che ti manca una parte. Il termine "sciabordare" e "lavandare" sono due verbi che finiscono in "are" e danno l'idea del rumore dell'acqua mentre si muovono i panni e del lavare. L'apertura in "are" da l'idea di un movimento aperto.
 
 "pare dimenticato" è un'inarcatura, ovvero quando l'ultima parola di un verso è collegata alla prima del verso seguente. 
-"nevica la frasca" è un'analogia, è una figura tetorica che rappesenta in modo sintetico un paragone, una specie di raffronto.  Sarebbe "i rami fanno cadere le foglie come se nevicasse". 
+"nevica la frasca" è un'analogia, è una figura retorica che rappesenta in modo sintetico un paragone, una specie di raffronto.  Sarebbe "i rami fanno cadere le foglie come se nevicasse". 
 
 ### Novembre:
 ```
@@ -75,11 +70,13 @@ E senti nel tuo cuore il profumo amaro del prunalbo
 Per la botanica usa sempre nomi ricercati
 "l'odorino amaro senti nel cuore" Sinestesia: è una figura retorica che prevede l'aggancio tra parole che dipendono da ambiti sensoriali diversi. Si unisce l'ambito dell'olfatto con l'ambito della pecezione. 
 ```
-Ma il pruno è secco e le piante segnano --> se l'albero non ha foglie è come se segnasse il cielo con trame nere
+Ma il pruno è secco e le piante segnano [1] 
 il cielo sereno con trame nere 
 Il terreno risulta vuoto al piede che lo percorre
 ```
-Se prima aveva detto che sembra che siamo in primavera, al verso 5 usa "ma", una congiunzione avversativa e in quanto tale distingue il prima dal dopo. Con ma dice che non siamo in primavera, perchè il pruno non ha le foglie, i rami segnano il cielo, e la persona che percorre il terreno srente il piede risuonare nel vuoto.
+*[1]* Se l'albero non ha foglie è come se segnasse il cielo con trame nere
+
+Se prima aveva detto che sembra che siamo in primavera, al verso 5 usa "ma", una congiunzione avversativa e in quanto tale distingue il prima dal dopo. Con *ma* dice che non siamo in primavera, perchè il pruno non ha le foglie, i rami segnano il cielo, e la persona che percorre il terreno srente il piede risuonare nel vuoto.
 ```
 Silenzio intorno, solo al vento
 Senti da lontano dai giardini e dagli orti un debole cadere di foglie.
@@ -97,16 +94,19 @@ San Lorenzo io lo so perchè
 Così tante stelle brillano e cadono nell'aria serena.
 Io lo so perchè un così grande pianto brilla nella concavità del cielo. 
 
-Ritornava una rondine al nido(tetto)--> metonimia
+Ritornava una rondine al nido [1]
 L'uccisero e cadde tra le spine   
 La rondine aveva nel becco un insetto 
 che era: la cena per i suoi rondinini. 
 
-Ora che è morta è la come in croce  --> dorso a terra e ali spiegate
+Ora che è morta è la come in croce [2]
 Che mostra il verme ad un cielo lontano
 E il suo nido è nell'ombra che aspetta 
 e che pigola sempre più piano.
 ```
+*[1]* si intende il tetto--> metonimia<br>
+*[2]* dorso a terra e le ali spiegate
+
 Da una parte c'è un'idea religiosa (religione), dall'altra parte la negazione (cielo lontano), nessuno si occupa dei bisogni dell'uomo. Indipendentemente dal fatto che dovesse ritornare al nido, nessuno interviene a favore. Ogni uomo si deve arrangiare. 
 ```
 Anche un uomo ritornava al suo nido
@@ -122,10 +122,12 @@ Lo aspettano inutilmente
 Egli immobile, attonito, mostra
 Le bambole al cielo lontano
 
-E tu Cielo dall'alto dei mondi      --> Cielo ha la maiuscola perchè è una personificazione. È un essere superiore
-Sereni, infinito, immortale              --> Climax.  
+E tu Cielo [1] dall'alto dei mondi 
+Sereni, infinito, immortale [2]  
 Tu cielo diffondi in questo atomo opaco del male un pianto di stelle
 ```
+*[1]* Cielo ha la maiuscola perchè è una personificazione. È un essere superiore<br>
+*[2]* Climax
 
 Vuol dire, E tu cielo rimani nel tuo sistema sempre sereno e immortale. 
 Il cielo invia alla terra(atomo immortale del male) un pianto di stelle. Un conto è se ci da delle prospettive, un bel cielo, un conto le stelle che cadono. 

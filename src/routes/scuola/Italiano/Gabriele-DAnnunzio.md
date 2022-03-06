@@ -12,13 +12,13 @@ La sua vita può essere divisa in varie fasi:
 
 
 ### Pescara:
-Nasce a `Pescara` da una famiglia benestante, e studia in un collegio prestigioso. fin da subito è appassionato di letteratura, e compone le sue prime poesie. Dopo iaver ottenuto il diploma si inscrive all'università, ma non si laurea, la sua attività prevalente era quella del `giornalismo`.
+Nasce a `Pescara` da una famiglia benestante, e studia in un collegio prestigioso. Fin da subito è appassionato di letteratura, e compone le sue prime poesie. Dopo aver ottenuto il diploma si inscrive all'università, ma non si laurea, la sua attività prevalente era quella del `giornalismo`.
 
 **Compone le prime opere**
 
 
 ### Roma:
-Si trasferisce ne `1881`, dove frequenterà i salotti più esclusivi della capitale. D'annunzio li frequentava sia per `ragioni culturali`, sia per `ragioni sociali` (gli piaceva essere in vista).
+Si trasferisce nel `1881`, dove frequenterà i salotti più esclusivi della capitale. D'annunzio li frequentava sia per `ragioni culturali`, sia per `ragioni sociali` (gli piaceva essere in vista).
 Si sposa a 20 anni, ma dopo 3 anni ha già un'amante, si separa dopo 7 anni. Usava le donne per poter avere uno stile di vita più alto delle sue possibiità.
 
 **Scrive il romanzo dell'estetismo `Il piacere` (1889).**
@@ -50,7 +50,7 @@ Una volta guarito torna al fronte e, a conclusione della guerra, compie due azio
 ### Gardone Riviera:
 Si costruisce una villa nel lago di Garda, il Vittoriale degli Italiani, dove verrò sepolto. 
 
-era filofascista, ma dopo il 1924 si distacca e fa la vita d'artista.
+Era filofascista, ma dopo il 1924 si distacca e fa la vita d'artista.
 
 ## Il mito di sé stesso:
 La visione del mondo e lo stile di vita di D'Annunzio prendono il nome di `Dannunzianesimo`, era un uomo fuori dal comune, volle creare il mito di s'è stesso e ci riusci. Il vittoriale è pensato e arredato come museo autocelebrativo. Era esibizionista, amava essere al centro dell'attenzione, un playboy, frequentava party e cacce alla volpe, era un dandy e andava al caffè greco (piazza di Spagna, Roma).
@@ -58,7 +58,7 @@ Fu uno dei primi intellettuali a capire l'importanza della `pubblicità`. L'arte
 
 ## Il Piacere:
 È un romanzo dell'estetismo diviso in quattro libri pubblicato nel 1889. Ha una trama sintetica, infatti nel componimento prevale la descrizione rispetto alla narrazione dei fatti.
- Il protagonista è `Andrea Sperelli`, un dandy, un uomo colto e raffinato che dopo avero viaggiato a lungo va a Roma. Il romanzo non ha una trama lineare, segue infatti la `linea del tempo interiore`, che non coincide con l'ordine cronologico degli avvenimenti. 
+ Il protagonista è `Andrea Sperelli`, un dandy, un uomo colto e raffinato che dopo aver viaggiato a lungo va a Roma. Il romanzo non ha una trama lineare, segue infatti la `linea del tempo interiore`, che non coincide con l'ordine cronologico degli avvenimenti. 
  
  Andrea era innamorato di Elena Muti, e il romanzo inizia con lei che va nella villa in piazza di Sapgnaa Roma dove vieve Andrea, anche se erano già separati. Per amor di Elena aveva compiuto un duello, era rimasto ferito e aveva passato la convalescenza a casa di una cugina, dove aveva conosciuto Maria Ferres. Vede elena nel suo palazzo, che intanto si era sposata. Elena è una donna passionale, Maria è una donna più spirituale. Una sera Sperelli durante una relazione invece di chiamare Maria con il suo nome la chiama Elena. Maria se ne va infastidita, e l'opera si conclude con Andrea che vive solo nel palazzo.
 
@@ -71,9 +71,9 @@ Afferma che nell'uomo ci sono due anime:
   - **Anima di Apollo** (apollea)
     ○ È il simbolo dell'equilibrio, dell'ordine, della bellezza.
 
-Per Nietzsche deve prevalere l'anima dionisiaca,per differenziarsi dall'uomo comune. È un uomo creativo, che si distingue dagli altri, è un uomo che ha volontà di potenza. Anche D'Annunzio ha reinterpretato l'immagine dell'oltreuomo, dando origine al `superuomo`. Questa è un'interpretazione forzata che rende Nietzsche un autore antidemocratico. Nietzsche parla nella sua opera di `nichilismo`(nihil, nulla), che poi si chiamerà "Dio è morto". È una visione della realtà che ha come fondamento il credere nel nulla, o non credere in nulla. Perchè credi non ci sia nulla di logico, continuo e sensato in cui credere. Dio è morto vuol dire che nulla, ne la religione, ne la filosofia, ne le istituzioni possono rappresentare una garanzia per l'uomo. Nietzsche rifiuta tutte le filosofie che la storia ha creato considerandole una menzogna. La più grande è Dio. Dice questo nell'opera "così parlò Zarthustra", un'antica divinità persiana, probabilmente inventata, dove zarathustra parla dell'oltreuomo ai persiani. 
+Per Nietzsche deve prevalere l'anima dionisiaca, per differenziarsi dall'uomo comune. È un uomo creativo, che si distingue dagli altri, è un uomo che ha volontà di potenza. Anche D'Annunzio ha reinterpretato l'immagine dell'oltreuomo, dando origine al `superuomo`. Questa è un'interpretazione forzata che rende Nietzsche un autore antidemocratico. Nietzsche parla nella sua opera di `nichilismo`(nihil, nulla), che poi si chiamerà "Dio è morto". È una visione della realtà che ha come fondamento il credere nel nulla, o non credere in nulla. Perchè credi non ci sia nulla di logico, continuo e sensato in cui credere. Dio è morto vuol dire che nulla, ne la religione, ne la filosofia, ne le istituzioni possono rappresentare una garanzia per l'uomo. Nietzsche rifiuta tutte le filosofie che la storia ha creato considerandole una menzogna. La più grande è Dio. Dice questo nell'opera "così parlò Zarthustra", un'antica divinità persiana, probabilmente inventata, dove zarathustra parla dell'oltreuomo ai persiani. 
 
-D'Annunzio interpreta a suo modo Nietzsche e ne prende alcuni elementi, come il concetto di oltreuomo, l'uomo che si distingue, che diventa superuomo in D'Annunzio, ossia l'uomo che si impone. Nietzsche aveva un pensiero molto più strutturato, il nichilismo, ossia la consapevolezza della decadenza della civiltà europea, ch non viene ripresa in D'Annunzio. Il concetto di nichilismo, ossia di non crederre in nulla, non vuol dire "buttare tutto in vacca", è un'atteggiamento simile a quello dei greci, che per difendersi da un contesto di un certo tipo avevano un'atteggiamento di distacco. 
+D'Annunzio interpreta a suo modo Nietzsche e ne prende alcuni elementi, come il concetto di oltreuomo, l'uomo che si distingue, che diventa superuomo in D'Annunzio, ossia l'uomo che si impone. Nietzsche aveva un pensiero molto più strutturato, il nichilismo, ossia la consapevolezza della decadenza della civiltà europea, che non viene ripresa in D'Annunzio. Il concetto di nichilismo, ossia di non credere in nulla, non vuol dire "buttare tutto in vacca", è un'atteggiamento simile a quello dei greci, che per difendersi da un contesto di un certo tipo avevano un'atteggiamento di distacco. 
 Le opere che documentano il superuomo in D'Annunzio sono "`il trionfo della morte`" e "`le vergini delle rocce`". In entrambe le opere viene esaltato sopratutto l'impero romano. Nell'opera "il trionfo della morte" il protagonista vorrebbe diventare il nuovo imperatore romano. Il superuomo descritto in queste opere è antidemocratico, considera il popolo come una massa ignorante, che si eleva a giudice dell'umanità.
 
 ## Le laudi:
