@@ -1,0 +1,17 @@
+<IndicePath/>
+
+<script>
+  import IndicePath from '$lib/IndicePath/index.svelte';
+  </script>
+
+## Situazione della Spagna:
+La Spagna negli anni `1920-1930` è sottoposta alla dittatura del generale `Primo de Rivera`, nel `1931` viene fatto dimettere e la Spagna diventa una repubblica democratica. La coalizione di social-democratici - comunisti - repubblicani vince le elezioni del 1936, e la repubblica si struttura maggiormente, con un potere più stabile. Come si era verificato in Italia e Germania anche in Spagna nasce un movimento di destra, la `falange`, gestito dal generale `Francisco Franco`, il quale grazie alla forza dell'esercito vuole ottenere il potere. In Spagna, dal 1936 al 1939 scoppia  quindi una `guerra civile`. Fracisco Franco ha l'appoggio di Mussolini e Hitler (sono tutti movimenti di destra), mentre il governo era appoggiato dall'URSS. Nel `1939` Francisco Franco vince la guerra civile e governerà la Spagna. La governerà fino al 1975, è la dittatura di destra più lunga della storia. Dopo questo torna la dinastia dei Borboni. 
+
+## Situazione tra Germania e Italia:
+Per realizzare il suoi obbiettivi (Spazio vitale e riunire i territori di lingua tedesca) la Germania aveva una `politica estera profondamente aggressiva`. Aumenta quindi le spese militari, favorendo il riarmo e crea la politica delle alleanze. Nel `1936` viene stipulato l'`Asse Roma-Berlino`, che decreta l'alleanza tra Mussolini e Hitler, successivamente diventerà Roma-Berlino-Tokyo(1939). Nel 1937 Mussolini è invitato da Hitler in Germania, che lo porta ad allearsi perché è un vincente, Hitler faceva sentire Mussolini quasi un re di Roma. La popolazione tedesca applaudì nello stadio olimpico di Berlino i due dittatori. La Germania organizza nel 1936 le olmpiadi a Berlino, per dimostrare la grandezza della razza ariana. In realtà quando Jesse Owens Vinse le 4 medaglie tra cui l'oro nei 100m Hitler non gli diede la mano. Nel `1938` Hitler viene accolto da Mussolini e il re a Roma. Da questo momento Italia e Germania sono profondamente alleate, nello stesso anno in piazza unità d'Italia a Trieste Mussolini dichiara che anche l'Italia avrà le leggi razziali, basate sulle leggi di Norimberga emanate da Hitler nel 1935. Quando l'Italia emana le leggi razziali il consenso a Mussolini ebbe delle criticità anche gli uomini a lui fedeli iniziarono a distaccarsi, tra cui Galeazzo Ciano, ministro degli esteri e marito della figlia Edda.
+
+## Situazione generale:
+In Germania e Italia ci sono due `poteri di destra`, in Russia c’è la Sinistra, comunque `totalitaria`. 
+In Inghilterra c'era il deputato `churchill`, ai governanti di Francia e Inghilterra era chiaro quello che Hitler avrebbe voluto fare. La Germania voleva il territorio della Polonia, Hitler quindi doveva assicurarsi che la Russia rimanesse neutrale, non intervendo a bloccare la sua avanzata verso est. Firma nel 1939 con l'URSS il `patto Molotov-Ribbentrop`, dal nome dei due firmatari Russi, per il quale l'URSS non sarebbe intervenuta in guerra nel caso in cui la Germania avesse invaso la Polonia, con una durata di 10 anni.
+
+Tutto l'est Europa, i territori nati dopo la disgregazione dell'URSS, l'impero Austro Ungarico e l'impero Ottomano, era sottoposto a regimi dittatoriali.
