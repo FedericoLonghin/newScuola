@@ -1,0 +1,20 @@
+<IndicePath/>
+<script>
+  import IndicePath from '$lib/IndicePath/index.svelte';
+  </script>
+
+## Contesto generale: 
+Le ragioni della guerra devono essere ricondotte alla politica estera degli stati negli anni precedenti. La seconda guerra mondiale `inizia nel 1939` quando Hitler invade la Polonia per `ricreare l'impero` e lo spazio vitale. Hitler era alleato con l’Italia, Inghilterra e Francia due giorni dopo l'ivasione dichiarano guerra alla Germania. Hitler dirige i suoi eserciti verso est, arriva a Varsavia e la Polonia è occupata dalle truppe Naziste, scompare dal sistema geo-politico. Secondo il patto Molotov-Ribbentrop è divisa in due parti, metà della Russia, metà della Germania. Anche la seconda guerra mondiale segue due fronti: orientale e occidentale, usando come riferimento la Germania.
+nel `1940` Hitler decide di avanzare verso il fronte Ovest, invade Danimarca, Norvegia, Olanda, Belgio e Lussemburgo. Erano tutti paesi neutrali, non schierati. L’invasione produce il controllo di Hitler, che riesce ad arrivare fino in a Parigi. È una guerra di movimento, secondo le intenzioni di Hitler doveva essere una guerra Lampo, che l’avrebbe portato in qualche mese a conquistare tutto lo spazio vitale. La parte a nord della Francia era controllata direttamente dai tedeschi, quella a sud indirettamente, perché è stato istituito un `governo collaborazionista`, il governo di Vichy. Questo governo crea l'idea del collaborazionismo, ossia dichiarare di stare da una parte, ma in realtà fornire informazioni alla parte avversaria. Sono coloro che non sono fascisti, ma in realtà collaborano a favore del governo fascista/nazista. 
+
+importante paragrafo 2 e 3!
+
+Nel 1940 Hitler per creare lo spazio vitale prosegue verso l’URSS con l'`Operazione Brbarossa`, ignorando il patto molotov-ribertro. In Russia c’era Stalin, l'esercito viene bloccato prima di Mosca dal patriottismo russo.
+Gli USA fino al 1941restano fuori dal conflitto, il presidente Roosvelt era convinto fosse necessario per rafforzare l’America, pronuncia la frase “l’America agli americani”. Nel mentre però gli USA avevano finanziavano Francia e Inghilterra, la legge di affitti e prestiti prevedeva la vendita di Armi in nome della difesa della democrazia. Nel 1941 Roosevelt e Churchill si incontrano su una nave da guerra e firmano la `carta atlantica`, ponendo in evidenza dei principi, la condanna ai regimi fascisti, la difesa dell’autodeterminazione dei popoli, il rispetto delle nazioni , la non invadenza e il contrasto ai regimi fascisti.
+
+
+## Attacco di Pearl Arbor:
+All’interno dei conflitti ci sono spesso guerre parallele per trarre vantaggi e rivendicare territori. Il Giappone si allea con Italia e Germania, per ottenere dalla Cina le colonne del continente asiatico. La Cina di Mao Zedong aveva interessi coloniali in contrasto con il Giappone. Nel `1941`la base americana di Peral Arbor fu attaccata dai giapponesi, vengono distrutte le portaerei ancorate e uccise 5000 persone. Questo fatto produce l’entrata in guerra degli USA, che dichiara guerra al Giappone. Si parla quindi di guerra mondiale, perché oltre all’Europa si aggiungono USA e Giappone. 
+
+## Olocausto: 
+Lo sterminio non si limità agli ebrei tedeschi, ma da tutta l'Europa Omossessuali, criminali, Zingari, assenteisti etc. furono portati nei lagher. I `kapò` erano coloro che vivevano di maggiori previlegi che, pur essendo ebrei, controllavano alcuni aspetti gestionali. Vennero creati i `Sonder kommando`, dei gruppi di ebrei che controllavano il processo di gasificazione e cremazione all’interno dei lagher. Godevano di diritti speciali, molti di loro sono tornati. `Heinrich Himmler`, capo delle SS, era uni spietato, massimo responsavile del terrore. La maggior parte dei campi erano in Germania e Polonia, i principali erano Auschwitz, Dachau, Buchenvald non lontano da Berlino, Matausen vicino a Praga. I campi erano idustrie, denti e capelli venivano riutilizzati. 6 milioni di ebrei vennero uccisi.
