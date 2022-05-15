@@ -15,8 +15,8 @@ Ci sono due grandi partiti:
 
 Nelle elezioni del 1920 divenne presidente il repubblicano Harding che adottò una politica isolazionista e sulla base dell'idea "`l'America agli americani`", per la quale era necessario che gli USA si occupassero delle loro questioni interne, rafforzandosi con una politica isolazionista. 
 
-Fino al 1927 gli USA si presentavano come lo stato più ricco e potente al mondo, c'era un `benessere della popolazione` (si compravano automobili, si andava in vacanza), gli `esiti della seconda rivoluzione industriale`. la `produzione era aumentata` del 64% (basso costo della mano d'opera), e gli USA ricevevano `interessi dai prestiti` che avevano dato ai paesi europei.
-questi anni vengono chiamati i "ruggenti anni 20", gli anni di massimo sviluppo e boom sul piano economico e sociale. È una crescita senza precedenti. Si parla di "American way of life", lo stile di vita americano. Già negli anni 20 si stavano inserendo nella società americana alcune contraddizioni, si vedevano alcune falle e limiti del sistema, tra cui:
+Fino al 1927 gli USA si presentavano come lo stato più ricco e potente al mondo, c'era un `benessere della popolazione` (si compravano automobili, si andava in vacanza), gli `esiti della seconda rivoluzione industriale`. La `produzione era aumentata` del 64% (basso costo della mano d'opera), e gli USA ricevevano `interessi dai prestiti` che avevano dato ai paesi europei.
+Questi anni vengono chiamati i "ruggenti anni 20", gli anni di massimo sviluppo e boom sul piano economico e sociale. È una crescita senza precedenti. Si parla di "American way of life", lo stile di vita americano. Già negli anni 20 si stavano inserendo nella società americana alcune contraddizioni, si vedevano alcune falle e limiti del sistema, tra cui:
 
   - **Poca attenzione alle classi povere**, quindi la riduzione delle spese dello stato in materia sociale. Uno stato che attribuisce scarsa importanza alla questione sociale è votato ad una economia privata. 
   - La concentrazione della ricchezza in **grandi imperi finanziari**, che diventeranno multinazionali o i grandi gruppi che controllano l'economia. Il gruppo Rockfeller ha creato a NY il Rockfeller center. I ricchi quindi diventano sempre più ricchi e i poveri sempre più poveri. 
@@ -34,7 +34,7 @@ Furono per gli USA anni di massimo splendore, molti utilizzavano l'automobile pe
 Negli anni '20 l'economia si stava riprendendo e, dato che molti paesi europei avevano bisogno dei prodotti agricoli americani, i contadini furono costretti ad abbassare il prezzo del grano. Molti agricoltori avevano dei mutui e debiti con le banche, a causa dell'acquisto dei materiali. Anche l'industria sulla base dei ruggenti anni '20 produceva moltissimo. Dopo i primi segnali di crisi dell'agricoltura la produzione fù superiore alla richiesta, quindi tanta merce rimase invenduta. Si parla di `sovraproduzione`. Nel 2008 molti cittadini Americani avevano comprato case a rate e si erano indebitati. 
 
 ## La borsa e le speculazioni:
-La borsa: è un mercato dove si comprano e vendono azioni. Le azioni son corrispondenti alle qute delle società quotate in borsa. 
+La borsa: è un mercato dove si comprano e vendono azioni. Le azioni son corrispondenti alle quote delle società quotate in borsa. 
 Con la speculazione si fa credere che un azienda sta andando bene o male. Dal 900 l'economia reale e l'economia virtuale viaggiano in parallelo.
 
 L'america stava entrando nel tunnel della sovraproduzione, di un eccesso di beni rispetto alla richiesta, le aziende continuavano ad emettere azioni, gli investitori continuavano ad acquistarli. Era diffusa l'idea secondo la quale tutti potevano diventare ricchi. 
