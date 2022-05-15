@@ -1,17 +1,14 @@
-
- {
-    "short_name": "newWebsite",
-    "name": "Federico's newWebsite",
-    "icons": [
-      {
+{
+    "short_name": "newScuola",
+    "name": "Federico's school portal",
+    "icons": [{
         "src": "favicon.png",
         "sizes": "512x512",
         "type": "image/png"
-      }
-    ],
+    }],
     "start_url": "/",
     "scope": "/",
     "display": "standalone",
     "theme_color": "#48e5c2",
-    "background_color": "#333333"  
-  }
+    "background_color": "#333333"
+}
