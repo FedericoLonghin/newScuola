@@ -15,13 +15,13 @@ C'è un legame parziale con il decadentismo, che finisce nel 1910. non può esse
 Vari elementi della società entrano in crisi:
 
 ### Crisi della razionalità scientifica: 
-Nel Novecento entra in crisi l'idea che la scienza sia la spiegazione di ogni dimensione e realtà, l'introduzione della teoria della relatività di Einstein va contro la visione della scienza classica e galileiana, per cui è vero cioò che è dimostrato essere vero.
+Nel Novecento entra in crisi l'idea che la scienza sia la spiegazione di ogni dimensione e realtà, l'introduzione della teoria della relatività di Einstein va contro la visione della scienza classica e galileiana, per cui è vero ciò che è dimostrato essere vero.
 
 Nel percorso evolutivo della scienza, la vera rivoluzione è stata fatta da Galileo Galilei che, oltre ad aver elaborato la teoria eliocentrica, imposta la componente di `sperimentazione` come imprescindibile e fondamentale.
 Con la teoria della relatività (1905) Einstein aggiunge il concetto di `dimostrazione matematica` oltre a quella fisica.
 La scienza sperimentale e la scienza teorica non sono in contraddizione, scienza di Einstein è applicata all'atomo, quella di Galileo di distanze fisiche.
 
-Einstein ha partecipato insieme ad Enrico Fermi e Ettore Majorana al `progetto Manattahn` nelle ricerche sul nucleare, effettuandi studi sul'atomo e sull'energia nucleare. Se ne va quando gli stati hanno iniziato a usare la ricerca per la bomba atomica, pronunciando la frease "la scienza è nata come servizio all'uomo e non come distruzione".  
+Einstein ha partecipato insieme ad Enrico Fermi e Ettore Majorana al `progetto Manattahn` nelle ricerche sul nucleare, effettuando studi sul'atomo e sull'energia nucleare. Se ne va quando gli stati hanno iniziato a usare la ricerca per la bomba atomica, pronunciando la frase "la scienza è nata come servizio all'uomo e non come distruzione".  
 
 Si parla di crisi della razionalità scentifica perchè `si scopre non esserci verità assolute`, si affermano cose vere che, potrebbero venire negate con il subentro di altri fattori.
 
@@ -29,14 +29,14 @@ Si parla di crisi della razionalità scentifica perchè `si scopre non esserci v
 Con la nascita dell'URSS viene aplicato il modello economico comunista, il contrario del sistema liberista. La `crisi del 1929` dimostra che il `sistema liberista di Adam Smith non è perfetto`. Le grandi teorie dei modelli economici sono andati in crisi, si doveva cercare il modello economico migliore. 
 
 ### Crisi della razionalità storico politica:  
-Nel Novecento scoppiano due `guerre mondiali` e c'è l'età dei `totalitarismi`. L'uomo aveva trovato dei modelli per gestire la società (costituzione, ugualianza)ma si verifica una ricaduta.
+Nel Novecento scoppiano due `guerre mondiali` e c'è l'età dei `totalitarismi`. L'uomo aveva trovato dei modelli per gestire la società (costituzione, ugualianzafrase) ma si verifica una ricaduta.
 
 ### Crisi del sistema culturale:
 Tutto ricade nella crisi del sistema culturale, che assorbe gli elementi scentifici, sociali economici e politici. Si sviluppano delle teorie che hanno cambiato la prospettiva e identità del secolo:
 
-- La **Psicanalisi di Freud**: Freud è uno psicanalista nato nell'impero asburgico, si laurea in neurologia a Vienna, inventa il `metodo psichianalitico`. Pubblica l'opera `l'interpretazione dei sogni`, il dove spiega alcuni sogni per ricondurli a processi mentali. Secondo Freud l'uomo nel sogno si libera delle costrizioni che gli derivano dalla società, cotesto e famiglia ed emergono i suoi bisogni e desideri. Analizzando il sogno quindi si conosce la parte più profonda dell'io. Scrive anche tre saggi sulla teoria sessuale per mettere in evidenza le ragioni di alcune malattie e alcune caratteristiche. <br>
+- La **Psicanalisi di Freud**: Freud è uno psicanalista nato nell'impero asburgico, si laurea in neurologia a Vienna, inventa il `metodo psichianalitico`. Pubblica l'opera `l'interpretazione dei sogni`, dove spiega alcuni sogni per ricondurli a processi mentali. Secondo Freud l'uomo nel sogno si libera delle costrizioni che gli derivano dalla società, cotesto e famiglia ed emergono i suoi bisogni e desideri. Analizzando il sogno quindi si conosce la parte più profonda dell'io. Scrive anche tre saggi sulla teoria sessuale per mettere in evidenza le ragioni di alcune malattie e alcune caratteristiche. <br>
 Muore in Inghilterra (è dovuto scappare dato che era ebreo) nel `1939`, i suoi libri furono bruciati nel rogo di Berlino.
-Studiando le malattie mentali afferma che l'*essere nel mondo* dell'uomo è condizionato dalla dimensione dell' `inconscio`.L'uomo spesso non è consapevole degli input che provengono dal contesto, dalla famiglia e dalla situazione, ma gli assorbe e li restituisce.<br>
+Studiando le malattie mentali afferma che l'*essere nel mondo* dell'uomo è condizionato dalla dimensione dell' `inconscio`. L'uomo spesso non è consapevole degli input che provengono dal contesto, dalla famiglia e dalla situazione, ma gli assorbe e li restituisce.<br>
 Elabora inoltre il `complesso di Edipo` (o processo elettra al femminile), per il quale si tende a cercare una persona uguale o contraria alla madre. L'analisi sulla sessualità non è solo legata a questi complessi, si analizza sempre una parte interiore dell'uomo che è spesso oggetto di tabù, alcune devianze, i comportamenti privati sessuali.<br><br>
 Freud dice che nell'uomo ci sono `tre livelli`:  
   - **ES**: È l'inconscio, contiene gli istinti e le paure che la nostra coscienza ha rimosso. È la parte più profonda della nostra identità. 
