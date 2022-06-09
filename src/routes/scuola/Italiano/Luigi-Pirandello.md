@@ -4,7 +4,11 @@
   </script>
 
 ## Caratteri generali:
-È un autore siciliano che nasce in provincia di Agrigento, applica tutte le teorie del romanzo del Novecento. Mentre Verga non si può comprendere senza la Sicilia, l’ambientazione delle opere è il mondo, non la Sicilia, parla infatti di `temi slegati da quel contesto`. Proveniva da una ricca famiglia borghese, aveva ereditato una zolfara dai genitori. Il padre l’aveva inscritto ad un istituto tecnico commerciale, Pirandello se ne va, andrà al liceo Classico e poi studierà Lettere a Roma. Litiga con il professore e `si laurea in Germania`, a Bonn.
+È un autore siciliano che nasce in provincia di Agrigento, applica tutte le teorie del romanzo del Novecento. Mentre Verga non si può 
+comprendere senza la Sicilia, l’ambientazione delle opere è il mondo, non la Sicilia, parla infatti di `temi slegati da quel contesto`. 
+Proveniva da una ricca famiglia borghese, aveva ereditato una zolfara dai genitori. Il padre l’aveva inscritto ad un istituto tecnico 
+commerciale, Pirandello se ne va, andrà al liceo Classico e poi studierà Lettere a Roma. Litiga con il professore e `si laurea in Germania`, a 
+Bonn.
 
 Si trasferisce a Roma e si sposa con una siciliana, `Antonietta Portolano`, figlia di un ricco commerciante di zolfo. Avrà tre figli, nel 1903 a causa di un’inondazione crolla una miniera di zolfo, che mette in crisi le finanze della famiglia. La moglie aveva paura di rimanere senza patrimonio, da quel momento inizia per la moglie una `depressione e malattia mentale` che la porterà al ricovero in una casa di cura dalla quale non uscirà più. La malattia della moglie è uno dei temi fondamentali delle opere di Pirandello. 
 
@@ -44,4 +48,32 @@ Il testo racconta la storia di `Belluca`, la novella inizia quando i fatti somo 
 ## Il fu Mattia Pascal:
 È un romanzo, non ha una struttura lineare, soprattutto nell'introduzione, premessa 1 e premessa 2. La storia segue il percorso di Mattia Pascal, che diventerà Adriano Meis, e poi "il fu Mattia Pascal". È la storia dell' `identità sospesa` di un uomo e della sua evoluzione,  
 
-... dopo aver cambiato vita va a Roma e si innamora della figlia del proprietario della locanda. La vuole sposare, ma non aveva i documenti, nel contesto sociale non è nessuno
+... dopo aver cambiato vita va a Roma e si innamora della figlia del proprietario della locanda. La vuole sposare, ma non aveva i documenti, nel contesto sociale non è nessuno. Gli uomini che non rispettano le convenzioni socili non hanno identità. Adriano Meis ritorna nel suo paese e decide che vuole tornare ad essere Mattia Pascal. Questo però non è possibile, va al cimitero e vede la sua tomba, sua moglie si è risposata, l'uomo che quindi non rispetta le convenzioni sociali non è nessuno. Chi non aderisce alle regole sociali non conta, si parla quindi di `identità sospesa`, quando l'identità è funzionale ad essere riconosciuto come qualcuno nel mondo. A lui non rimane che scrivere le sue memorie chiuso in una biblioteca in Liguria, fuori dalla realtà. 
+
+### Trama:
+Era un bibliotecatrio, viveva con la moglie e la sposa, aveva due gemelli ma sono morti, voeva andare in america ma quando arriva a Montecarlo vince una somma di denaro al gioco, e quando vuole tornare in Liguria legge dal giornale della sua morta. 
+
+## Componimento:
+Il romanzo ha parti descrittive e parti filosofiche, non è una semplice narrazione, ma una narrazione complessa. L'idea di scrivere questo romanzo gli è venuta in una biblioteca dove lavorava, dove c'era anche l'amico `Don Eligio`. 
+
+Dopo questa parte generale dice: "gli uomini sono delle trottole invisibili illuminate da un filo di sole, stanno in una terra che è come (rispetto all'universo) un granello di sabbia che gira senza sosta, senza sapere perchè e senza arrivare ad un destino. In questa terra a volte fa caldo, a volte freddo, e per non farci annoiare gira continuamente. `Copernico`***** ha rovinato l'umanità. Noi dobbiamo adattarci all'idea che siamo piccoli, che per l'univer4so non valiamo niente e che le nostre invensioni e scoperte sono nulla in confronto alle forze più grnadi. Dimentichiamo spesso che siamo atomi infinitesimali e per questo spesso ci facciamo la guerra anche per un piccolo pezzo di terra. Se ci ricordassimo che siamo una piccola entità, vivremo nel mondo in modo diverso.". 
+
+>**Copernico** viene citato perchè è stato il primo a mettere in discussione il sistema geocentrico. Questo prevedeva che tutto girasse intorno alla terra, e dipendesse da essa. Quello eliocentrico, invece, prevedeva che la terra fosse solo uno dei tanti sistemi in un contesto infinitamente grande. 
+
+### Capitolo 8:
+È un capitolo importante, Pirandello fa una riflessione, Mattia Pascal è Adriano Meis e scrive:
+
+*Io sono ADriano Meis ma non avrei mai potuto avere un amico, Amicizia vuol dire confidenza,  come avrei potuto confidare un segreto della mia vita senza nome e senza passato? Avrei potuto avere solo conversazioni superficiali, potrò vivere solo con me e di me. Siamo giusti, io mi ero conciato in quel modo per gli altri, non per me, ora mi chiamo Adriano Meis, Mattia Pascal era morto.*
+
+
+*La vita a considerarla così da spettatore estraneo mi pareva senza senso e senza scopo*
+
+Analisi sulla `società di massa`, sottolinea l'`ambivalenza del progresso`:<br>
+*Perchè c'è questo stordimento di macchine? e che farà l'uomo quando le macchine faranno tutto? Si accorgerà allora che il progresso non ha nulla a che fare con la felicità? Di tutte le invenzioni che fa l'umanità, che gioia proviamo noi ammirandole? Un giorno ho fatto il giro di mezza Milano con il tram elettrico, l'uomo diceva che era una bella invenzione, ma non si era accorto che, a causa dei soldi spesi nel tram e nella bolletta della luce spendeva tutto lo stipendio, eppure crediamo di essere felici, ed avere un'esistenza più comoda.*
+
+## Il lanternino:
+Mattia Pascal si è operato ad un occhio e deve stare 40 giorni al buio. durante questi giorni avvia un discorso filosofico con `Anselmo Palearmi`, il padrone dell'albergo in cui vive a Roma: 
+
+*Il signor Anselmo mi dimostrava che non siamo come l'albero che vive e non sa di vivere* ***** *albero a cui la terra, pioggia, sole e vento non cambia nulla. Noi invece siamo consapevoli che stiamo vivendo, abbiamo il `sentimento della vita.  Nel mondo ci sono tanti lanternini accesi, alcuni attraverso la lanterna vedono più o meno luce, chi ha il lanternino acceso o spento. Quando la persona muore, il lanternino è spento. Ognuno ha la sua consapevolezza di vita*
+
+>**Non sa di vivere** non ha la consapevolezza di essere vivo. La vita, o consapevolezza di vivere, è uguale ad un lanternino.<br> 1 uomo = 1 vita = 1 lanterna

@@ -36,3 +36,16 @@ Tra le innovazioni più importanti troviamo le ricerche sull'`energia nucleare` 
 ## Il processo di Norimberga:
 Si è tenuto tra il 1945 e il 1946, è fondamentale perché viene introdotto il diritto internazionale. Furono individuate le colpe di 21 ufficiali Tedeschi, molti dei quali non erano presenti al processo, dato che erano scappati. Furono chiamati come testimoni gli scappati, furono letti i documenti, le lettere, i filmati, scoperti gli esperimenti del dottor Mengele etc. Furono imputati di crimini contro la democrazia, pace, umanità etc. 
 
+
+## Dopoguerra Italiano e resistenza.
+Mussolini ricrea sul lago di Garda la repubblica di Salò. L’Italia si trova quindi a vivere una guerra civile, a Sud ci sono gli 
+aglo-americani che liberano l’Italia e a nord tedeschi alleati con i fascisti. Nasce anche la resistenza, specialmente in Veneto e Lombardia 
+dove, studenti, uomini di centro e sinistra decidono di combattere per liberare l’italia dal fascismo. Si crea il CLN, Comitato di Liberazione 
+Nazionale con sede a Roma che coordina le azioni della resistenza. I tedeschi che appresero dell’uscita dell’Italia dalla guerra consideravano 
+gli italiani come un popolo che gli aveva voltato la faccia. In grecia ci fu la `strage di Cefalonia`. Quando l'Italia esce dalla guerra nel 
+1943 i soldati all'estero continuavano a combattere, i tedeschi li consideravano falsi e disertori, quindi li uccidevano. In Italia ci furono 
+le `fosse Ardeatine` e l'`eccidio di Marzabotto` (tra Bologna e Ferrara). Quando nel 1944 gli Anglo-Americani conquistarono Roma e le linee 
+tedesche si festeggia la liberazione, i tedeschi si arrendono, Mussolin viene appeso a piazzale Loreto a Milano.
+
+Il 10 Febbraio si ricordano le `stragi di Tito`, il presidente comunista della Ex-Jugoslavia nei confronti degli italiani. Lui considerava 
+tutti gli italiani del Friuli come Fascisti, e gli perseguì in nome dell'deologia comunista.
