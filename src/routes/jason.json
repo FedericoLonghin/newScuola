@@ -54,6 +54,14 @@
                     "name": "Seconda guerra mondiale",
                     "date": "05/05/2022",
                     "url": "/scuola/Storia/Seconda-guerra-mondiale"
+                }, {
+                    "name": "Il mondo del dopoguerra",
+                    "date": "10/06/2022",
+                    "url": "/scuola/Storia/Il-mondo-del-dopoguerra"
+                }, {
+                    "name": "La decolonizzazione",
+                    "date": "10/06/2022",
+                    "url": "/scuola/Storia/La-decolonizzazione"
                 }
             ]
         },
@@ -124,6 +132,10 @@
                     "name": "Luigi Pirandello",
                     "date": "16/05/2022",
                     "url": "/scuola/Italiano/Luigi-Pirandello"
+                }, {
+                    "name": "Giuseppe Ungaretti",
+                    "date": "10/06/2022",
+                    "url": "/scuola/Italiano/Giuseppe-Ungaretti"
                 }
             ]
         }
