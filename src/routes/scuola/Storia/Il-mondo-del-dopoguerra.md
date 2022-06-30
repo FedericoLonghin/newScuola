@@ -1,3 +1,7 @@
+<IndicePath/>
+<script>
+  import IndicePath from '$lib/IndicePath/index.svelte';
+  </script>
 
 La seconda guerra mondiale provocò più di 71 milioni di cui più della metà erano `civili`. Oltre a questo problema c'era la questione dei 
 `profughi, disoccupati e senzatetto`. USA e URSS vinsero la guerra, e furono denominate `superpotenze` e, in quanto reali vincitori della 
