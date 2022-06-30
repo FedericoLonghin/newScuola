@@ -4,7 +4,7 @@
   </script>
 
 ## Caratteri generali del romanzo:
-Ci furono tre versioni edl romanzo:
+Ci furono tre versioni del romanzo:
 
 Titolo          | Anni
 ----------------|------------

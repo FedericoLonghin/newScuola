@@ -37,7 +37,7 @@ Tra le innovazioni più importanti troviamo le ricerche sull'`energia nucleare` 
 Si è tenuto tra il 1945 e il 1946, è fondamentale perché viene introdotto il diritto internazionale. Furono individuate le colpe di 21 ufficiali Tedeschi, molti dei quali non erano presenti al processo, dato che erano scappati. Furono chiamati come testimoni gli scappati, furono letti i documenti, le lettere, i filmati, scoperti gli esperimenti del dottor Mengele etc. Furono imputati di crimini contro la democrazia, pace, umanità etc. 
 
 
-## Dopoguerra Italiano e resistenza.
+## Dopoguerra Italiano e resistenza:
 Mussolini ricrea sul lago di Garda la repubblica di Salò. L’Italia si trova quindi a vivere una guerra civile, a Sud ci sono gli 
 aglo-americani che liberano l’Italia e a nord tedeschi alleati con i fascisti. Nasce anche la resistenza, specialmente in Veneto e Lombardia 
 dove, studenti, uomini di centro e sinistra decidono di combattere per liberare l’italia dal fascismo. Si crea il CLN, Comitato di Liberazione 
